@@ -156,8 +156,10 @@ def buscar_pendientes():
             else:
                 break
 
-def marcar_pendiente():
-
+def marcar_pendiente(idtag):
+    print("\n", lista_de_recordatorios[idtag])
+    lista_de_recordatorios[idtag].update({"estado": "completado"})
+    print(f"\nRecordatorio denominado como: {lista_de_recordatorios[idtag]["nombre"]}, ha sido completado")
 
 def menu_informacion():
     print("\nMENÚ DE INFORMACIÓN")
