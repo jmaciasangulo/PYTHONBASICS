@@ -135,8 +135,7 @@ def imprimir_recordatorios():
             print(f"    {clave.capitalize()}: {valor}")
         print()
 
-def buscar_pendientes():
-
+def buscar_pendientes(funcion):
     while True:
         identifica_id =  input("Escribe el id del pendiente: ")
         try:
