@@ -136,8 +136,7 @@ def imprimir_recordatorios():
         print()
 
 def buscar_pendientes():
-    print("\nSus pendientes son estos:")
-    imprimir_recordatorios()
+
     while True:
         identifica_id =  input("Escribe el id del pendiente: ")
         try:
