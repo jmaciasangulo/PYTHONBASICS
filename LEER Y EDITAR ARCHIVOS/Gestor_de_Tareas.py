@@ -139,7 +139,7 @@ def buscar_pendientes(funcion):
     while True:
         identifica_id =  input("Escribe el id del pendiente: ")
         try:
-            funcion(identifica_id)
+            funcion()
             guardar_cambios()
             break
         except KeyError:
