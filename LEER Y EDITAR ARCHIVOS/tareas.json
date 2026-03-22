@@ -1,0 +1,32 @@
+{
+    "ba842944-3db3-424c-93a5-1ef144e45082": {
+        "nombre": "Comprar leche",
+        "descripccion": "Ve a walmart y compra leche",
+        "fecha": [
+            "01/01/2025",
+            739157
+        ],
+        "hora": [
+            "00:00",
+            0
+        ],
+        "prioridad": "ALTA",
+        "estado": "completado",
+        "id": "ba842944-3db3-424c-93a5-1ef144e45082"
+    },
+    "d8c926d7-ab84-467f-bc36-ecbbee2320d3": {
+        "nombre": "Comprar materiales",
+        "descripccion": "Ve a la papeler\u00eda y compra los materiales de dibujo que pidi\u00f3 la maestra",
+        "fecha": [
+            "25/03/2026",
+            739608
+        ],
+        "hora": [
+            "14:00",
+            840
+        ],
+        "prioridad": "MEDIA",
+        "estado": "pendiente",
+        "id": "d8c926d7-ab84-467f-bc36-ecbbee2320d3"
+    }
+}
