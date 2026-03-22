@@ -20,8 +20,8 @@ except FileNotFoundError:
 
 operaciones = {
     "agregar recordatorio": lambda: agregar_recordatorio(),
-    "marcar pendiente como completado": lambda: buscar_pendientes(marcar_pendiente()),
-    "eliminar recordatorio": lambda: buscar_pendientes(eliminar_pendiente()),
+    "marcar pendiente como completado": lambda: buscar_pendientes(marcar_pendiente),
+    "eliminar recordatorio": lambda: buscar_pendientes(eliminar_pendiente),
     "listar recordatorios": lambda: imprimir_recordatorios(),
     "consultar informacion de como trabaja su lista": lambda: menu_informacion()
     }
