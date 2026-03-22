@@ -140,9 +140,7 @@ def buscar_pendientes():
     while True:
         identifica_id =  input("Escribe el id del pendiente: ")
         try:
-            print("\n",lista_de_recordatorios[identifica_id])
-            lista_de_recordatorios[identifica_id].update({"estado": "completado"})
-            print(f"\nRecordatorio denominado como: {lista_de_recordatorios[identifica_id]["nombre"]}, ha sido completado")
+            funcion(identifica_id)
             guardar_cambios()
             break
         except KeyError:
