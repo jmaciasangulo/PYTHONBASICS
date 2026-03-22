@@ -154,7 +154,8 @@ def buscar_pendientes():
             else:
                 break
 
-def marcar_pendiente(idtag):
+def marcar_pendiente():
+    idtag = input("Escribe el id del pendiente: ")
     print("\n", lista_de_recordatorios[idtag])
     lista_de_recordatorios[idtag].update({"estado": "completado"})
     print(f"\nRecordatorio denominado como: {lista_de_recordatorios[idtag]["nombre"]}, ha sido completado")
