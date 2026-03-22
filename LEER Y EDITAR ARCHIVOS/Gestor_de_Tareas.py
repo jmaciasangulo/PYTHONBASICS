@@ -246,7 +246,7 @@ while True:
 
     operaciones[operacion]()
 
-    continuar = input("Desea seguir trabajando con su agenda? [SI/NO]").lower()
+    continuar = input("Desea seguir trabajando con su agenda? [SI/NO] ").lower()
     while continuar not in ["si", "no"]:
         print("Opcción incorrecta, vuelva a intentar...")
         continuar = input("Desea seguir trabajando con su agenda? [SI/NO] ").lower()
