@@ -159,7 +159,12 @@ def marcar_pendiente():
     print("\n", lista_de_recordatorios[idtag])
     lista_de_recordatorios[idtag].update({"estado": "completado"})
     print(f"\nRecordatorio denominado como: {lista_de_recordatorios[idtag]["nombre"]}, ha sido completado")
-
+def eliminar_pendiente():
+    idtag = input("Escribe el id del pendiente: ")
+    nombre = lista_de_recordatorios[idtag]["nombre"]
+    print("\n", lista_de_recordatorios[idtag])
+    print(f"\nRecordatorio denominado como '{nombre}' ha sido eliminado.")
+    del lista_de_recordatorios[idtag]
 def menu_informacion():
     print("\nMENÚ DE INFORMACIÓN")
     print("\nUsted puede hacer las siguientes operaciones:\n")
