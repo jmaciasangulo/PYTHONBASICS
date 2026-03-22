@@ -125,7 +125,7 @@ def agregar_recordatorio():
         "id": id
 
     }
-    print(f"Taread denominada como {nombre} agregada")
+    print(f"Tarea denominada como {nombre} agregada")
     guardar_cambios()
 
 def imprimir_recordatorios():
