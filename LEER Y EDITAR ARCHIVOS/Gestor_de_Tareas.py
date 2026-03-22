@@ -238,7 +238,7 @@ while True:
     print("Aquí podras gestionar todos tus pendientes\n"
           "\nCon esta lista puedes hacer:\n")
     for accion in operaciones:
-        print(accion)
+        print(accion.capitalize())
     operacion = input("\n¿Que desea hacer con su lista?: ").lower()
     while operacion not in operaciones:
         print("\nOpcción incorrecta, vuelva a intentar.")
