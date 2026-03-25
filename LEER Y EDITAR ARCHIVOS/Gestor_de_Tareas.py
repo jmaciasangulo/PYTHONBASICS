@@ -37,6 +37,28 @@ ejemplo = {}
 
 #-----------------------------FUNCIONES---------------------------------------------------------------
 
+def agregar_recordatorio():
+    print("\nEscriba como lo denominará ")
+    nombre = input("Denominación: ")
+    descripccion = input("Agrege una breve descripción: ")
+    fecha_en_dias, fecha  = validar_fecha()
+    hora_en_minutos, hora = validar_hora()
+    prioridad = validar_prioridad()
+    estado = "pendiente"
+    id = str(uuid.uuid4())
+
+    lista_de_recordatorios[id] = {
+        "nombre": nombre,
+        "descripccion": descripccion,
+        "fecha": (fecha,fecha_en_dias),
+        "hora": (hora, hora_en_minutos),
+        "prioridad": prioridad,
+        "estado": estado,
+        "id": id
+
+    }
+    print(f"Tarea denominada como {nombre} agregada")
+    guardar_cambios()
 def validar_fecha():
     while True:
         fecha = input("Recordar el día (SOLO FORMATO DD/MM/AAAA): ")
@@ -67,7 +89,6 @@ def validar_fecha():
 
     fecha_en_dias = (dias*1) + (meses*31) + (anos*365)
     return fecha_en_dias, fecha
-
 def validar_hora():
     while True:
         hora = input("Recordar a la hora (SOLO FORMATO HH:MM y RELOJ DE 24 HRS): ")
@@ -93,7 +114,6 @@ def validar_hora():
 
     hora_en_minutos = (horas*60) + (minutos*1)
     return hora_en_minutos, hora
-
 def validar_prioridad():
     prioridad = input("Nivel de prioridad (SOLO BAJA, MEDIA, ALTA): ").upper()
     while prioridad not in ["BAJA", "MEDIA", "ALTA"]:
@@ -101,44 +121,15 @@ def validar_prioridad():
         prioridad = input("Nivel de prioridad (SOLO BAJA, MEDIA, ALTA): ").upper()
     return prioridad
 
-def guardar_cambios():
-    with open(ruta_tareas, "w") as archivo:
-        json.dump(lista_de_recordatorios, archivo, indent=4)
-
-def agregar_recordatorio():
-    print("\nEscriba como lo denominará ")
-    nombre = input("Denominación: ")
-    descripccion = input("Agrege una breve descripción: ")
-    fecha_en_dias, fecha  = validar_fecha()
-    hora_en_minutos, hora = validar_hora()
-    prioridad = validar_prioridad()
-    estado = "pendiente"
-    id = str(uuid.uuid4())
-
-    lista_de_recordatorios[id] = {
-        "nombre": nombre,
-        "descripccion": descripccion,
-        "fecha": (fecha,fecha_en_dias),
-        "hora": (hora, hora_en_minutos),
-        "prioridad": prioridad,
-        "estado": estado,
-        "id": id
-
-    }
-    print(f"Tarea denominada como {nombre} agregada")
-    guardar_cambios()
-
-def imprimir_recordatorios():
-    for i, datos in enumerate(lista_de_recordatorios.values(), 1):
-        print(f"Tarea {i}:")
-        for clave, valor in datos.items():
-            print(f"    {clave.capitalize()}: {valor}")
-        print()
-
 def buscar_pendientes(funcion):
     while True:
         identifica_id =  input("Escribe el id del pendiente: ")
         try:
+            if not lista_de_recordatorios:
+                print("No hay recordatorios guardados, agrege uno para que pueda trabajar con él.")
+                break
+            else:
+                pass
             funcion()
             guardar_cambios()
             break
@@ -152,7 +143,6 @@ def buscar_pendientes(funcion):
                 pass
             else:
                 break
-
 def marcar_pendiente():
     idtag = input("Escribe el id del pendiente: ")
     print("\n", lista_de_recordatorios[idtag])
@@ -164,6 +154,18 @@ def eliminar_pendiente():
     print("\n", lista_de_recordatorios[idtag])
     print(f"\nRecordatorio denominado como '{nombre}' ha sido eliminado.")
     del lista_de_recordatorios[idtag]
+
+def imprimir_recordatorios():
+    for id in lista_de_recordatorios:
+        print("\n",id)
+        for clave, valor in lista_de_recordatorios[id].items():
+            print(f" {clave.capitalize()}: {valor}")
+
+
+def guardar_cambios():
+    with open(ruta_tareas, "w") as archivo:
+        json.dump(lista_de_recordatorios, archivo, indent=4)
+
 def menu_informacion():
     print("\nMENÚ DE INFORMACIÓN")
     print("\nUsted puede hacer las siguientes operaciones:\n")
@@ -174,7 +176,6 @@ def menu_informacion():
         print("Opcción incorrecta, vuelva a intentar...")
         mostar_info_de = input("Sobre que operación desea saber más?: ").lower()
     menu_ayuda[mostar_info_de]()
-
 def informacion_agregar_recordatorio():
     print("\nCon esta operación usted puede agregar un recordatorio como lo indica su nombre."
     "\n\nEn el paso #1 se le pedirá que le asigne un título o nombre a su pendiente, usted puede poner el"
