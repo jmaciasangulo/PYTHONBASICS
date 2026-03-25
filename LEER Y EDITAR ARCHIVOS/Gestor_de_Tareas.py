@@ -154,6 +154,16 @@ def eliminar_pendiente():
     print(f"\nRecordatorio denominado como '{nombre}' ha sido eliminado.")
     del lista_de_recordatorios[idtag]
 
+def escoge_imprimir_recordatorios():
+    print("Filtros de recordatorios:")
+    for rubro in categorías_de_recordatorios
+        print(f"-{rubro.capitalize()}")
+    filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
+    while filtro not in categorías_de_recordatorios:
+        print("Opcción iconrrecta, vuelva a intentar...")
+        filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
+    categorías_de_recordatorios[filtro]()
+
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
         print("\n",id)
