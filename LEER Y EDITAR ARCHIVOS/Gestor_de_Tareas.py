@@ -161,7 +161,7 @@ def eliminar_pendiente():
 
 def escoge_imprimir_recordatorios():
     print("Filtros de recordatorios:")
-    for rubro in categorias_de_recordatorios
+    for rubro in categorias_de_recordatorios:
         print(f"-{rubro.capitalize()}")
     filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
     while filtro not in categorias_de_recordatorios:
