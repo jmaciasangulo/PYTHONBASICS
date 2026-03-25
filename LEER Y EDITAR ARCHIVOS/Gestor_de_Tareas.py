@@ -123,7 +123,6 @@ def validar_prioridad():
 
 def buscar_pendientes(funcion):
     while True:
-        identifica_id =  input("Escribe el id del pendiente: ")
         try:
             if not lista_de_recordatorios:
                 print("No hay recordatorios guardados, agrege uno para que pueda trabajar con él.")
