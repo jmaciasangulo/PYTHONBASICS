@@ -33,7 +33,7 @@ menu_ayuda = {
 
 }
 ejemplo = {}
-
+categorias_de_recordatorios = {}
 
 #-----------------------------FUNCIONES---------------------------------------------------------------
 
@@ -156,13 +156,13 @@ def eliminar_pendiente():
 
 def escoge_imprimir_recordatorios():
     print("Filtros de recordatorios:")
-    for rubro in categorías_de_recordatorios
+    for rubro in categorias_de_recordatorios
         print(f"-{rubro.capitalize()}")
     filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
-    while filtro not in categorías_de_recordatorios:
+    while filtro not in categorias_de_recordatorios:
         print("Opcción iconrrecta, vuelva a intentar...")
         filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
-    categorías_de_recordatorios[filtro]()
+    categorias_de_recordatorios[filtro]()
 
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
