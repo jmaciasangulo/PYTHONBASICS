@@ -149,10 +149,20 @@ def buscar_pendientes(funcion):
             else:
                 break
 def marcar_pendiente():
-    idtag = input("Escribe el id del pendiente: ")
-    print("\n", lista_de_recordatorios[idtag])
-    lista_de_recordatorios[idtag].update({"estado": "completado"})
-    print(f"\nRecordatorio denominado como: {lista_de_recordatorios[idtag]["nombre"]}, ha sido completado")
+    while True:
+        idtag = input("Escribe el id del pendiente: ")
+        print("\n", lista_de_recordatorios[idtag])
+        lista_de_recordatorios[idtag].update({"estado": "completado"})
+        print(f"\nRecordatorio denominado como: {lista_de_recordatorios[idtag]["nombre"]}, ha sido completado")
+        repetir = input("Deseas marcar otro pendiente? [SI/NO] ").lower()
+        while repetir not in ["si", "no"]:
+            print("Opcción invalida, vuelva a intentar...")
+            repetir = input("Deseas marcar otro pendiente? [SI/NO] ").lower()
+        if repetir == "si":
+            continue
+        else:
+            break
+
 def eliminar_pendiente():
     idtag = input("Escribe el id del pendiente: ")
     nombre = lista_de_recordatorios[idtag]["nombre"]
