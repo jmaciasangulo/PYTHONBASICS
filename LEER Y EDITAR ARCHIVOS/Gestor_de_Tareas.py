@@ -154,7 +154,7 @@ def eliminar_pendiente():
     print(f"\nRecordatorio denominado como '{nombre}' ha sido eliminado.")
     del lista_de_recordatorios[idtag]
 
-def imprimir_recordatorios():
+def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
         print("\n",id)
         for clave, valor in lista_de_recordatorios[id].items():
