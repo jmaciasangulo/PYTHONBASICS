@@ -186,9 +186,14 @@ def imprimir_recordatorios_pendientes():
             print("\n", id)
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
-        else:
-            print("No hay recordatorios pendientes.")
-            continue
+
+def imprimir_recordatorios_completados():
+    for id in lista_de_recordatorios:
+        estado = lista_de_recordatorios[id]["estado"]
+        if estado == "completado":
+            print("\n", id)
+            for clave, valor in lista_de_recordatorios[id].items():
+                    print(f" {clave.capitalize()}: {valor}")
 
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
