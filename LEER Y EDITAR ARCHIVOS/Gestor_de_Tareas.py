@@ -203,7 +203,10 @@ def imprimir_recordatorios_prioridad(prioridad_parametro):
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
 
-
+def imprimir_recordatorio_prioridad_ordenada():
+    imprimir_recordatorios_prioridad("ALTA")
+    imprimir_recordatorios_prioridad("MEDIA")
+    imprimir_recordatorios_prioridad("BAJA")
 
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
