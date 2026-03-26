@@ -181,8 +181,8 @@ def escoge_imprimir_recordatorios():
     categorias_de_recordatorios[filtro]()
 def imprimir_recordatorios_clave_valor(clave_parametro, valor_parametro):
     for id in lista_de_recordatorios:
-        clave_parametro = lista_de_recordatorios[id][clave_parametro]
-        if clave_parametro == valor_parametro:
+        valor_actual = lista_de_recordatorios[id][clave_parametro]
+        if valor_actual == valor_parametro:
             print("\n", id)
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
