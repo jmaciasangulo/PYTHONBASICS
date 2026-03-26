@@ -179,7 +179,7 @@ def escoge_imprimir_recordatorios():
         print("Opcción iconrrecta, vuelva a intentar...")
         filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
     categorias_de_recordatorios[filtro]()
-def imprimir_recordatorios_clave_valor(valor_parametro, clave_parametro):
+def imprimir_recordatorios_clave_valor(clave_parametro, valor_parametro):
     for id in lista_de_recordatorios:
         clave_parametro = lista_de_recordatorios[id][clave_parametro]
         if clave_parametro == valor_parametro:
@@ -197,9 +197,9 @@ def imprimir_recordatorios_prioridad(prioridad_parametro):
                     print(f" {clave.capitalize()}: {valor}")
 
 def imprimir_recordatorio_prioridad_ordenada():
-    imprimir_recordatorios_clave_valor("ALTA", "prioridad")
-    imprimir_recordatorios_clave_valor("MEDIA", "prioridad")
-    imprimir_recordatorios_clave_valor("BAJA", "prioridad")
+    imprimir_recordatorios_clave_valor("prioridad", "ALTA")
+    imprimir_recordatorios_clave_valor("prioridad", "MEDIA")
+    imprimir_recordatorios_clave_valor("prioridad", "BAJA")
 
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
