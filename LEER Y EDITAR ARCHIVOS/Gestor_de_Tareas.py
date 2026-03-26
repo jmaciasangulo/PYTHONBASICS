@@ -195,6 +195,16 @@ def imprimir_recordatorios_completados():
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
 
+def imprimir_recordatorios_prioridad(prioridad_parametro):
+    for id in lista_de_recordatorios:
+        prioridad = lista_de_recordatorios[id]["prioridad"]
+        if prioridad == prioridad_parametro:
+            print("\n", id)
+            for clave, valor in lista_de_recordatorios[id].items():
+                    print(f" {clave.capitalize()}: {valor}")
+
+
+
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
         print("\n",id)
