@@ -179,10 +179,10 @@ def escoge_imprimir_recordatorios():
         print("Opcción iconrrecta, vuelva a intentar...")
         filtro = input("¿Qué recordatorios desea que se muestren en pantalla?:").lower()
     categorias_de_recordatorios[filtro]()
-def imprimir_recordatorios_estado(estado_parametro):
+def imprimir_recordatorios_clave_valor(valor_parametro, clave_parametro):
     for id in lista_de_recordatorios:
-        estado = lista_de_recordatorios[id]["estado"]
-        if estado == estado_parametro:
+        clave_parametro = lista_de_recordatorios[id][clave_parametro]
+        if clave_parametro == valor_parametro:
             print("\n", id)
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
