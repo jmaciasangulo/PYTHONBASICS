@@ -151,6 +151,7 @@ def buscar_pendientes(funcion):
 def marcar_pendiente():
     while True:
         idtag = input("Escribe el id del pendiente: ")
+        print("\n")
         for clave, valor in lista_de_recordatorios[idtag].items():
             print(f" {clave.capitalize()}: {valor}")
         lista_de_recordatorios[idtag].update({"estado": "completado"})
