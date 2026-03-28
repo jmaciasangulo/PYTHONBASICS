@@ -34,11 +34,11 @@ menu_ayuda = {
 }
 ejemplo = {}
 categorias_de_recordatorios = {
-    "listar recordatorios pendientes": lambda: "función sin desarrollar",
-    "listar recordatorios vencidos": lambda: "funcion sin desarrollar",
-    "listar recordatorios completos": lambda: "funcion sin desarrollar",
-    "listar recordatorios de prioridad ALTA a BAJA": lambda: "funcion sin desarrollar",
-    "listar todos los recordatorios": lambda: "funcion sin desarrollar"
+    "listar recordatorios pendientes": lambda: imprimir_recordatorios_clave_valor("estado", "pendiente"),
+    "listar recordatorios vencidos": lambda: imprimir_recordatorios_vencidos(),
+    "listar recordatorios completos": lambda: imprimir_recordatorios_clave_valor("estado", "completado"),
+    "listar recordatorios de prioridad alta a baja": lambda: imprimir_recordatorio_prioridad_ordenada(),
+    "listar todos los recordatorios": lambda: imprimir_todos_recordatorios()
 }
 
 #-----------------------------FUNCIONES---------------------------------------------------------------
