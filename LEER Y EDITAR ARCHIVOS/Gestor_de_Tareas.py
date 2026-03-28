@@ -217,6 +217,26 @@ def imprimir_todos_recordatorios():
         print("\n",id)
         for clave, valor in lista_de_recordatorios[id].items():
             print(f" {clave.capitalize()}: {valor}")
+def imprimir_recordatorios_vencidos():
+    tareas_vencidas = False
+    for id, datos in lista_de_recordatorios.items():
+        fecha = datos["fecha"][1]
+        hora = datos["hora"][1]
+        if fecha_actual > fecha:
+            print("\n", id)
+            for clave, valor in datos.items():
+                print(f" {clave.capitalize()}: {valor}")
+            tareas_vencidas = True
+        elif fecha_actual >= fecha:
+            if hora_actual > hora:
+                print("\n", id)
+                for clave, valor in datos.items():
+                    print(f" {clave.capitalize()}: {valor}")
+                tareas_vencidas = True
+    if not tareas_vencidas:
+        print("Usted no tiene tareas vencidas")
+
+
 
 
 def guardar_cambios():
