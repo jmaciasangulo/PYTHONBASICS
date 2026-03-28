@@ -1,9 +1,10 @@
-#Proyecto iniciado el 20 de marzo del 2026
+#Proyecto iniciado el 20 de marzo del 2026 y terminado el 28 de marzo del 2026
 #-------------------------IMPORTS---------------------------------------------------------------------
 from colorama import Fore, init
 import uuid
 import json
 import os
+from datetime import datetime
 #----------------------------PREPARATIVOS-------------------------------------------------------------
 ruta_script = os.path.dirname(os.path.abspath(__file__))
 ruta_tareas = os.path.join(ruta_script, "tareas.json")
@@ -15,7 +16,9 @@ try:
 except FileNotFoundError:
     lista_de_recordatorios = {
     }
-
+momento_actual = datetime.now()
+fecha_actual = momento_actual.day+(momento_actual.month*31)+(momento_actual.year*365)
+hora_actual = (momento_actual.hour*60)+momento_actual.minute
 #-----------------------------DICCIONARIOS------------------------------------------------------------
 
 operaciones = {
@@ -133,8 +136,6 @@ def buscar_pendientes(funcion):
             if not lista_de_recordatorios:
                 print("No hay recordatorios guardados, agrege uno para que pueda trabajar con él.")
                 break
-            else:
-                pass
             funcion()
             guardar_cambios()
             break
@@ -164,10 +165,10 @@ def marcar_pendiente():
             continue
         else:
             break
-
 def eliminar_pendiente():
     while True:
         idtag = input("Escribe el id del pendiente: ")
+        print("\n")
         for clave, valor in lista_de_recordatorios[idtag].items():
             print(f"{clave.capitalize()}: {valor}")
         print(f"\nRecordatorio denominado como '{lista_de_recordatorios[idtag]["nombre"]}' ha sido eliminado.")
@@ -180,7 +181,6 @@ def eliminar_pendiente():
             continue
         else:
             break
-
 
 def escoge_imprimir_recordatorios():
     print("Filtros de recordatorios:")
@@ -198,21 +198,10 @@ def imprimir_recordatorios_clave_valor(clave_parametro, valor_parametro):
             print("\n", id)
             for clave, valor in lista_de_recordatorios[id].items():
                     print(f" {clave.capitalize()}: {valor}")
-
-
-def imprimir_recordatorios_prioridad(prioridad_parametro):
-    for id in lista_de_recordatorios:
-        prioridad = lista_de_recordatorios[id]["prioridad"]
-        if prioridad == prioridad_parametro:
-            print("\n", id)
-            for clave, valor in lista_de_recordatorios[id].items():
-                    print(f" {clave.capitalize()}: {valor}")
-
 def imprimir_recordatorio_prioridad_ordenada():
     imprimir_recordatorios_clave_valor("prioridad", "ALTA")
     imprimir_recordatorios_clave_valor("prioridad", "MEDIA")
     imprimir_recordatorios_clave_valor("prioridad", "BAJA")
-
 def imprimir_todos_recordatorios():
     for id in lista_de_recordatorios:
         print("\n",id)
@@ -228,7 +217,7 @@ def imprimir_recordatorios_vencidos():
             for clave, valor in datos.items():
                 print(f" {clave.capitalize()}: {valor}")
             tareas_vencidas = True
-        elif fecha_actual >= fecha:
+        elif fecha_actual == fecha:
             if hora_actual > hora:
                 print("\n", id)
                 for clave, valor in datos.items():
@@ -236,9 +225,6 @@ def imprimir_recordatorios_vencidos():
                 tareas_vencidas = True
     if not tareas_vencidas:
         print("Usted no tiene tareas vencidas")
-
-
-
 
 def guardar_cambios():
     with open(ruta_tareas, "w") as archivo:
@@ -325,7 +311,7 @@ while True:
 
     operaciones[operacion]()
 
-    continuar = input("Desea seguir trabajando con su agenda? [SI/NO] ").lower()
+    continuar = input("\nDesea seguir trabajando con su agenda? [SI/NO] ").lower()
     while continuar not in ["si", "no"]:
         print("Opcción incorrecta, vuelva a intentar...")
         continuar = input("Desea seguir trabajando con su agenda? [SI/NO] ").lower()
@@ -333,7 +319,3 @@ while True:
         continue
     else:
         break
-        
-
-
-
