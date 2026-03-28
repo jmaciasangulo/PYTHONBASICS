@@ -164,11 +164,21 @@ def marcar_pendiente():
             break
 
 def eliminar_pendiente():
-    idtag = input("Escribe el id del pendiente: ")
-    nombre = lista_de_recordatorios[idtag]["nombre"]
-    print("\n", lista_de_recordatorios[idtag])
-    print(f"\nRecordatorio denominado como '{nombre}' ha sido eliminado.")
-    del lista_de_recordatorios[idtag]
+    while True:
+        idtag = input("Escribe el id del pendiente: ")
+        for clave, valor in lista_de_recordatorios[idtag].items():
+            print(f"{clave.capitalize()}: {valor}")
+        print(f"\nRecordatorio denominado como '{lista_de_recordatorios[idtag]["nombre"]}' ha sido eliminado.")
+        del lista_de_recordatorios[idtag]
+        repetir = input("Deseas eliminar otro pendiente? [SI/NO] ").lower()
+        while repetir not in ["si", "no"]:
+            print("Opcción invalida, vuelva a intentar...")
+            repetir = input("Deseas eliminar otro pendiente? [SI/NO] ").lower()
+        if repetir == "si":
+            continue
+        else:
+            break
+
 
 def escoge_imprimir_recordatorios():
     print("Filtros de recordatorios:")
