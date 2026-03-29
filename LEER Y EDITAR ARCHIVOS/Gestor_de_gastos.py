@@ -36,4 +36,14 @@ if categorias:
         else:
             break
 else:
-
+    print("¡Bienvenido a su gestor de gastos!\n")
+    print("Usted puede hacer lo siguiente con su gestor:\n")
+    for operacion in operaciones:
+        print(f"-{operacion.capitalize()}")
+    print("\nPara empezar a usar su gestor, agrege al menos 3 categorias principales para clasificar sus gastos:\n")
+    categoria1 = input("Escriba el nombre de la categoría #1: ").lower()
+    categoria2 = input("Escriba el nombre de la categoría #2: ").lower()
+    categoria3 = input("Escriba el nombre de la categoría #3: ").lower()
+    print("Excelente, ahora, para empezar a registrar gastos cierre el programa y vuelvalo a abrir.")
+    print("PRESIONE CUALQUIER TECLA PARA SALIR")
+    msvcrt.getch()
