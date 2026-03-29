@@ -25,7 +25,7 @@ if categorias:
             print("Opcion invalida, vuelva a intentar...")
             operacion = input("¿Que desea hacer con su gestor?: ").lower()
 
-    operaciones[operacion]()
+        operaciones[operacion]()
 
     repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
     while repetir not in ["si", "no"]:
