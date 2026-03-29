@@ -17,8 +17,8 @@ if categorias:
     while True:
         print("Usted puede hacer lo siguiente:\n")
 
-    for operacion in operaciones:
-        print(f"-{operacion.capitalize()}")
+        for operacion in operaciones:
+            print(f"-{operacion.capitalize()}")
 
     operacion = input("\n¿Que desea hacer con su gestor?: ").lower()
     while operacion not in operaciones:
