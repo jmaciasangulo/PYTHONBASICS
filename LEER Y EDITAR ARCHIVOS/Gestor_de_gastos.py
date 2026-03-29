@@ -21,7 +21,7 @@ except FileNotFoundError:
     }
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
-    "agregar categoria de gastos": lambda: "funcion no definida",
+    "agregar categoria de gastos": lambda: agregar_categoria_de_gastos(),
     "eliminar categoria de gastos": lambda: "funcion no definida",
     "registrar gasto": lambda: "función no definida",
     "listar gasto": lambda: "función no definida",
@@ -33,6 +33,10 @@ categorias = {}
 def guardar_cambios():
     with open(ruta_tareas, "w") as archivo:
         json.dump(diccionarios, archivo, indent=4, ensure_ascii=False)
+def agregar_categoria_de_gastos():
+    nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
+    diccionarios["categorias_de_gastos"].append(nueva_categoria)
+    print(f'Categoría denominada como "{nueva_categoria}" agregada con éxito.')
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
