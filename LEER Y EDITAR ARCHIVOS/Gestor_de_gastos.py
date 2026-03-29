@@ -3,10 +3,12 @@
 #----------------------------PREPARATIVOS------------------------------------
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
-    "registrar gasto"
-    "listar gasto"
-    "eliminar gasto"
-    "ver resumen de gastos"
+    "agregar categoria de gastos": lambda: "funcion no definida",
+    "eliminar categoria de gastos": lambda: "funcion no definida",
+    "registrar gasto": lambda: "función no definida",
+    "listar gasto": lambda: "función no definida",
+    "eliminar gasto": lambda: "función no definida",
+    "ver resumen de gastos": lambda: "función no definida"
 }
 #----------------------------FUNCIONES---------------------------------------
 #----------------------------UNIDAD LOGICA-----------------------------------
