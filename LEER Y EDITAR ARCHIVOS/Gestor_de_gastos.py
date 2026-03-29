@@ -20,10 +20,10 @@ if categorias:
         for operacion in operaciones:
             print(f"-{operacion.capitalize()}")
 
-    operacion = input("\n¿Que desea hacer con su gestor?: ").lower()
-    while operacion not in operaciones:
-        print("Opcion invalida, vuelva a intentar...")
-        operacion = input("¿Que desea hacer con su gestor?: ").lower()
+        operacion = input("\n¿Que desea hacer con su gestor?: ").lower()
+        while operacion not in operaciones:
+            print("Opcion invalida, vuelva a intentar...")
+            operacion = input("¿Que desea hacer con su gestor?: ").lower()
 
     operaciones[operacion]()
 
