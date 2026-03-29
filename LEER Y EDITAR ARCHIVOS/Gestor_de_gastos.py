@@ -9,9 +9,13 @@ ruta_tareas = os.path.join(ruta_script, "gastos.json")
 
 try:
     with open(ruta_tareas, "r") as json_file:
-        lista_gastos = json.load(json_file)
+        diccionarios = json.load(json_file)
+    categorias_de_gastos = diccionarios["categorias_de_gastos"]
+    lista_de_gastos = diccionarios["lista_de_gastos"]
 except FileNotFoundError:
-    lista_gastos = {}
+    lista_de_gastos = {}
+    categorias_de_gastos = {}
+
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
     "agregar categoria de gastos": lambda: "funcion no definida",
