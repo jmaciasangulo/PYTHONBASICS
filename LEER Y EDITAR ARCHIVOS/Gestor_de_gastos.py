@@ -46,7 +46,8 @@ def registrar_gasto():
     categoria = validar_categoria()
     id_gasto = str(uuid.uuid4())
 
-    lista_de_gastos[nombre] = {
+    lista_de_gastos[id_gasto] = {
+        "nombre": nombre,
         "descripcion": descripcion,
         "monto": monto,
         "fecha": [fecha,fecha_en_dias],
