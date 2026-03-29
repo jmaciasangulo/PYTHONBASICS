@@ -21,6 +21,7 @@ operaciones = {
     "eliminar gasto": lambda: "función no definida",
     "ver resumen de gastos": lambda: "función no definida"
 }
+categorias = {}
 #----------------------------FUNCIONES---------------------------------------
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias:
