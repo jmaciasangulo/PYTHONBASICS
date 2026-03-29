@@ -36,6 +36,7 @@ def guardar_cambios():
 def agregar_categoria_de_gastos():
     nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
     diccionarios["categorias_de_gastos"].append(nueva_categoria)
+    guardar_cambios()
     print(f'Categoría denominada como "{nueva_categoria}" agregada con éxito.')
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
