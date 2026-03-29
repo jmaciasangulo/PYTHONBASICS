@@ -1,6 +1,14 @@
 #Proyecto iniciado el 28 de marzo del 2026.
 #-------------------------------IMPORTS--------------------------------------
 #----------------------------PREPARATIVOS------------------------------------
+ruta_script= os.path.dirname(os.path.abspath(__file__))
+ruta_tareas = os.path.join(ruta_script, "gastos.json")
+
+try:
+    with open(ruta_tareas, "r") as json_file:
+        lista_gastos = json.load(json_file)
+except FileNotFoundError:
+    lista_gastos = {}
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
     "agregar categoria de gastos": lambda: "funcion no definida",
