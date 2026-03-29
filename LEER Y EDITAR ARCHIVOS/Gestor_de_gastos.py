@@ -66,6 +66,9 @@ else:
     categoria1 = input("Escriba el nombre de la categoría #1: ").lower()
     categoria2 = input("Escriba el nombre de la categoría #2: ").lower()
     categoria3 = input("Escriba el nombre de la categoría #3: ").lower()
+    categorias_de_gastos = [categoria1, categoria2, categoria3]
+    diccionarios["categorias_de_gastos"] = categorias_de_gastos
+    guardar_cambios()
     print("Excelente, ahora, para empezar a registrar gastos cierre el programa y vuelvalo a abrir.")
     print("PRESIONE CUALQUIER TECLA PARA SALIR")
     msvcrt.getch()
