@@ -56,6 +56,54 @@ def registrar_gasto():
 
     diccionarios["lista_de_gastos"].append(nombre)
     guardar_cambios()
+def validar_monto():
+    monto = 0
+    while True:
+        try:
+            monto = float(input("Escriba el monto del gasto: $"))
+            break
+        except ValueError:
+            print("Escriba el monto en números, vuelva a intentar...")
+            continue
+    return monto
+def validar_fecha():
+    while True:
+        fecha = input("Escriba el fecha del gasto (SOLO FORMATO DD/MM/AAAA): ")
+        try:
+            if len(fecha) !=10 :
+                print("La fecha debe estar digitada en 10 caracteres, vuélvalo a intentar...")
+                continue
+            if int(fecha[0:2]) not in range(1,32):
+                print("El día no está dentro del límite establecido, vuélvalo a intentar...")
+                continue
+            if int(fecha[3:5]) not in range(1,13):
+                print("El mes no está dentro del límite establecido, vuélvalo a intentar...")
+                continue
+            if int(fecha[6:10]) not in range(1,3000):
+                print("El año no está dentro del límite establecido, vuélvalo a intentar...")
+                continue
+            if fecha[2] != "/" or fecha[5] != "/":
+                print('El separador entre fechas no es correcto, use exclusivamente "/"')
+                continue
+            break
+        except ValueError:
+            print("La fecha ha sido digitada de manera incorrecta, solo use números. Vuélvalo a intentar...")
+            continue
+    dias = int(fecha[0:2])
+    meses = int(fecha[3:5])
+    anos = int(fecha[6:10])
+    fecha_en_dias = dias + (meses*31) + (anos*365)
+    return fecha, fecha_en_dias
+def validar_categoria():
+    print("Usted tiene registradas todas estas categorías.")
+    for categoria in diccionarios["categorias_de_gastos"]:
+        print(f"-{categoria}.")
+    print("Usted solo puede registrarla a una de esas categorías.")
+    categoria = input("¿A que categoría registrará este gasto?: ")
+    while categoria not in diccionarios["categorias_de_gastos"]:
+        print("Esta categoría no existe, vuélvalo a intentar...")
+        categoria = input("¿A que categoría registrará este gasto?: ")
+    return categoria
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
