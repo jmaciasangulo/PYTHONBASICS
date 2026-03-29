@@ -14,8 +14,11 @@ try:
     lista_de_gastos = diccionarios["lista_de_gastos"]
 except FileNotFoundError:
     lista_de_gastos = {}
-    categorias_de_gastos = {}
-
+    categorias_de_gastos = []
+    diccionarios = {
+        "lista_de_gastos":lista_de_gastos,
+        "categorias_de_gastos":categorias_de_gastos
+    }
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
     "agregar categoria de gastos": lambda: "funcion no definida",
