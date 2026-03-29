@@ -55,6 +55,7 @@ def registrar_gasto():
     }
 
     diccionarios["lista_de_gastos"].append(nombre)
+    guardar_cambios()
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
