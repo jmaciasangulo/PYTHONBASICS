@@ -12,10 +12,10 @@ operaciones = {
 }
 #----------------------------FUNCIONES---------------------------------------
 #----------------------------UNIDAD LOGICA-----------------------------------
-
-print("GESTOR DE GASTOS PERSONALES\n")
-while True:
-    print("Usted puede hacer lo siguiente:\n")
+if categorias:
+    print("GESTOR DE GASTOS PERSONALES\n")
+    while True:
+        print("Usted puede hacer lo siguiente:\n")
 
     for operacion in operaciones:
         print(f"-{operacion.capitalize()}")
