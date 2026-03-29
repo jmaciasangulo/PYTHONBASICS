@@ -38,6 +38,23 @@ def agregar_categoria_de_gastos():
     diccionarios["categorias_de_gastos"].append(nueva_categoria)
     guardar_cambios()
     print(f'Categoría denominada como "{nueva_categoria}" agregada con éxito.')
+def registrar_gasto():
+    nombre = input("\nEscriba el concepto del gasto: ")
+    descripcion = input("Agrege una breve descripción: ")
+    monto = validar_monto()
+    fecha, fecha_en_dias = validar_fecha()
+    categoria = validar_categoria()
+    id_gasto = str(uuid.uuid4())
+
+    nombre = {
+        "descripcion": descripcion,
+        "monto": monto,
+        "fecha": [fecha,fecha_en_dias],
+        "categoria": categoria,
+        "ID de gasto": id_gasto
+    }
+
+    diccionarios["lista_de_gastos"].append(nombre)
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
