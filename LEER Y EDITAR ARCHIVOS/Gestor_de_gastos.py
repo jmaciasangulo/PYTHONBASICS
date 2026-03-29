@@ -30,6 +30,9 @@ operaciones = {
 }
 categorias = {}
 #----------------------------FUNCIONES---------------------------------------
+def guardar_cambios():
+    with open(ruta_tareas, "w") as archivo:
+        json.dump(diccionarios, archivo, indent=4)
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias:
     print("GESTOR DE GASTOS PERSONALES\n")
