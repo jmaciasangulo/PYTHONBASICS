@@ -27,12 +27,13 @@ if categorias:
 
         operaciones[operacion]()
 
-    repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
-    while repetir not in ["si", "no"]:
-        print("Opcion invalida, vuelva a intentar...")
         repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
-    if repetir == "si":
-        continue
-    else:
-        break
+        while repetir not in ["si", "no"]:
+            print("Opcion invalida, vuelva a intentar...")
+            repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
+        if repetir == "si":
+            continue
+        else:
+            break
+else:
 
