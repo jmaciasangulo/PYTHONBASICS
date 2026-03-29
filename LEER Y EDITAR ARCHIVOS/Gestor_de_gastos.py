@@ -63,9 +63,9 @@ else:
     for operacion in operaciones:
         print(f"-{operacion.capitalize()}")
     print("\nPara empezar a usar su gestor, agrege al menos 3 categorias principales para clasificar sus gastos:\n")
-    categoria1 = input("Escriba el nombre de la categoría #1: ").lower()
-    categoria2 = input("Escriba el nombre de la categoría #2: ").lower()
-    categoria3 = input("Escriba el nombre de la categoría #3: ").lower()
+    categoria1 = input("Escriba el nombre de la categoría #1: ")
+    categoria2 = input("Escriba el nombre de la categoría #2: ")
+    categoria3 = input("Escriba el nombre de la categoría #3: ")
     categorias_de_gastos = [categoria1, categoria2, categoria3]
     diccionarios["categorias_de_gastos"] = categorias_de_gastos
     guardar_cambios()
