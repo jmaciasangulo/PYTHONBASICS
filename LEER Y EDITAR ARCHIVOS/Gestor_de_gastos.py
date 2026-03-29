@@ -1,5 +1,8 @@
 #Proyecto iniciado el 28 de marzo del 2026.
 #-------------------------------IMPORTS--------------------------------------
+import msvcrt
+import os
+import json
 #----------------------------PREPARATIVOS------------------------------------
 ruta_script= os.path.dirname(os.path.abspath(__file__))
 ruta_tareas = os.path.join(ruta_script, "gastos.json")
