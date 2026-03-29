@@ -8,8 +8,8 @@ ruta_script= os.path.dirname(os.path.abspath(__file__))
 ruta_tareas = os.path.join(ruta_script, "gastos.json")
 
 try:
-    with open(ruta_tareas, "r") as json_file:
-        diccionarios = json.load(json_file)
+    with open(ruta_tareas, "r") as archivo:
+        diccionarios = json.load(archivo)
     categorias_de_gastos = diccionarios["categorias_de_gastos"]
     lista_de_gastos = diccionarios["lista_de_gastos"]
 except FileNotFoundError:
