@@ -34,7 +34,7 @@ def guardar_cambios():
     with open(ruta_tareas, "w") as archivo:
         json.dump(diccionarios, archivo, indent=4)
 #----------------------------UNIDAD LOGICA-----------------------------------
-if categorias:
+if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
     while True:
         print("Usted puede hacer lo siguiente:\n")
