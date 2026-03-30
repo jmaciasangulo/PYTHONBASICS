@@ -105,6 +105,37 @@ def validar_categoria():
         print("Esta categoría no existe, vuélvalo a intentar...")
         categoria = input("¿A que categoría registrará este gasto?: ")
     return categoria
+
+def eliminar_gasto():
+    while True:
+        id_gasto = input("Escriba el ID del gasto: ")
+        try:
+
+            for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
+                print(f"{clave.capitalize()}: {valor}")
+            print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][id_gasto]["nombre"]} ha sido eliminado.')
+            del diccionarios["lista_de_gastos"][id_gasto]
+            repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+            while repetirbucle not in ["si", "no"]:
+                print("Opcion invalida, vuelva a intentar...")
+                repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+            if repetirbucle == "si":
+                break
+            else:
+                continue
+        except KeyError:
+            print("El ID no existe.")
+            repetirbucle = input("¿Desea volverlo a intentar? [SI/NO]: ").lower()
+            while repetirbucle not in ["si", "no"]:
+                print("Opcion invalida, vuelva a intentar...")
+                repetirbucle = input("¿Desea volverlo a intentar? [SI/NO]: ").lower()
+            if repetirbucle == "si":
+                continue
+            else:
+                break
+
+
+
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
     print("GESTOR DE GASTOS PERSONALES\n")
