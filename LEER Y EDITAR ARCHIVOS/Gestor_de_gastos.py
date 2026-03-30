@@ -153,13 +153,7 @@ if categorias_de_gastos:
         operaciones[operacion]()
 
         repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
-        while repetir not in ["si", "no"]:
-            print("Opcion invalida, vuelva a intentar...")
-            repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
-        if repetir == "si":
-            continue
-        else:
-            break
+        repetir_bucle(repetir)
 else:
     print("¡Bienvenido a su gestor de gastos!\n")
     print("Usted puede hacer lo siguiente con su gestor:\n")
