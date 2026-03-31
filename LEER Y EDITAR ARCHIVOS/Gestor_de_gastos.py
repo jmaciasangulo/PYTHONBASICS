@@ -62,7 +62,13 @@ def eliminar_categoria_de_gastos():
         eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
         if not repetir_bucle(eliminar_otravez):
             break
-            
+
+def validar_categoria_eliminar():
+    categoria = input("Escriba el nombre de la categoría: ")
+    while categoria not in categorias_de_gastos:
+        print("Opcción incorrecta, vuelva a intentar...")
+        categoria = input("Escriba el nombre de la categoría: ")
+    return categoria
 def registrar_gasto():
     while True:
         nombre = input("\nEscriba el concepto del gasto: ")
