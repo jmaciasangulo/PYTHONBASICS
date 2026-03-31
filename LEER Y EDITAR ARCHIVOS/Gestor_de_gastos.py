@@ -42,7 +42,27 @@ def agregar_categoria_de_gastos():
         repetir_registro = input("¿Desea agregar otra categoría? [SI/NO]: ").lower()
         if not repetir_bucle(repetir_registro):
             break
-
+def eliminar_categoria_de_gastos():
+    while True:
+        categoria = input("Escriba el nombre de la categoría: ")
+        while categoria not in categorias_de_gastos:
+            print("Opcción incorrecta, vuelva a intentar...")
+            categoria = input("Escriba el nombre de la categoría: ")
+        try:
+            del diccionarios["categorias_de_gastos"][categoria]
+            guardar_cambios()
+            print(f'Categoría denominada como "{categoria}" ha sido eliminada.')
+            eliminar_otravez= input("Desea eliminar otra categoría? [SI/NO]: ").lower()
+            if not repetir_bucle(eliminar_otravez):
+                break
+            else:
+                continue
+        except KeyError:
+            print("Esta categoría no existe.")
+        eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
+        if not repetir_bucle(eliminar_otravez):
+            break
+            
 def registrar_gasto():
     while True:
         nombre = input("\nEscriba el concepto del gasto: ")
