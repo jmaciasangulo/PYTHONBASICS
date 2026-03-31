@@ -66,6 +66,11 @@ def validar_categoria_eliminar():
         print("Opcción incorrecta, vuelva a intentar...")
         categoria = input("Escriba el nombre de la categoría: ")
     return categoria
+def elimina_categoria_seleccionada(eliminaestacategoria):
+    del diccionarios["categorias_de_gastos"][eliminaestacategoria]
+    guardar_cambios()
+    print(f'Categoría denominada como "{eliminaestacategoria}" ha sido eliminada.')
+    
 def registrar_gasto():
     while True:
         nombre = input("\nEscriba el concepto del gasto: ")
