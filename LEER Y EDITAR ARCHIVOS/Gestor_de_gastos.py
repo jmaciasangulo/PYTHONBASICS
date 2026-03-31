@@ -3,6 +3,7 @@
 import msvcrt
 import os
 import json
+import uuid
 #----------------------------PREPARATIVOS------------------------------------
 ruta_script= os.path.dirname(os.path.abspath(__file__))
 ruta_tareas = os.path.join(ruta_script, "gastos.json")
@@ -123,26 +124,25 @@ def eliminar_gasto():
                 print(f"{clave.capitalize()}: {valor}")
             print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][id_gasto]["nombre"]} ha sido eliminado.')
             del diccionarios["lista_de_gastos"][id_gasto]
-            repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-            while repetirbucle not in ["si", "no"]:
-                print("Opcion invalida, vuelva a intentar...")
-                repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-            if repetirbucle == "si":
+            eliminar_otravez = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+            if not repetir_bucle(eliminar_otravez):
                 break
             else:
                 continue
         except KeyError:
             print("El ID no existe.")
-            repetirbucle = input("¿Desea volverlo a intentar? [SI/NO]: ").lower()
-            while repetirbucle not in ["si", "no"]:
-                print("Opcion invalida, vuelva a intentar...")
-                repetirbucle = input("¿Desea volverlo a intentar? [SI/NO]: ").lower()
-            if repetirbucle == "si":
-                continue
-            else:
-                break
+        repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+        if not repetir_bucle(repetirbucle):
+            break
 
-
+def repetir_bucle(respuesta):
+    while respuesta not in ["si", "no"]:
+        print("Opcion invalida, vuelva a intentar...")
+        respuesta = input("SOLO [SI/NO]: ").lower()
+    if respuesta == "si":
+        return True
+    else:
+        return False
 
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
