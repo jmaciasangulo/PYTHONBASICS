@@ -34,17 +34,23 @@ def guardar_cambios():
     with open(ruta_tareas, "w") as archivo:
         json.dump(diccionarios, archivo, indent=4, ensure_ascii=False)
 def agregar_categoria_de_gastos():
-    nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
-    diccionarios["categorias_de_gastos"].append(nueva_categoria)
-    guardar_cambios()
-    print(f'Categoría denominada como "{nueva_categoria}" agregada con éxito.')
+    while True:
+        nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
+        diccionarios["categorias_de_gastos"].append(nueva_categoria)
+        guardar_cambios()
+        print(f'Categoría denominada como "{nueva_categoria}" agregada con éxito.')
+        repetir_registro = input("¿Desea agregar otra categoría? [SI/NO]: ").lower()
+        if not repetir_bucle(repetir_registro):
+            break
+
 def registrar_gasto():
-    nombre = input("\nEscriba el concepto del gasto: ")
-    descripcion = input("Agrege una breve descripción: ")
-    monto = validar_monto()
-    fecha, fecha_en_dias = validar_fecha()
-    categoria = validar_categoria()
-    id_gasto = str(uuid.uuid4())
+    while True:
+        nombre = input("\nEscriba el concepto del gasto: ")
+        descripcion = input("Agrege una breve descripción: ")
+        monto = validar_monto()
+        fecha, fecha_en_dias = validar_fecha()
+        categoria = validar_categoria()
+        id_gasto = str(uuid.uuid4())
 
         lista_de_gastos[id_gasto] = {
             "nombre": nombre,
