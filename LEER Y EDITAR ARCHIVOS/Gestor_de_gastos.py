@@ -47,11 +47,6 @@ def eliminar_categoria_de_gastos():
         categoria = validar_categoria_eliminar()
         try:
             elimina_categoria_seleccionada(categoria)
-            eliminar_otravez= input("Desea eliminar otra categoría? [SI/NO]: ").lower()
-            if not repetir_bucle(eliminar_otravez):
-                break
-            else:
-                continue
         except KeyError:
             print("Esta categoría no existe.")
         eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
