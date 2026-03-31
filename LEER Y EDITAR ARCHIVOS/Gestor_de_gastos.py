@@ -137,7 +137,13 @@ def validar_categoria():
 
 def eliminar_gasto():
     while True:
-        id_gasto = input("Escriba el ID del gasto: ")
+        id_gasto = validar_id_gasto()
+        if validar_id_gasto() == False:
+            break
+        elif validar_id_gasto() == True:
+            continue
+        else:
+            pass
         try:
 
             for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
