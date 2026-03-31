@@ -46,17 +46,19 @@ def registrar_gasto():
     categoria = validar_categoria()
     id_gasto = str(uuid.uuid4())
 
-    lista_de_gastos[id_gasto] = {
-        "nombre": nombre,
-        "descripcion": descripcion,
-        "monto": monto,
-        "fecha": [fecha,fecha_en_dias],
-        "categoria": categoria,
-        "ID de gasto": id_gasto
-    }
-
-    diccionarios["lista_de_gastos"].append(nombre)
-    guardar_cambios()
+        lista_de_gastos[id_gasto] = {
+            "nombre": nombre,
+            "descripcion": descripcion,
+            "monto": monto,
+            "fecha": [fecha,fecha_en_dias],
+            "categoria": categoria,
+            "ID del gasto": id_gasto
+        }
+        guardar_cambios()
+        print(f'Gasto con concepto de "{nombre}" agregado.')
+        repetir_registro = input("¿Desea volver a registrar otro gasto? [SI/NO]: ").lower()
+        if not repetir_bucle(repetir_registro):
+            break
 def validar_monto():
     monto = 0
     while True:
