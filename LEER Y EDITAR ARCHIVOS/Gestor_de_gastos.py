@@ -46,9 +46,7 @@ def eliminar_categoria_de_gastos():
     while True:
         categoria = validar_categoria_eliminar()
         try:
-            del diccionarios["categorias_de_gastos"][categoria]
-            guardar_cambios()
-            print(f'Categoría denominada como "{categoria}" ha sido eliminada.')
+            elimina_categoria_seleccionada(categoria)
             eliminar_otravez= input("Desea eliminar otra categoría? [SI/NO]: ").lower()
             if not repetir_bucle(eliminar_otravez):
                 break
