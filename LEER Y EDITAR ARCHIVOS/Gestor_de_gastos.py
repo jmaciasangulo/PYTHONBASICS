@@ -8,7 +8,7 @@ ruta_script= os.path.dirname(os.path.abspath(__file__))
 ruta_tareas = os.path.join(ruta_script, "gastos.json")
 
 try:
-    with open(ruta_tareas, "r") as archivo:
+    with open(ruta_tareas, "r", encoding="utf-8") as archivo:
         diccionarios = json.load(archivo)
     categorias_de_gastos = diccionarios["categorias_de_gastos"]
     lista_de_gastos = diccionarios["lista_de_gastos"]
@@ -31,8 +31,8 @@ operaciones = {
 categorias = {}
 #----------------------------FUNCIONES---------------------------------------
 def guardar_cambios():
-    with open(ruta_tareas, "w") as archivo:
-        json.dump(diccionarios, archivo, indent=4, ensure_ascii=False)
+    with open(ruta_tareas, "w", encoding="utf-8") as archivo_escritura:
+        json.dump(diccionarios, archivo_escritura, indent=4, ensure_ascii=False)
 def agregar_categoria_de_gastos():
     while True:
         nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
