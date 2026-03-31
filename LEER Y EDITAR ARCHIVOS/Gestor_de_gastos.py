@@ -44,10 +44,7 @@ def agregar_categoria_de_gastos():
             break
 def eliminar_categoria_de_gastos():
     while True:
-        categoria = input("Escriba el nombre de la categoría: ")
-        while categoria not in categorias_de_gastos:
-            print("Opcción incorrecta, vuelva a intentar...")
-            categoria = input("Escriba el nombre de la categoría: ")
+        categoria = validar_categoria_eliminar()
         try:
             del diccionarios["categorias_de_gastos"][categoria]
             guardar_cambios()
