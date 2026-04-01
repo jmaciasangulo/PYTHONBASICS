@@ -170,10 +170,7 @@ def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
         print("Opcion invalida, vuelva a intentar...")
         respuesta = input("SOLO [SI/NO]: ").lower()
-    if respuesta == "si":
-        return True
-    else:
-        return False
+    return respuesta == "si"
 
 #----------------------------UNIDAD LOGICA-----------------------------------
 if categorias_de_gastos:
