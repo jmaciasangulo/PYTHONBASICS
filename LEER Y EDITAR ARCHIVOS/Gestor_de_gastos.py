@@ -33,6 +33,7 @@ operaciones = {
 def guardar_cambios():
     with open(ruta_tareas, "w", encoding="utf-8") as archivo_escritura:
         json.dump(diccionarios, archivo_escritura, indent=4, ensure_ascii=False)
+
 def agregar_categoria_de_gastos():
     while True:
         nueva_categoria = input("\nEscriba como se llamará su nueva categoría de gastos: ")
@@ -42,6 +43,7 @@ def agregar_categoria_de_gastos():
         repetir_registro = input("¿Desea agregar otra categoría? [SI/NO]: ").lower()
         if not repetir_bucle(repetir_registro):
             break
+
 def eliminar_categoria_de_gastos():
     while True:
         categoria = validar_categoria_eliminar()
@@ -51,7 +53,6 @@ def eliminar_categoria_de_gastos():
         eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
         if not repetir_bucle(eliminar_otravez):
             break
-
 def validar_categoria_eliminar():
     categoria = input("Escriba el nombre de la categoría: ")
     while categoria not in categorias_de_gastos:
@@ -166,6 +167,7 @@ def eliminar_gasto_seleccionado(eliminaestegasto):
         print(f"{clave.capitalize()}: {valor}")
     print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][eliminaestegasto]["nombre"]} ha sido eliminado.')
     del diccionarios["lista_de_gastos"][eliminaestegasto]
+
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
         print("Opcion invalida, vuelva a intentar...")
