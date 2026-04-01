@@ -172,7 +172,11 @@ def validar_id_gasto():
             return True
     else:
         return id_gasto
-
+def eliminar_gasto_seleccionado(eliminaestegasto):
+    for clave, valor in diccionarios["lista_de_gastos"][eliminaestegasto].items():
+        print(f"{clave.capitalize()}: {valor}")
+    print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][eliminaestegasto]["nombre"]} ha sido eliminado.')
+    del diccionarios["lista_de_gastos"][eliminaestegasto]
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
         print("Opcion invalida, vuelva a intentar...")
