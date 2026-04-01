@@ -45,10 +45,9 @@ def agregar_categoria_de_gastos():
 def eliminar_categoria_de_gastos():
     while True:
         categoria = validar_categoria_eliminar()
-        try:
-            elimina_categoria_seleccionada(categoria)
-        except KeyError:
-            print("Esta categoría no existe.")
+
+        elimina_categoria_seleccionada(categoria)
+
         eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
         if not repetir_bucle(eliminar_otravez):
             break
@@ -144,23 +143,13 @@ def eliminar_gasto():
             continue
         else:
             pass
-        try:
-
-            for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
-                print(f"{clave.capitalize()}: {valor}")
-            print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][id_gasto]["nombre"]} ha sido eliminado.')
-            del diccionarios["lista_de_gastos"][id_gasto]
-            eliminar_otravez = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-            if not repetir_bucle(eliminar_otravez):
-                break
-            else:
-                continue
-        except KeyError:
-            print("El ID no existe.")
-        repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-        if not repetir_bucle(repetirbucle):
+        eliminar_gasto_seleccionado(id_gasto)
+        guardar_cambios()
+        eliminar_otravez = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+        if not repetir_bucle(eliminar_otravez):
             break
-
+        else:
+            continue
 def validar_id_gasto():
     id_gasto = input("Escriba el ID del gasto: ")
     if id_gasto not in diccionarios["lista_de_gastos"]:
