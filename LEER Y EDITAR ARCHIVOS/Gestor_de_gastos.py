@@ -135,11 +135,11 @@ def validar_categoria():
     print("Usted tiene registradas todas estas categorías.")
     for categoria in diccionarios["categorias_de_gastos"]:
         print(f"-{categoria}.")
-    print("Usted solo puede registrarla a una de esas categorías.")
-    categoria = input("¿A que categoría registrará este gasto?: ")
+    print("Usted solo puede trabajar con una de esas categorías.")
+    categoria = input("¿Con que categoría trabajará?: ")
     while categoria not in diccionarios["categorias_de_gastos"]:
         print("Esta categoría no existe, vuélvalo a intentar...")
-        categoria = input("¿A que categoría registrará este gasto?: ")
+        categoria = input("¿Con que categoría trabajará?: ")
     return categoria
 
 def eliminar_gasto():
