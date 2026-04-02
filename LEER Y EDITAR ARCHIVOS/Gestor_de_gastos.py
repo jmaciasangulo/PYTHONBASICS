@@ -156,10 +156,7 @@ def validar_id_gasto():
     if id_gasto not in diccionarios["lista_de_gastos"]:
         print("Este ID no existe.")
         repetirbucle = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-        if not repetir_bucle(repetirbucle):
-            return False
-        else:
-            return True
+        return repetir_bucle(repetirbucle)
     else:
         return id_gasto
 def eliminar_gasto_seleccionado(eliminaestegasto):
