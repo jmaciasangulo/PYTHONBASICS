@@ -29,6 +29,13 @@ operaciones = {
     "eliminar gasto": lambda: "función no definida",
     "ver resumen de gastos": lambda: "función no definida"
 }
+
+listar_gastos = {
+    "listar por categoria": lambda: listar_por_categoria(),
+    "listar por fecha": lambda: listar_por_fecha(),
+    "listar todos": lambda: listar_todos_gastos()
+}
+
 #----------------------------FUNCIONES---------------------------------------
 def guardar_cambios():
     with open(ruta_tareas, "w", encoding="utf-8") as archivo_escritura:
