@@ -138,7 +138,7 @@ def validar_categoria():
 def eliminar_gasto():
     while True:
         id_gasto = validar_id_gasto()
-        if id_gasto == False:
+        if not id_gasto:
             break
         elif id_gasto == True:
             continue
