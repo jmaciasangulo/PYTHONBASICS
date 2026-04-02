@@ -179,27 +179,31 @@ def escoge_listar_gastos():
     listar_gastos[filtrar]()
 
 def listar_por_categoria():
-    print("Las categorías disponibles para consulta son:")
-    for categoria in categorias_de_gastos:
-        print(f"-{categoria}.")
+    while True:
+        print("Las categorías disponibles para consulta son:")
+        for categoria in categorias_de_gastos:
+            print(f"-{categoria}.")
 
-    categoria = input("Que categoria desea ver?: ")
-
-    haygastosencategoria = False
-
-    while categoria not in categorias_de_gastos:
-        print("Opcción invalida, vuelva a intentar...")
         categoria = input("Que categoria desea ver?: ")
 
-    for id_gasto in diccionarios["lista_de_gastos"]:
-        if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
-            for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
-                print(f"{clave.capitalize()}: {valor}")
-                haygastosencategoria = True
+        haygastosencategoria = False
 
-    if not haygastosencategoria:
-        print("No hay gastos registrados con esta categoria.")
+        while categoria not in categorias_de_gastos:
+            print("Opcción invalida, vuelva a intentar...")
+            categoria = input("Que categoria desea ver?: ")
 
+        for id_gasto in diccionarios["lista_de_gastos"]:
+            if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
+                for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
+                    print(f"{clave.capitalize()}: {valor}")
+                    haygastosencategoria = True
+
+        if not haygastosencategoria:
+            print("No hay gastos registrados con esta categoria.")
+
+        volvera_listar = input("Desea volver a listar gastos por categoría? [SI/NO]: ").lower()
+        if not repetir_bucle(volvera_listar):
+            break
 
 
 def repetir_bucle(respuesta):
