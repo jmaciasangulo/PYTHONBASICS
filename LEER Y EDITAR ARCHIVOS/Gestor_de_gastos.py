@@ -165,6 +165,19 @@ def eliminar_gasto_seleccionado(eliminaestegasto):
     print(f'\nGasto con concepto de {diccionarios["lista_de_gastos"][eliminaestegasto]["nombre"]} ha sido eliminado.')
     del diccionarios["lista_de_gastos"][eliminaestegasto]
 
+def escoge_listar_gastos():
+    print("Usted filtrar los gastos que se mostrarán en pantalla de la siguiente manera:")
+    for filtro in listar_gastos:
+        print(f"-{filtro.capitalize()}")
+
+    filtrar = input("¿Que filtro desea aplicar?: ").lower()
+
+    while filtrar not in listar_gastos:
+        print("Opcción incorrecta, vuelva a intentar...")
+        filtrar = input("¿Que filtro desea aplicar?: ").lower()
+
+    listar_gastos[filtrar]()
+
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
         print("Opcion invalida, vuelva a intentar...")
