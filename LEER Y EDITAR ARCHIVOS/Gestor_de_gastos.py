@@ -228,6 +228,11 @@ def listar_por_fecha():
         volvera_listar = input("¿Desea volver a listar gastos con una fecha distinta? [SI/NO]: ").lower()
         if not repetir_bucle(volvera_listar):
             break
+def listar_todos_gastos():
+    for id_gasto in diccionarios["lista_de_gastos"]:
+        print("\n")
+        for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
+            print(f"{clave.capitalize()}: {valor}")
 
 
 
