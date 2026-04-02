@@ -210,6 +210,26 @@ def listar_por_categoria():
         if not repetir_bucle(volvera_listar):
             break
 
+def listar_por_fecha():
+    while True:
+        fecha, _ = validar_fecha()
+
+        gastosenestafecha = False
+
+        for id_gasto in diccionarios["lista_de_gastos"]:
+            if diccionarios["lista_de_gastos"][id_gasto]["fecha"][0] == fecha:
+                for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
+                    print(f"{clave.capitalize()}: {valor}")
+                    gastosenestafecha = True
+
+        if not gastosenestafecha:
+            print("No hay gastos registrados con esta fecha.")
+
+        volvera_listar = input("¿Desea volver a listar gastos con una fecha distinta? [SI/NO]: ").lower()
+        if not repetir_bucle(volvera_listar):
+            break
+
+
 
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
