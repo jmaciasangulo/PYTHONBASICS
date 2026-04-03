@@ -23,10 +23,10 @@ except FileNotFoundError:
 #----------------------------DICCIONARIOS------------------------------------
 operaciones = {
     "agregar categoria de gastos": lambda: agregar_categoria_de_gastos(),
-    "eliminar categoria de gastos": lambda: "funcion no definida",
-    "registrar gasto": lambda: "función no definida",
-    "listar gasto": lambda: "función no definida",
-    "eliminar gasto": lambda: "función no definida",
+    "eliminar categoria de gastos": lambda: eliminar_categoria(),
+    "registrar gasto": lambda: registrar_gasto(),
+    "listar gasto": lambda: escoge_listar_gastos(),
+    "eliminar gasto": lambda: eliminar_gasto(),
     "ver resumen de gastos": lambda: "función no definida"
 }
 
