@@ -241,6 +241,46 @@ def listar_todos_gastos():
         for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
             print(f"{clave.capitalize()}: {valor}")
 
+def eliminar_categoria():
+    while True:
+        if categorias_de_gastos:
+            categoria = validar_categoria()
+
+            print("¿Desea eliminar esta categoria? Al eliminar esta categoría,\ntambién se eliminarán todos los gastos relacionadas con esta.")
+            respuesta = input("[SI/NO]: ").lower()
+
+            while respuesta not in ["si", "no"]:
+                print("Opccíon incorrecta, vuelva a intentar...")
+                respuesta = input("[SI/NO]: ").lower()
+
+            if respuesta == "no":
+                break
+
+            ids_a_eliminar = []
+
+            for id_gasto in diccionarios["lista_de_gastos"]:
+                if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
+                    ids_a_eliminar.append(id_gasto)
+
+            for gasto in ids_a_eliminar:
+                del diccionarios["lista_de_gastos"][gasto]
+
+            diccionarios["categorias_de_gastos"].remove(categoria)
+
+            guardar_cambios()
+
+            print(f"La categoría denominada como {categoria} junto con sus tareas han sido eliminados.")
+
+            volvera_eliminar = input("¿Desea volver a eliminar otra categoría? [SI/NO]: ").lower()
+            if not repetir_bucle(volvera_eliminar):
+                break
+
+        else:
+            print("Usted no tiene categorias de gastos registradas."
+                  "\nAgrege una categoría de gastos para que pueda trabajar con el gestor.")
+            break
+
+
 
 
 def repetir_bucle(respuesta):
