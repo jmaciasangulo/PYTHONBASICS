@@ -278,8 +278,14 @@ def eliminar_categoria():
                   "\nAgrege una categoría de gastos para que pueda trabajar con el gestor.")
             break
 
-
-
+def ver_resumen_gastos():
+    gasto_por_categoria = {}
+    calcular_gasto_categoria()
+    gastos_en_total = calculargastototal()
+    print(f"La sumatoria de todos los gastos por categoría son:")
+    for clave, valor in gasto_por_categoria.items():
+        print(f"{clave.capitalize()}: ${valor} MXN")
+    print(f"Que nos dá una sumatoria total de: ${gastos_en_total} MXN")
 
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
