@@ -189,7 +189,6 @@ def escoge_listar_gastos():
         volvera_listar = input("¿Desea volver a listar gastos con un filtro diferente? [SI/NO]: ").lower()
         if not repetir_bucle(volvera_listar):
             break
-
 def listar_por_categoria():
     while True:
         print("Las categorías disponibles para consulta son:")
@@ -216,7 +215,6 @@ def listar_por_categoria():
         volvera_listar = input("Desea volver a listar gastos por categoría? [SI/NO]: ").lower()
         if not repetir_bucle(volvera_listar):
             break
-
 def listar_por_fecha():
     while True:
         fecha, _ = validar_fecha()
