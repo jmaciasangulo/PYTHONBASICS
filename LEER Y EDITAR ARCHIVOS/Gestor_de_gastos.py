@@ -179,7 +179,7 @@ def eliminar_gasto_seleccionado(eliminaestegasto):
     del diccionarios["lista_de_gastos"][eliminaestegasto]
 
 def escoge_listar_gastos():
-    if listar_gastos:
+    if lista_de_gastos:
         while True:
             print("Usted filtrar los gastos que se mostrarán en pantalla de la siguiente manera:")
             for filtro in listar_gastos:
