@@ -297,7 +297,6 @@ def ver_resumen_gastos():
     else:
         print("Parece que no hay categorias de gastos ni gastos registrados,"
               "\nagrege una categoria y registre un gasto para poder hacer esta operacion.")
-
 def calcular_gasto_categoria():
     for categoria in diccionarios["categorias_de_gastos"]:
         sumatoria = 0
