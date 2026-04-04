@@ -52,14 +52,17 @@ def agregar_categoria_de_gastos():
             break
 
 def eliminar_categoria_de_gastos():
-    while True:
-        categoria = validar_categoria_eliminar()
+    if categorias_de_gastos:
+        while True:
+            categoria = validar_categoria_eliminar()
 
-        elimina_categoria_seleccionada(categoria)
+            elimina_categoria_seleccionada(categoria)
 
-        eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
-        if not repetir_bucle(eliminar_otravez):
-            break
+            eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
+            if not repetir_bucle(eliminar_otravez):
+                break
+    else:
+        print("Usted no cuenta con categorias de gastos, para eliminar una, primero debe crear una. ")
 def validar_categoria_eliminar():
     categoria = input("Escriba el nombre de la categoría: ")
     while categoria not in categorias_de_gastos:
@@ -143,21 +146,24 @@ def validar_categoria():
     return categoria
 
 def eliminar_gasto():
-    while True:
-        id_gasto = validar_id_gasto()
-        if not id_gasto:
-            break
-        elif id_gasto == True:
-            continue
-        else:
-            pass
-        eliminar_gasto_seleccionado(id_gasto)
-        guardar_cambios()
-        eliminar_otravez = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
-        if not repetir_bucle(eliminar_otravez):
-            break
-        else:
-            continue
+    if lista_de_gastos:
+        while True:
+            id_gasto = validar_id_gasto()
+            if not id_gasto:
+                break
+            elif id_gasto == True:
+                continue
+            else:
+                pass
+            eliminar_gasto_seleccionado(id_gasto)
+            guardar_cambios()
+            eliminar_otravez = input("¿Desea eliminar otro gasto? [SI/NO]: ").lower()
+            if not repetir_bucle(eliminar_otravez):
+                break
+            else:
+                continue
+    else:
+        print("Usted no tiene gastos registrados, para poder eliminar primero debe agregar uno.")
 def validar_id_gasto():
     id_gasto = input("Escriba el ID del gasto: ")
     if id_gasto not in diccionarios["lista_de_gastos"]:
@@ -173,22 +179,25 @@ def eliminar_gasto_seleccionado(eliminaestegasto):
     del diccionarios["lista_de_gastos"][eliminaestegasto]
 
 def escoge_listar_gastos():
-    while True:
-        print("Usted filtrar los gastos que se mostrarán en pantalla de la siguiente manera:")
-        for filtro in listar_gastos:
-            print(f"-{filtro.capitalize()}.")
+    if listar_gastos:
+        while True:
+            print("Usted filtrar los gastos que se mostrarán en pantalla de la siguiente manera:")
+            for filtro in listar_gastos:
+                print(f"-{filtro.capitalize()}.")
 
-        filtrar = input("¿Que filtro desea aplicar?: ").lower()
-
-        while filtrar not in listar_gastos:
-            print("Opcción incorrecta, vuelva a intentar...")
             filtrar = input("¿Que filtro desea aplicar?: ").lower()
 
-        listar_gastos[filtrar]()
+            while filtrar not in listar_gastos:
+                print("Opcción incorrecta, vuelva a intentar...")
+                filtrar = input("¿Que filtro desea aplicar?: ").lower()
 
-        volvera_listar = input("¿Desea volver a listar gastos con un filtro diferente? [SI/NO]: ").lower()
-        if not repetir_bucle(volvera_listar):
-            break
+            listar_gastos[filtrar]()
+
+            volvera_listar = input("¿Desea volver a listar gastos con un filtro diferente? [SI/NO]: ").lower()
+            if not repetir_bucle(volvera_listar):
+                break
+    else:
+        print("Usted no tiene gastos registrados, agrege uno para poder listar los gastos.")
 def listar_por_categoria():
     while True:
         print("Las categorías disponibles para consulta son:")
