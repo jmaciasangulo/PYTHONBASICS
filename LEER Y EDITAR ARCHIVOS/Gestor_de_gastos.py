@@ -299,6 +299,12 @@ def calcular_gasto_categoria():
             gasto_por_categoria[categoria] = sumatoria
             continue
 
+def calculargastototal():
+    total = 0
+    for categoria in gasto_por_categoria:
+        total += gasto_por_categoria[categoria]
+    return total
+
 def repetir_bucle(respuesta):
     while respuesta not in ["si", "no"]:
         print("Opcion invalida, vuelva a intentar...")
