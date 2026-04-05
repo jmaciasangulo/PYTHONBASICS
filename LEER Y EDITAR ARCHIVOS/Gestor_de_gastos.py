@@ -300,10 +300,10 @@ def ver_resumen_gastos():
 def calcular_gasto_categoria():
     for categoria in diccionarios["categorias_de_gastos"]:
         sumatoria = 0
-        try:
-            for id_gasto in diccionarios["lista_de_gastos"]:
-                if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
-                    sumatoria += diccionarios["lista_de_gastos"][id_gasto]["monto"]
+        for id_gasto in diccionarios["lista_de_gastos"]:
+            print("Iteracion")
+            if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
+                sumatoria += diccionarios["lista_de_gastos"][id_gasto]["monto"]
 
         except KeyError:
             gasto_por_categoria[categoria] = sumatoria
