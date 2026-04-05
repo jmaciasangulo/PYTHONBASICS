@@ -304,9 +304,7 @@ def calcular_gasto_categoria():
             if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
                 sumatoria += diccionarios["lista_de_gastos"][id_gasto]["monto"]
 
-        except KeyError:
-            gasto_por_categoria[categoria] = sumatoria
-            continue
+        gasto_por_categoria[categoria] = sumatoria
 
 def calculargastototal():
     total = 0
