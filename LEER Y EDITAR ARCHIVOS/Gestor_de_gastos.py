@@ -301,7 +301,6 @@ def calcular_gasto_categoria():
     for categoria in diccionarios["categorias_de_gastos"]:
         sumatoria = 0
         for id_gasto in diccionarios["lista_de_gastos"]:
-            print("Iteracion")
             if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
                 sumatoria += diccionarios["lista_de_gastos"][id_gasto]["monto"]
 
