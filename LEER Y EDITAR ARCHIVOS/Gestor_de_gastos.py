@@ -27,7 +27,7 @@ operaciones = {
     "registrar gasto": lambda: registrar_gasto(),
     "listar gasto": lambda: escoge_listar_gastos(),
     "eliminar gasto": lambda: eliminar_gasto(),
-    "ver resumen de gastos": lambda: "función no definida"
+    "ver resumen de gastos": lambda: ver_resumen_gastos()
 }
 
 listar_gastos = {
