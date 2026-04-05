@@ -35,7 +35,7 @@ listar_gastos = {
     "listar por fecha": lambda: listar_por_fecha(),
     "listar todos": lambda: listar_todos_gastos()
 }
-
+gasto_por_categoria = {}
 #----------------------------FUNCIONES---------------------------------------
 def guardar_cambios():
     with open(ruta_tareas, "w", encoding="utf-8") as archivo_escritura:
