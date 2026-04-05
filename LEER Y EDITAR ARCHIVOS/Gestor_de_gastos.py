@@ -288,15 +288,15 @@ def eliminar_categoria():
             break
 
 def ver_resumen_gastos():
-    if categorias_de_gastos:
+    if lista_de_gastos:
+        calcular_gasto_categoria()
         gastos_en_total = calculargastototal()
         print(f"La sumatoria de todos los gastos por categoría son:")
         for clave, valor in gasto_por_categoria.items():
             print(f"{clave.capitalize()}: ${valor} MXN")
         print(f"Que nos dá una sumatoria total de: ${gastos_en_total} MXN")
     else:
-        print("Parece que no hay categorias de gastos ni gastos registrados,"
-              "\nagrege una categoria y registre un gasto para poder hacer esta operacion.")
+        print("Parece que no hay gastos registrados, registre un gasto para poder hacer esta operacion.")
 def calcular_gasto_categoria():
     for categoria in diccionarios["categorias_de_gastos"]:
         sumatoria = 0
