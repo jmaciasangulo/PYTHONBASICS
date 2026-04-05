@@ -58,7 +58,7 @@ def eliminar_categoria_de_gastos():
 
             elimina_categoria_seleccionada(categoria)
 
-            eliminar_otravez = input("Desea eliminar otra categoría?: [SI/NO]: ").lower()
+            eliminar_otravez = input("\nDesea eliminar otra categoría?: [SI/NO]: ").lower()
             if not repetir_bucle(eliminar_otravez):
                 break
     else:
@@ -73,7 +73,7 @@ def elimina_categoria_seleccionada(eliminaestacategoria):
     del diccionarios["categorias_de_gastos"][eliminaestacategoria]
     guardar_cambios()
     print(f'Categoría denominada como "{eliminaestacategoria}" ha sido eliminada.')
-    
+
 def registrar_gasto():
     while True:
         nombre = input("\nEscriba el concepto del gasto: ")
@@ -135,10 +135,10 @@ def validar_fecha():
     fecha_en_dias = dias + (meses*31) + (anos*365)
     return fecha, fecha_en_dias
 def validar_categoria():
-    print("Usted tiene registradas todas estas categorías.")
+    print("\nUsted tiene registradas todas estas categorías.\n")
     for categoria in diccionarios["categorias_de_gastos"]:
         print(f"-{categoria}.")
-    print("Usted solo puede trabajar con una de esas categorías.")
+    print("\nUsted solo puede trabajar con una de esas categorías.")
     categoria = input("¿Con que categoría trabajará?: ")
     while categoria not in diccionarios["categorias_de_gastos"]:
         print("Esta categoría no existe, vuélvalo a intentar...")
