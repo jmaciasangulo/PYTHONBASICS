@@ -1,0 +1,48 @@
+
+from decimal import Decimal, InvalidOperation, ROUND_DOWN
+
+class CuentaDeBanco:
+
+    def __init__(self, nombre, balance, nip):
+        self.nombre = nombre
+        self.balance = balance
+        self.nip = nip
+
+    def atributos(self):
+        print(f"Nombre: {self.nombre}")
+        print(f"Balance: $ {self.balance} USD")
+        print(f"NIP: {self.nip}")
+
+    def depositar(self):
+        while True:
+            try:
+                deposito = Decimal(input("\nEscriba la cantidad a depositar: "))
+                if deposito <= 0:
+                    print("Deposito invalido, escriba solo números positivos")
+                    continue
+                str_deposito = str(deposito)
+                if "." in str_deposito:
+                    decimales = str_deposito.split(".")[1]
+                    if len(decimales) > 2:
+                        print("El programa solo guardará los primeros 2 decimales")
+                        deposito = deposito.quantize(Decimal("0.01"), rounding=ROUND_DOWN)
+                break
+            except InvalidOperation:
+                print("Digite en números la cantidad a depositar.")
+
+        self.balance += deposito
+        print(f"Deposito por la cantidad de: {deposito} USD")
+        print(f"Balance actual: {self.balance} USD")
+
+    def retirar(self):
+
+    def calcular_intereses(self):
+
+    def transaccion(self):
+
+
+
+mi_cuenta = CuentaDeBanco("Jesús Alejandro Macías Angulo", 130000, 2821)
+mi_cuenta.atributos()
+mi_cuenta.depositar()
+mi_cuenta.atributos()

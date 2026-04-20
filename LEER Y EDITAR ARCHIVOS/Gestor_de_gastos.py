@@ -1,4 +1,4 @@
-#Proyecto iniciado el 28 de marzo del 2026.
+#Proyecto iniciado el 28 de marzo del 2026. Proyecto terminado el 4 de abril del 2026.
 #-------------------------------IMPORTS--------------------------------------
 import msvcrt
 import os
@@ -50,29 +50,6 @@ def agregar_categoria_de_gastos():
         repetir_registro = input("¿Desea agregar otra categoría? [SI/NO]: ").lower()
         if not repetir_bucle(repetir_registro):
             break
-
-def eliminar_categoria_de_gastos():
-    if categorias_de_gastos:
-        while True:
-            categoria = validar_categoria_eliminar()
-
-            elimina_categoria_seleccionada(categoria)
-
-            eliminar_otravez = input("\nDesea eliminar otra categoría?: [SI/NO]: ").lower()
-            if not repetir_bucle(eliminar_otravez):
-                break
-    else:
-        print("Usted no cuenta con categorias de gastos, para eliminar una, primero debe crear una. ")
-def validar_categoria_eliminar():
-    categoria = input("Escriba el nombre de la categoría: ")
-    while categoria not in categorias_de_gastos:
-        print("Opcción incorrecta, vuelva a intentar...")
-        categoria = input("Escriba el nombre de la categoría: ")
-    return categoria
-def elimina_categoria_seleccionada(eliminaestacategoria):
-    del diccionarios["categorias_de_gastos"][eliminaestacategoria]
-    guardar_cambios()
-    print(f'Categoría denominada como "{eliminaestacategoria}" ha sido eliminada.')
 
 def registrar_gasto():
     while True:
@@ -181,30 +158,30 @@ def eliminar_gasto_seleccionado(eliminaestegasto):
 def escoge_listar_gastos():
     if lista_de_gastos:
         while True:
-            print("Usted filtrar los gastos que se mostrarán en pantalla de la siguiente manera:")
+            print("\nUsted puede filtrar los gastos que se mostrarán en pantalla de la siguiente manera:\n")
             for filtro in listar_gastos:
                 print(f"-{filtro.capitalize()}.")
 
-            filtrar = input("¿Que filtro desea aplicar?: ").lower()
+            filtrar = input("\n¿Que filtro desea aplicar?: ").lower()
 
             while filtrar not in listar_gastos:
                 print("Opcción incorrecta, vuelva a intentar...")
-                filtrar = input("¿Que filtro desea aplicar?: ").lower()
+                filtrar = input("\n¿Que filtro desea aplicar?: ").lower()
 
             listar_gastos[filtrar]()
 
-            volvera_listar = input("¿Desea volver a listar gastos con un filtro diferente? [SI/NO]: ").lower()
+            volvera_listar = input("\n¿Desea volver a listar gastos con un filtro diferente? [SI/NO]: ").lower()
             if not repetir_bucle(volvera_listar):
                 break
     else:
         print("Usted no tiene gastos registrados, agrege uno para poder listar los gastos.")
 def listar_por_categoria():
     while True:
-        print("Las categorías disponibles para consulta son:")
+        print("\nLas categorías disponibles para consulta son:\n")
         for categoria in categorias_de_gastos:
             print(f"-{categoria}.")
 
-        categoria = input("Que categoria desea ver?: ")
+        categoria = input("\nQue categoria desea ver?: ")
 
         haygastosencategoria = False
 
@@ -214,6 +191,7 @@ def listar_por_categoria():
 
         for id_gasto in diccionarios["lista_de_gastos"]:
             if diccionarios["lista_de_gastos"][id_gasto]["categoria"] == categoria:
+                print("\n")
                 for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
                     print(f"{clave.capitalize()}: {valor}")
                     haygastosencategoria = True
@@ -221,7 +199,7 @@ def listar_por_categoria():
         if not haygastosencategoria:
             print("No hay gastos registrados con esta categoria.")
 
-        volvera_listar = input("Desea volver a listar gastos por categoría? [SI/NO]: ").lower()
+        volvera_listar = input("\nDesea volver a listar gastos por categoría? [SI/NO]: ").lower()
         if not repetir_bucle(volvera_listar):
             break
 def listar_por_fecha():
@@ -232,6 +210,7 @@ def listar_por_fecha():
 
         for id_gasto in diccionarios["lista_de_gastos"]:
             if diccionarios["lista_de_gastos"][id_gasto]["fecha"][0] == fecha:
+                print("\n")
                 for clave, valor in diccionarios["lista_de_gastos"][id_gasto].items():
                     print(f"{clave.capitalize()}: {valor}")
                     gastosenestafecha = True
@@ -335,6 +314,7 @@ if categorias_de_gastos:
         operaciones[operacion]()
 
         repetir = input("Desea volver a trabajar con su gestor? [SI/NO]: ").lower()
+        print("\n")
         if not repetir_bucle(repetir):
             break
 else:
