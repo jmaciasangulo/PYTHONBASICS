@@ -16,22 +16,22 @@ class CuentaDeBanco:
     def depositar(self):
         while True:
             try:
-                deposito = Decimal(input("\nEscriba la cantidad a depositar: "))
-                if deposito <= 0:
+                monto = Decimal(input("\nEscriba la cantidad a depositar: "))
+                if monto <= 0:
                     print("Deposito invalido, escriba solo números positivos")
                     continue
-                str_deposito = str(deposito)
-                if "." in str_deposito:
-                    decimales = str_deposito.split(".")[1]
+                str_monto = str(monto)
+                if "." in str_monto:
+                    decimales = str_monto.split(".")[1]
                     if len(decimales) > 2:
                         print("El programa solo guardará los primeros 2 decimales")
-                        deposito = deposito.quantize(Decimal("0.01"), rounding=ROUND_DOWN)
+                        monto = monto.quantize(Decimal("0.01"), rounding=ROUND_DOWN)
                 break
             except InvalidOperation:
                 print("Digite en números la cantidad a depositar.")
 
-        self.balance += deposito
-        print(f"Deposito por la cantidad de: {deposito} USD")
+        self.balance += monto
+        print(f"Deposito por la cantidad de: {monto} USD")
         print(f"Balance actual: {self.balance} USD")
 
     def retirar(self):
