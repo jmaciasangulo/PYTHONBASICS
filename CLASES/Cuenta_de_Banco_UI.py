@@ -12,3 +12,8 @@ print( "\n", Fore.CYAN + "Bienvenido a su Cuenta de Banco", end='\n\n' )
 print("Usted puede hacer las siguientes operaciones:", end='\n')
 for operacion in operaciones:
     print("-", operacion, end='.\n')
+
+operacion_Bancaria = input("\n" "Escriba la operación que realizará: ")
+
+
+
