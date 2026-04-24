@@ -8,6 +8,13 @@ operaciones = {
     "VER HISTORIAL DE OPERACIONES"
 }
 
+def validar_respuesta(respuesta, diccionario):
+    if respuesta not in diccionario:
+        return False
+    else:
+        return True
+
+
 print( "\n", Fore.CYAN + "Bienvenido a su Cuenta de Banco", end='\n\n' )
 print("Usted puede hacer las siguientes operaciones:", end='\n')
 for operacion in operaciones:
