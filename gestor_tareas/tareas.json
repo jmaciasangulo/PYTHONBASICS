@@ -1,0 +1,17 @@
+{
+    "f684710b-f5b9-4060-8d37-340a627d6a86": {
+        "nombre": "Comprar leche",
+        "descripccion": "Ve al gualmart y compra leche LALA entera 6L",
+        "fecha": [
+            "07/05/2026",
+            739652
+        ],
+        "hora": [
+            "18:30",
+            1110
+        ],
+        "prioridad": "MEDIA",
+        "estado": "completado",
+        "id": "f684710b-f5b9-4060-8d37-340a627d6a86"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "lista_de_gastos": {
+        "1ef155ad-4559-4343-a639-89cf97e06b5c": {
+            "nombre": "Hot Dogs",
+            "descripcion": "Compré hot dogs en la coperativa del CBTis",
+            "monto": 50.0,
+            "fecha": [
+                "03/04/2026",
+                739617
+            ],
+            "categoria": "Comida",
+            "ID del gasto": "1ef155ad-4559-4343-a639-89cf97e06b5c"
+        },
+        "6741b665-eb9f-4c14-b6c3-c2c4ca1eea99": {
+            "nombre": "Camión verde",
+            "descripcion": "Tomé el camión verde del CBTis a mi casa",
+            "monto": 10.0,
+            "fecha": [
+                "12/03/2026",
+                739595
+            ],
+            "categoria": "Transporte",
+            "ID del gasto": "6741b665-eb9f-4c14-b6c3-c2c4ca1eea99"
+        },
+        "93dcbbd8-40e6-43f2-99ab-d3439e1aabdd": {
+            "nombre": "Crunchyroll",
+            "descripcion": "Pagué la suscripcción del crunchy.",
+            "monto": 60.0,
+            "fecha": [
+                "31/03/2026",
+                739614
+            ],
+            "categoria": "Casa",
+            "ID del gasto": "93dcbbd8-40e6-43f2-99ab-d3439e1aabdd"
+        },
+        "e3c98ca5-3773-4813-86da-abf1afd974fc": {
+            "nombre": "Comida china",
+            "descripcion": "Compre comida china",
+            "monto": 67.0,
+            "fecha": [
+                "03/04/2026",
+                739617
+            ],
+            "categoria": "Comida",
+            "ID del gasto": "e3c98ca5-3773-4813-86da-abf1afd974fc"
+        },
+        "6334d3bf-27c4-4797-883a-4d8756842a45": {
+            "nombre": "Gripa",
+            "descripcion": "Compré medicina para la gripe",
+            "monto": 580.0,
+            "fecha": [
+                "04/03/2026",
+                739587
+            ],
+            "categoria": "Salud",
+            "ID del gasto": "6334d3bf-27c4-4797-883a-4d8756842a45"
+        }
+    },
+    "categorias_de_gastos": [
+        "Comida",
+        "Salud",
+        "Transporte",
+        "Casa",
+        "Escuela"
+    ]
+}
