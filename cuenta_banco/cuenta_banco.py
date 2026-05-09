@@ -1,3 +1,7 @@
+import datetime
+hora_actual = str(datetime.datetime.now().hour)+":"+str(datetime.datetime.now().minute)
+fecha_actual = str(datetime.datetime.now().date())
+
 class Operacion:
     def __init__(self, fecha, hora, operacion, monto):
         self.fecha = fecha
