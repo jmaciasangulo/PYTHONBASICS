@@ -18,27 +18,27 @@ class CuentaBancaria:
 
     def depositar(self, monto):
         self.balance += monto
-        operacion = self._crear_operacion("PENDIENTE", "PENDIENTE", "Deposito", monto)
+        operacion = self._crear_operacion( "Deposito", monto)
         self._anexar_operacion(operacion)
 
     def retirar(self, monto):
         self.balance -= monto
-        operacion = self._crear_operacion("PENDIENTE", "PENDIENTE", "Retiro", monto)
+        operacion = self._crear_operacion("Retiro", monto)
         self._anexar_operacion(operacion)
 
     def ver_balance(self):
-        operacion = self._crear_operacion("PENDIENTE", "PENDIENTE", "Consulta de balance", None)
+        operacion = self._crear_operacion("Consulta de balance", None)
         self._anexar_operacion(operacion)
         return self.balance
 
     def ver_historial(self):
-        operacion = self._crear_operacion("PENDIENTE", "PENDIENTE", "Consulta de historial de operaciones de cuenta", None)
+        operacion = self._crear_operacion("Consulta de historial de operaciones de cuenta", None)
         self._anexar_operacion(operacion)
         return self.historial
 
 
-    def _crear_operacion(self, fecha, hora, operacion, monto):
-        historial = Operacion(fecha, hora, operacion, monto)
+    def _crear_operacion(self, operacion, monto):
+        historial = Operacion(fecha_actual, hora_actual, operacion, monto)
         return historial
     def _anexar_operacion(self, operacion):
         self.historial.append(operacion)
