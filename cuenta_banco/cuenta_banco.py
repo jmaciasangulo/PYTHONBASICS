@@ -11,3 +11,6 @@ class CuentaBancaria:
         self.balance = balance
         self.nip = nip
         self.historial = historial
+
+    def depositar(self, monto):
+        self.balance += monto
