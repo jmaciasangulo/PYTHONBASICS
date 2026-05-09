@@ -6,11 +6,11 @@ class Operacion:
         self.monto = monto
 
 class CuentaBancaria:
-    def __init__(self, titular, balance, nip, historial):
+    def __init__(self, titular, balance, nip):
         self.titular = titular
         self.balance = balance
         self.nip = nip
-        self.historial = historial
+        self.historial = []
 
     def depositar(self, monto):
         self.balance += monto
