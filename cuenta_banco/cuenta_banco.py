@@ -8,7 +8,8 @@ class Operacion:
         self.hora = hora
         self.operacion = operacion
         self.monto = monto
-
+    def __str__(self):
+        return f"{self.fecha}-{self.hora}-{self.operacion}-{self.monto}"
 class CuentaBancaria:
     def __init__(self, titular, balance, nip):
         self.titular = titular
