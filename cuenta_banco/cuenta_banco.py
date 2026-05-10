@@ -9,7 +9,10 @@ class Operacion:
         self.operacion = operacion
         self.monto = monto
     def __str__(self):
-        return f"{self.fecha}-{self.hora}-{self.operacion}-{self.monto}"
+        if self.operacion == "Consulta de balance" or self.operacion == "Consulta de historial de operaciones de cuenta":
+            return f"{self.fecha}-{self.hora}-{self.operacion}"
+        else:
+            return f"{self.fecha}-{self.hora}-{self.operacion}-{self.monto}"
 class CuentaBancaria:
     def __init__(self, titular, balance, nip):
         self.titular = titular
