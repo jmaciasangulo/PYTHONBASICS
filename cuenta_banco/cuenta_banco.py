@@ -47,3 +47,6 @@ class CuentaBancaria:
     def _anexar_operacion(self, operacion):
         self.historial.append(operacion)
 
+#HOY HICE: las funciones restantes, o sea todas, a excepcion de depositar().
+#QUE HARÉ MAÑANA: Corregiré como se ve la hora al momento de describir un objeto de la clase Operacion
+
