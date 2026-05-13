@@ -1,6 +1,6 @@
 import datetime
-hora_actual = str(datetime.datetime.now().hour)+":"+str(datetime.datetime.now().minute)
-fecha_actual = str(datetime.datetime.now().date())
+hora_actual = datetime.datetime.now().strftime("%I:%M %p")
+fecha_actual = datetime.datetime.now().strftime("%d/%m/%Y")
 
 class Operacion:
     def __init__(self, fecha, hora, operacion, monto):
