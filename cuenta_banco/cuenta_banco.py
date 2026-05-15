@@ -50,29 +50,13 @@ class CuentaBancaria:
     def _anexar_operacion(self, operacion):
         self.historial.append(operacion)
 
-"""ESTRUCTURA DE DICCIONARIO:
-usuarios:{
-    
-    (código alfanumerico de UUID4):{
-    
-    "Titular": (el nombre del titular),
-    "Balance": (un número float),
-    "NIP": (Un código de 4 digitos),
-    "Historial": [
-    {"fecha": (el str de la fecha de la operacion realizada), 
-    "Hora": (el str de la hora de la operacion), 
-    "Operacion": (el str del nombre de la operacion hardcodeada),
-    "Monto": (el float del monto de la operacion realizada. Aveces puede ser None, ya que hay operaciones que no mueven dinero)},
-    {etc},
-    {etc}]
-    }
-    
-    (otro código de identificacion):{
-    
-    "todas las llaves": (todos los valores)
-    "Historial": [(lista de diccionarios de cada operacion, o sea la serializacion de cada objeto tipo Operacion)]
-    }
-}
+def serializar_cuenta(cuenta_bancaria):
+    dic_cuenta = cuenta_bancaria.__dict__
+    hist_indep = []
+    for operacion in cuenta_bancaria.historial:
+        hist_indep.append(operacion.__dict__)
+    dic_cuenta["historial"] = hist_indep
+    return dic_cuenta
 
 LOGICA DE CARGA DE ARCHIVOS:
 try:
