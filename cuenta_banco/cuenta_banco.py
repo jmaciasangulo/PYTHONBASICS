@@ -52,9 +52,7 @@ class CuentaBancaria:
 
 def serializar_cuenta(cuenta_bancaria):
     dic_cuenta = cuenta_bancaria.__dict__
-    hist_indep = []
-    for operacion in cuenta_bancaria.historial:
-        hist_indep.append(operacion.__dict__)
+    hist_indep = [operacion.__dict__ for operacion in cuenta_bancaria.historial]
     dic_cuenta["historial"] = hist_indep
     return dic_cuenta
 
