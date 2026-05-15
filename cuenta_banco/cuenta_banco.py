@@ -3,16 +3,19 @@ hora_actual = datetime.datetime.now().strftime("%I:%M %p")
 fecha_actual = datetime.datetime.now().strftime("%d/%m/%Y")
 
 class Operacion:
+
     def __init__(self, fecha, hora, operacion, monto):
         self.fecha = fecha
         self.hora = hora
         self.operacion = operacion
         self.monto = monto
+
     def __str__(self):
         if self.operacion == "Consulta de balance" or self.operacion == "Consulta de historial de operaciones de cuenta":
             return f"{self.fecha}-{self.hora}-{self.operacion}"
         else:
             return f"{self.fecha}-{self.hora}-{self.operacion}-{self.monto}"
+
 class CuentaBancaria:
     def __init__(self, titular, balance, nip):
         self.titular = titular
@@ -40,13 +43,53 @@ class CuentaBancaria:
         self._anexar_operacion(operacion)
         return self.historial
 
-
     def _crear_operacion(self, operacion, monto):
         historial = Operacion(fecha_actual, hora_actual, operacion, monto)
         return historial
+
     def _anexar_operacion(self, operacion):
         self.historial.append(operacion)
 
-#HOY HICE: las funciones restantes, o sea todas, a excepcion de depositar().
-#QUE HARÉ MAÑANA: Corregiré como se ve la hora al momento de describir un objeto de la clase Operacion
+"""ESTRUCTURA DE DICCIONARIO:
+usuarios:{
+    
+    (código alfanumerico de UUID4):{
+    
+    "Titular": (el nombre del titular),
+    "Balance": (un número float),
+    "NIP": (Un código de 4 digitos),
+    "Historial": [
+    {"fecha": (el str de la fecha de la operacion realizada), 
+    "Hora": (el str de la hora de la operacion), 
+    "Operacion": (el str del nombre de la operacion hardcodeada),
+    "Monto": (el float del monto de la operacion realizada. Aveces puede ser None, ya que hay operaciones que no mueven dinero)},
+    {etc},
+    {etc}]
+    }
+    
+    (otro código de identificacion):{
+    
+    "todas las llaves": (todos los valores)
+    "Historial": [(lista de diccionarios de cada operacion, o sea la serializacion de cada objeto tipo Operacion)]
+    }
+}
 
+LOGICA DE CARGA DE ARCHIVOS:
+try:
+    bloque de código que busca el archivo y carga la informacion
+    en variables para que el programa trabaje con ellas
+except FileNotFoundError:
+    bloque de código que crea la estructura del diccionario vacía
+    para que el programa trabaje con el
+    
+def guardar_cambios():
+    Abre el archivo o lo crea de manera automatica si no existe,
+    y descarga la informacion de los diccionarios al archivo .JSON
+#Esta funcion se llama cada que el usuario haga una operacion, para si se llega a cerrar la sesion de 
+#manera inesperada, los datos no se pierdan.
+"""
+
+#HOY HICE: Definí la estructura del archivo .json y la lógica de la carga y guardado de informacion en el .json
+#QUE ME ATASCÓ: No sé como serializar los objetos para que se puedan guardar en archivos .JSON, No sé cual es la sintaxis
+#para escribir la lógica de la descarga y carga de archivos
+#QUE HARÉ MAÑANA: Mañana investigaré como serializar objetos y cual es la sintaxis para guardar y descargar la información en .JSONs
