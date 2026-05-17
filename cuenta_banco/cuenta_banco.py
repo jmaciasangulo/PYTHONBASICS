@@ -67,3 +67,9 @@ def deserializar_cuenta(dict_cuenta):
     cuenta_obj = CuentaBancaria(dict_cuenta["titular"], dict_cuenta["balance"], dict_cuenta["nip"])
     cuenta_obj.historial = historial
     return cuenta_obj
+
+try:
+    with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
+        usuarios = json.load(archivo_cuentas_lec)
+except FileNotFoundError:
+    usuarios = {}
