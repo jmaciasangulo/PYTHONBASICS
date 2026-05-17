@@ -1,6 +1,7 @@
 import datetime
-hora_actual = datetime.datetime.now().strftime("%I:%M %p")
-fecha_actual = datetime.datetime.now().strftime("%d/%m/%Y")
+import json
+import uuid
+
 
 class Operacion:
 
