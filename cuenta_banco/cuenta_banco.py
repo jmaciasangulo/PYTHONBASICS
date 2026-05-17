@@ -19,6 +19,7 @@ class Operacion:
 
 class CuentaBancaria:
     def __init__(self, titular, balance, nip):
+        self.id_cuenta = f"{uuid.uuid4()}"
         self.titular = titular
         self.balance = balance
         self.nip = nip
