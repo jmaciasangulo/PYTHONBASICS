@@ -56,22 +56,10 @@ def serializar_cuenta(cuenta_bancaria):
     dic_cuenta["historial"] = hist_indep
     return dic_cuenta
 
-LOGICA DE CARGA DE ARCHIVOS:
-try:
-    bloque de código que busca el archivo y carga la informacion
-    en variables para que el programa trabaje con ellas
-except FileNotFoundError:
-    bloque de código que crea la estructura del diccionario vacía
-    para que el programa trabaje con el
-    
-def guardar_cambios():
-    Abre el archivo o lo crea de manera automatica si no existe,
-    y descarga la informacion de los diccionarios al archivo .JSON
-#Esta funcion se llama cada que el usuario haga una operacion, para si se llega a cerrar la sesion de 
-#manera inesperada, los datos no se pierdan.
-"""
-
-#HOY HICE: Definí la estructura del archivo .json y la lógica de la carga y guardado de informacion en el .json
-#QUE ME ATASCÓ: No sé como serializar los objetos para que se puedan guardar en archivos .JSON, No sé cual es la sintaxis
-#para escribir la lógica de la descarga y carga de archivos
-#QUE HARÉ MAÑANA: Mañana investigaré como serializar objetos y cual es la sintaxis para guardar y descargar la información en .JSONs
+def deserializar_cuenta(dict_cuenta):
+    historial = []
+    for operacion in dict_cuenta["historial"]:
+        historial.append(Operacion(operacion["fecha"], operacion["hora"], operacion["operacion"], operacion["monto"]))
+    cuenta_obj = CuentaBancaria(dict_cuenta["titular"], dict_cuenta["balance"], dict_cuenta["nip"])
+    cuenta_obj.historial = historial
+    return cuenta_obj
