@@ -68,6 +68,10 @@ def deserializar_cuenta(dict_cuenta):
     cuenta_obj.historial = historial
     return cuenta_obj
 
+def guardar_cambios():
+    with open("cuentas.json", "w", encoding="utf-8") as archivo_cuentas_esc:
+        json.dump(usuarios, archivo_cuentas_esc, indent=4, ensure_ascii=False)
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
