@@ -73,11 +73,13 @@ def guardar_cambios():
     with open("cuentas.json", "w", encoding="utf-8") as archivo_cuentas_esc:
         json.dump(usuarios, archivo_cuentas_esc, indent=4, ensure_ascii=False)
 
-def validar_usuario(input_usuario):
+def obtener_usuario(input_usuario):
     for usuario in usuarios:
         if usuarios[usuario]["titular"] == input_usuario:
-            return True
-    return False
+            dic_cuenta = usuarios[usuario]
+            return dic_cuenta
+    dic_cuenta = None
+    return dic_cuenta
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
