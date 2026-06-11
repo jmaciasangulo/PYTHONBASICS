@@ -86,3 +86,7 @@ try:
         usuarios = json.load(archivo_cuentas_lec)
 except FileNotFoundError:
     usuarios = {}
+
+print("¡Bienvenido a PyBank!")
+print()
+nombre = input("Escriba el nombre del titular: ")
