@@ -88,6 +88,7 @@ except FileNotFoundError:
     usuarios = {}
 
 cuenta_actual = None
+acceso = False
 
 print("¡Bienvenido a PyBank!")
 print()
