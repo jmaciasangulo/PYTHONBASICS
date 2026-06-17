@@ -97,6 +97,8 @@ nombre = input("Escriba el nombre del titular: ")
 if obtener_usuario(nombre):
 
     cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
+    nip_ingresado = input("Ingrese su NIP: ")
+    validar_nip(nip_ingresado)
 
 else:
     print("El usuario no existe")
