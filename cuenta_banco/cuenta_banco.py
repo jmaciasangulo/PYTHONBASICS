@@ -87,6 +87,8 @@ try:
 except FileNotFoundError:
     usuarios = {}
 
+cuenta_actual = None
+
 print("¡Bienvenido a PyBank!")
 print()
 nombre = input("Escriba el nombre del titular: ")
