@@ -56,10 +56,10 @@ class CuentaBancaria:
         self.historial.append(operacion)
 
 def serializar_cuenta(cuenta_bancaria):
-    dic_cuenta = cuenta_bancaria.__dict__
+    dicionario_cuenta = cuenta_bancaria.__dict__
     hist_indep = [operacion.__dict__ for operacion in cuenta_bancaria.historial]
-    dic_cuenta["historial"] = hist_indep
-    return dic_cuenta
+    dicionario_cuenta["historial"] = hist_indep
+    return dicionario_cuenta
 
 def deserializar_cuenta(dict_cuenta):
     historial = []
@@ -76,10 +76,10 @@ def guardar_cambios():
 def obtener_usuario(input_usuario):
     for usuario in usuarios:
         if usuarios[usuario]["titular"] == input_usuario:
-            dic_cuenta = usuarios[usuario]
-            return dic_cuenta
-    dic_cuenta = None
-    return dic_cuenta
+            dicionario_cuenta = usuarios[usuario]
+            return dicionario_cuenta
+    dicionario_cuenta = None
+    return dicionario_cuenta
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
