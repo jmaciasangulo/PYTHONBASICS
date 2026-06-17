@@ -93,3 +93,8 @@ acceso = False
 print("¡Bienvenido a PyBank!")
 print()
 nombre = input("Escriba el nombre del titular: ")
+
+if obtener_usuario(nombre):
+
+else:
+    print("El usuario no existe")
