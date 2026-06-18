@@ -115,11 +115,11 @@ match opcion:
     case 1:
         nombre = input("Ingrese el nombre del titular: ")
 
-        dicionario_cuenta = obtener_usuario(nombre)
+        dic_cuenta = obtener_usuario(nombre)
 
-        if dicionario_cuenta:
+        if dic_cuenta:
 
-            cuenta_actual = deserializar_cuenta(dicionario_cuenta)
+            cuenta_actual = deserializar_cuenta(dic_cuenta)
             nip_ingresado = input("Ingrese su NIP: ")
             intentos = 0
             while not validar_nip(nip_ingresado):
