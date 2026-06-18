@@ -63,10 +63,12 @@ def serializar_cuenta(cuenta_bancaria):
 
 def deserializar_cuenta(dict_cuenta):
     historial = []
+    id_cuenta = dict_cuenta["id_cuenta"]
     for operacion in dict_cuenta["historial"]:
         historial.append(Operacion(operacion["fecha"], operacion["hora"], operacion["operacion"], operacion["monto"]))
     cuenta_obj = CuentaBancaria(dict_cuenta["titular"], dict_cuenta["balance"], dict_cuenta["nip"])
     cuenta_obj.historial = historial
+    cuenta_obj.id_cuenta = id_cuenta
     return cuenta_obj
 
 def guardar_cambios():
