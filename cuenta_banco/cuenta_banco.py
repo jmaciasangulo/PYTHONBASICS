@@ -107,7 +107,17 @@ if obtener_usuario(nombre):
 
     cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
     nip_ingresado = input("Ingrese su NIP: ")
-    validar_nip(nip_ingresado)
+    intentos = 0
+    while not validar_nip(nip_ingresado):
+
+        if intentos == 2:
+            print("Has agotado los intentos de acceso, intentelo más tarde.")
+            break
+
+        intentos += 1
+        print("NIP incorrecto, vuelva a intenar.")
+        nip_ingresado = input("Ingrese su NIP: ")
+        validar_nip(nip_ingresado)
 
 else:
     print("El usuario no existe")
