@@ -101,23 +101,33 @@ acceso = False
 
 print("¡Bienvenido a PyBank!")
 print()
-nombre = input("Escriba el nombre del titular: ")
+print("-Crear nueva cuenta bancaria.--[1]")
+print("-Acceder a su cuenta bancaria.-[2]")
+opcion = int(input("¿Qué desea hacer?: "))
 
-if obtener_usuario(nombre):
+while opcion not in [1, 2]:
+    print("Respuesta invalida, vuelva a intentar.")
+    opcion = int(input("¿Qué desea hacer?: "))
 
-    cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
-    nip_ingresado = input("Ingrese su NIP: ")
-    intentos = 0
-    while not validar_nip(nip_ingresado):
+match opcion:
+    case 1:
+        nombre = input("Ingrese el nombre del titular: ")
 
-        if intentos == 2:
-            print("Has agotado los intentos de acceso, intentelo más tarde.")
-            break
+        if obtener_usuario(nombre):
 
-        intentos += 1
-        print("NIP incorrecto, vuelva a intenar.")
-        nip_ingresado = input("Ingrese su NIP: ")
-        validar_nip(nip_ingresado)
+            cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
+            nip_ingresado = input("Ingrese su NIP: ")
+            intentos = 0
+            while not validar_nip(nip_ingresado):
 
-else:
-    print("El usuario no existe")
+                if intentos == 2:
+                    print("Has agotado los intentos de acceso, intentelo más tarde.")
+                    break
+
+                intentos += 1
+                print("NIP incorrecto, vuelva a intenar.")
+                nip_ingresado = input("Ingrese su NIP: ")
+                validar_nip(nip_ingresado)
+
+        else:
+            print("El usuario no existe")
