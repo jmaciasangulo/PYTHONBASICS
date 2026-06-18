@@ -81,6 +81,12 @@ def obtener_usuario(input_usuario):
     dicionario_cuenta = None
     return dicionario_cuenta
 
+def validar_nip(nip):
+    global cuenta_actual
+    global acceso
+    if cuenta_actual.nip == nip:
+        acceso = True
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
