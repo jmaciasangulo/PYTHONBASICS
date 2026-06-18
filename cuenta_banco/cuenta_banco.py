@@ -135,3 +135,14 @@ match opcion:
 
         else:
             print("El usuario no existe")
+
+    case  2:
+        print("Bienvenido a PyBank!")
+        print()
+        print("Le damos la bienvenida a nuestro banco a base de código de python.")
+        print("Acontinuación le mostramos todo lo que nuestra cuenta de banco ofrece: ")
+        print("-Depósitos y retiros 100% seguros y digitales.")
+        print("-Consultas de dinero e historial.")
+        print("-Un riguroso historial que lleva registro de todo lo que haga, en el momento que sea.")
+        print("(Únicamente el dueño de la cuenta puede ver el historial de su cuenta, asi que es 100%")
+        print("confidencial)")
