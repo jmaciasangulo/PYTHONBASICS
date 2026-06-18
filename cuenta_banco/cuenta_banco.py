@@ -101,8 +101,8 @@ acceso = False
 
 print("¡Bienvenido a PyBank!")
 print()
-print("-Crear nueva cuenta bancaria.--[1]")
-print("-Acceder a su cuenta bancaria.-[2]")
+print("-Acceder a su cuenta bancaria.-[1]")
+print("-Crear nueva cuenta bancaria.--[2]")
 opcion = int(input("¿Qué desea hacer?: "))
 
 while opcion not in [1, 2]:
