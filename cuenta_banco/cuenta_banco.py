@@ -105,7 +105,9 @@ print("¡Bienvenido a PyBank!")
 print()
 print("-Acceder a su cuenta bancaria.-[1]")
 print("-Crear nueva cuenta bancaria.--[2]")
+print()
 opcion = int(input("¿Qué desea hacer?: "))
+print()
 
 while opcion not in [1, 2]:
     print("Respuesta invalida, vuelva a intentar.")
