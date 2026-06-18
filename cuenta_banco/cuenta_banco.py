@@ -86,6 +86,9 @@ def validar_nip(nip):
     global acceso
     if cuenta_actual.nip == nip:
         acceso = True
+        return acceso
+    else:
+        return False
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
