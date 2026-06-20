@@ -152,6 +152,22 @@ match opcion:
         print()
         print("CREASE UNA CUENTA")
         print()
+
         nombre = input("Ingrese el nombre del titular de la cuenta: ")
-        balance_inicial = float(input("Ingrese con cuanto dinero creará su cuenta: "))
+        todos_caracter = all( caracter.isalpha() or caracter.isspace() for caracter in nombre)
+        while not todos_caracter:
+            print("Escriba su nombre en letras.")
+            nombre = input("Ingrese el nombre del titular de la cuenta: ")
+            todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre)
+
+        while True:
+            try:
+                balance_inicial = float(input("Ingrese con cuanto dinero creará su cuenta: "))
+                break
+            except ValueError:
+                print("Escriba la cantidad con números.")
+
         nip_nuevo = input("Escriba su NIP (contraseña de 4 dígitos para acceder a su cuenta): ")
+        while len(nip_nuevo) != 4 or not(nip_nuevo.isdigit()):
+            print("SOLO ESCRIBA 4 NÚMEROS PARA SU NIP")
+            nip_nuevo = input("Escriba su NIP (contraseña de 4 dígitos para acceder a su cuenta): ")
