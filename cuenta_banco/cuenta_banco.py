@@ -106,15 +106,16 @@ print()
 print("-Acceder a su cuenta bancaria.-[1]")
 print("-Crear nueva cuenta bancaria.--[2]")
 print()
-opcion = int(input("¿Qué desea hacer?: "))
+opcion = input("¿Qué desea hacer?: ")
 print()
 
-while opcion not in [1, 2]:
+while opcion not in ["1", "2"]:
     print("Respuesta invalida, vuelva a intentar.")
-    opcion = int(input("¿Qué desea hacer?: "))
+    opcion = input("¿Qué desea hacer?: ")
+    print()
 
 match opcion:
-    case 1:
+    case "1":
         nombre = input("Ingrese el nombre del titular: ")
 
         dic_cuenta = obtener_usuario(nombre)
@@ -138,7 +139,7 @@ match opcion:
         else:
             print("El usuario no existe")
 
-    case  2:
+    case  "2":
         print("Bienvenido a PyBank!")
         print()
         print("Le damos la bienvenida a nuestro banco a base de código de python.")
