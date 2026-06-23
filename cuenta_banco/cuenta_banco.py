@@ -107,6 +107,12 @@ def menu_principal(cuenta):
         print("Respuesta invalida, vuelva a intentar.")
         respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
 
+    match respuesta:
+        case "1":
+            print("*****************DEPÓSITO*****************")
+            cantidad_dinero = input("Ingrese el monto del dinero a depositar: $")
+
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
