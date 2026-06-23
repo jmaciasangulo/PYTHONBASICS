@@ -160,7 +160,7 @@ match opcion:
 
         while True:
             try:
-                balance_inicial = float(input("Ingrese con cuanto dinero creará su cuenta: "))
+                balance_inicial = float(input("Ingrese con cuanto dinero creará su cuenta: $"))
                 break
             except ValueError:
                 print("Escriba la cantidad con números.")
