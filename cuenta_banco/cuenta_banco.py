@@ -126,6 +126,7 @@ match opcion:
             cuenta_actual = deserializar_cuenta(dic_cuenta)
             nip_ingresado = input("Ingrese su NIP: ")
             intentos = 0
+
             while not validar_nip(nip_ingresado):
 
                 if intentos == 2:
@@ -135,6 +136,9 @@ match opcion:
                 intentos += 1
                 print("NIP incorrecto, vuelva a intenar.")
                 nip_ingresado = input("Ingrese su NIP: ")
+
+            print()
+            print("Has accedido correctamete.")
 
         else:
             print("El usuario no existe")
