@@ -134,7 +134,6 @@ match opcion:
                 intentos += 1
                 print("NIP incorrecto, vuelva a intenar.")
                 nip_ingresado = input("Ingrese su NIP: ")
-                validar_nip(nip_ingresado)
 
         else:
             print("El usuario no existe")
