@@ -93,6 +93,15 @@ def validar_nip(nip):
         return False
 
 def menu_principal(cuenta):
+    print("-----------------MENÚ DE CUENTA-----------------")
+    print()
+    print("Usted puede realizar las siguientes operaciones:")
+    print("-Realizar  un Depósito-----------------------[1]")
+    print("-Realizar un Retiro--------------------------[2]")
+    print("-Consultar su Balance Actual-----------------[3]")
+    print("-Consultar el Historal de Operaciones--------[4]")
+    print()
+    respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
