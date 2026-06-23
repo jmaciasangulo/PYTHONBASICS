@@ -92,6 +92,8 @@ def validar_nip(nip):
     else:
         return False
 
+def menu_principal(cuenta):
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
