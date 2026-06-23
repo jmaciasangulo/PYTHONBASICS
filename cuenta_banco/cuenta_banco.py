@@ -103,6 +103,10 @@ def menu_principal(cuenta):
     print()
     respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
 
+    while respuesta not in ["1", "2", "3", "4"]:
+        print("Respuesta invalida, vuelva a intentar.")
+        respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
