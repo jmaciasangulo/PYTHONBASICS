@@ -86,7 +86,6 @@ def obtener_usuario(input_usuario):
 
 def validar_nip(nip):
     global cuenta_actual
-    global acceso
     if cuenta_actual.nip == nip:
         acceso = True
         return acceso
@@ -100,7 +99,6 @@ except FileNotFoundError:
     usuarios = {}
 
 cuenta_actual = None
-acceso = False
 
 print("¡Bienvenido a PyBank!")
 print()
