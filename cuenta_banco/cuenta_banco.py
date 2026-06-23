@@ -1,5 +1,6 @@
 import datetime
 import json
+import sys
 import uuid
 
 
@@ -129,7 +130,7 @@ match opcion:
 
                 if intentos == 2:
                     print("Has agotado los intentos de acceso, intentelo más tarde.")
-                    break
+                    sys.exit()
 
                 intentos += 1
                 print("NIP incorrecto, vuelva a intenar.")
