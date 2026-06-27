@@ -125,6 +125,21 @@ def menu_principal(cuenta):
             print(f"Se han depositado: ${cantidad_dinero} MXN")
             print(f"Balance actual:    ${cuenta.balance} MXN")
 
+        case "2":
+            print("******************RETIRO******************")
+
+            while True:
+                try:
+                    cantidad_dinero = float(input("Ingrese el monto del dinero a retirar: $"))
+                    break
+                except ValueError:
+                    print("Ingrese el monto de la operación utilizando números.")
+
+            cuenta.retirar(cantidad_dinero)
+            print()
+            print(f"Se han retirado:   ${cantidad_dinero} MXN")
+            print(f"Balance actual:    ${cuenta.balance} MXN")
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
