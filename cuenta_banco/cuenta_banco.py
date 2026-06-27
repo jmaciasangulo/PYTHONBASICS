@@ -107,76 +107,77 @@ def validar_nip(nip):
         return False
 
 def menu_principal(cuenta):
-    print("-----------------MENÚ DE CUENTA-----------------")
-    print()
-    print("Usted puede realizar las siguientes operaciones:")
-    print()
-    print("-Realizar  un Depósito-----------------------[1]")
-    print("-Realizar un Retiro--------------------------[2]")
-    print("-Consultar su Balance Actual-----------------[3]")
-    print("-Consultar el Historal de Operaciones--------[4]")
-    print()
-    respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
-    print()
-    print("------------------------------------------------")
-    print()
-
-    while respuesta not in ["1", "2", "3", "4"]:
-        print("Respuesta invalida, vuelva a intentar.")
+    while True:
+        print("-----------------MENÚ DE CUENTA-----------------")
+        print()
+        print("Usted puede realizar las siguientes operaciones:")
+        print()
+        print("-Realizar  un Depósito-----------------------[1]")
+        print("-Realizar un Retiro--------------------------[2]")
+        print("-Consultar su Balance Actual-----------------[3]")
+        print("-Consultar el Historal de Operaciones--------[4]")
+        print()
         respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
+        print()
+        print("------------------------------------------------")
+        print()
 
-    match respuesta:
-        case "1":
-            print("*****************DEPÓSITO*****************")
+        while respuesta not in ["1", "2", "3", "4"]:
+            print("Respuesta invalida, vuelva a intentar.")
+            respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
 
-            while True:
-                try:
-                    cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
-                    break
-                except ValueError:
-                    print("Ingrese el monto de la operación utilizando números.")
+        match respuesta:
+            case "1":
+                print("*****************DEPÓSITO*****************")
 
-            cuenta.depositar(cantidad_dinero)
-            print()
-            print(f"Se han depositado: ${cantidad_dinero} MXN")
-            print(f"Balance actual:    ${cuenta.balance} MXN")
-            print()
-            print("******************************************")
-            print()
+                while True:
+                    try:
+                        cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
+                        break
+                    except ValueError:
+                        print("Ingrese el monto de la operación utilizando números.")
 
-        case "2":
-            print("******************RETIRO******************")
+                cuenta.depositar(cantidad_dinero)
+                print()
+                print(f"Se han depositado: ${cantidad_dinero} MXN")
+                print(f"Balance actual:    ${cuenta.balance} MXN")
+                print()
+                print("******************************************")
+                print()
 
-            while True:
-                try:
-                    cantidad_dinero = float(input("Ingrese el monto del dinero a retirar: $"))
-                    break
-                except ValueError:
-                    print("Ingrese el monto de la operación utilizando números.")
+            case "2":
+                print("******************RETIRO******************")
 
-            cuenta.retirar(cantidad_dinero)
-            print()
-            print(f"Se han retirado:   ${cantidad_dinero} MXN")
-            print(f"Balance actual:    ${cuenta.balance} MXN")
-            print()
-            print("******************************************")
-            print()
+                while True:
+                    try:
+                        cantidad_dinero = float(input("Ingrese el monto del dinero a retirar: $"))
+                        break
+                    except ValueError:
+                        print("Ingrese el monto de la operación utilizando números.")
 
-        case "3":
-            print("***********CONSULTA DE BALANCE************")
-            print()
-            cuenta.ver_balance()
-            print()
-            print("******************************************")
-            print()
+                cuenta.retirar(cantidad_dinero)
+                print()
+                print(f"Se han retirado:   ${cantidad_dinero} MXN")
+                print(f"Balance actual:    ${cuenta.balance} MXN")
+                print()
+                print("******************************************")
+                print()
 
-        case "4":
-            print("***********CONSULTA DE HISTORAL***********")
-            print()
-            cuenta.ver_historial()
-            print()
-            print("******************************************")
-            print()
+            case "3":
+                print("***********CONSULTA DE BALANCE************")
+                print()
+                cuenta.ver_balance()
+                print()
+                print("******************************************")
+                print()
+
+            case "4":
+                print("***********CONSULTA DE HISTORAL***********")
+                print()
+                cuenta.ver_historial()
+                print()
+                print("******************************************")
+                print()
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
