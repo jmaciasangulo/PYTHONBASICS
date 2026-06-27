@@ -124,7 +124,9 @@ def menu_principal(cuenta):
 
         while respuesta not in ["1", "2", "3", "4"]:
             print("Respuesta invalida, vuelva a intentar.")
+            print()
             respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
+            print()
 
         match respuesta:
             case "1":
@@ -209,6 +211,7 @@ print()
 
 while opcion not in ["1", "2"]:
     print("Respuesta invalida, vuelva a intentar.")
+    print()
     opcion = input("¿Qué desea hacer?: ")
     print()
 
