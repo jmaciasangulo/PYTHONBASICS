@@ -179,6 +179,18 @@ def menu_principal(cuenta):
                 print("******************************************")
                 print()
 
+        continuar = input("¿Desea realizar otra operación? [S/N] ").upper()
+
+        while continuar not in ["S", "N"]:
+            print("Respuesta invalida, vuelva a intentar.")
+            continuar = input("¿Desea realizar otra operación? [S/N] ").upper()
+
+        print()
+
+        if continuar == "N":
+            print(f"¡Gracias por usar PyBank, {cuenta.titular}!")
+            break
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
