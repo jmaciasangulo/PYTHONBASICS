@@ -44,9 +44,21 @@ class CuentaBancaria:
         self._anexar_operacion(operacion)
 
     def ver_historial(self):
+        for operacion in self.historial:
+            if operacion.monto is None:
+                print()
+                print(f"OPERACIÓN REALIZADA:        {operacion.operacion}")
+                print(f"FECHA EN LA QUE SE REALIZÓ: {operacion.fecha}")
+                print(f"HORA EN LA QUE SE REALIZÓ:  {operacion.hora}")
+            else:
+                print()
+                print(f"OPERACIÓN REALIZADA:        {operacion.operacion}")
+                print(f"MONTO DE LA OPERACIÓN:      {operacion.monto}")
+                print(f"FECHA EN LA QUE SE REALIZÓ: {operacion.fecha}")
+                print(f"HORA EN LA QUE SE REALIZÓ:  {operacion.hora}")
+
         operacion = self._crear_operacion("Consulta de historial de operaciones de cuenta", None)
         self._anexar_operacion(operacion)
-        return self.historial
 
     def _crear_operacion(self, operacion, monto):
         hora_actual = datetime.datetime.now().strftime("%I:%M %p")
@@ -157,6 +169,15 @@ def menu_principal(cuenta):
             print()
             print("******************************************")
             print()
+
+        case "4":
+            print("***********CONSULTA DE HISTORAL***********")
+            print()
+            cuenta.ver_historial()
+            print()
+            print("******************************************")
+            print()
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
