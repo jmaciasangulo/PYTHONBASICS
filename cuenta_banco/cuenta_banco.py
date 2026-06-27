@@ -118,6 +118,11 @@ def menu_principal(cuenta):
                 except ValueError:
                     print("Ingrese el monto de la operación utilizando números.")
 
+            cuenta.depositar(cantidad_dinero)
+            print()
+            print(f"Se han depositado: ${cantidad_dinero} MXN")
+            print(f"Balance actual:    ${cuenta.balance} MXN")
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
