@@ -37,9 +37,11 @@ class CuentaBancaria:
         self._anexar_operacion(operacion)
 
     def ver_balance(self):
+        print(f"Estimado {self.titular},")
+        print(f"Su balance actual es de: ${self.balance} MXN")
+
         operacion = self._crear_operacion("Consulta de balance", None)
         self._anexar_operacion(operacion)
-        return self.balance
 
     def ver_historial(self):
         operacion = self._crear_operacion("Consulta de historial de operaciones de cuenta", None)
@@ -151,8 +153,7 @@ def menu_principal(cuenta):
         case "3":
             print("***********CONSULTA DE BALANCE************")
             print()
-            print(f"Estimado {cuenta.titular},")
-            print(f"Su balance actual es de: ${cuenta.balance} MXN")
+            cuenta.ver_balance()
             print()
             print("******************************************")
             print()
