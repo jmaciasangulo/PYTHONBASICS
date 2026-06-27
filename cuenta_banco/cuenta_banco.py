@@ -103,6 +103,7 @@ def menu_principal(cuenta):
     print("-Consultar el Historal de Operaciones--------[4]")
     print()
     respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
+    print()
 
     while respuesta not in ["1", "2", "3", "4"]:
         print("Respuesta invalida, vuelva a intentar.")
@@ -168,6 +169,9 @@ match opcion:
 
             print()
             print("Has accedido correctamete.")
+            print()
+
+            menu_principal(cuenta_actual)
 
         else:
             print("El usuario no existe")
