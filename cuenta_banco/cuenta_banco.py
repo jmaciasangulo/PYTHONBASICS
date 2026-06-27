@@ -96,6 +96,7 @@ def menu_principal(cuenta):
     print("-----------------MENÚ DE CUENTA-----------------")
     print()
     print("Usted puede realizar las siguientes operaciones:")
+    print()
     print("-Realizar  un Depósito-----------------------[1]")
     print("-Realizar un Retiro--------------------------[2]")
     print("-Consultar su Balance Actual-----------------[3]")
