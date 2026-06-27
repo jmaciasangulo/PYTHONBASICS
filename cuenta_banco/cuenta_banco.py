@@ -104,6 +104,8 @@ def menu_principal(cuenta):
     print()
     respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
     print()
+    print("------------------------------------------------")
+    print()
 
     while respuesta not in ["1", "2", "3", "4"]:
         print("Respuesta invalida, vuelva a intentar.")
@@ -124,6 +126,9 @@ def menu_principal(cuenta):
             print()
             print(f"Se han depositado: ${cantidad_dinero} MXN")
             print(f"Balance actual:    ${cuenta.balance} MXN")
+            print()
+            print("******************************************")
+            print()
 
         case "2":
             print("******************RETIRO******************")
@@ -139,6 +144,9 @@ def menu_principal(cuenta):
             print()
             print(f"Se han retirado:   ${cantidad_dinero} MXN")
             print(f"Balance actual:    ${cuenta.balance} MXN")
+            print()
+            print("******************************************")
+            print()
 
         case "3":
             print("***********CONSULTA DE BALANCE************")
