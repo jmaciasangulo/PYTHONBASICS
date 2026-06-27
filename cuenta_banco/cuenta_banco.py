@@ -111,8 +111,12 @@ def menu_principal(cuenta):
     match respuesta:
         case "1":
             print("*****************DEPÓSITO*****************")
-            cantidad_dinero = input("Ingrese el monto del dinero a depositar: $")
-
+            while True:
+                try:
+                    cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
+                    break
+                except ValueError:
+                    print("Ingrese el monto de la operación utilizando números.")
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
