@@ -140,6 +140,14 @@ def menu_principal(cuenta):
             print(f"Se han retirado:   ${cantidad_dinero} MXN")
             print(f"Balance actual:    ${cuenta.balance} MXN")
 
+        case "3":
+            print("***********CONSULTA DE BALANCE************")
+            print()
+            print(f"Estimado {cuenta.titular},")
+            print(f"Su balance actual es de: ${cuenta.balance} MXN")
+            print()
+            print("******************************************")
+            print()
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
