@@ -53,7 +53,7 @@ class CuentaBancaria:
             else:
                 print()
                 print(f"OPERACIÓN REALIZADA:        {operacion.operacion}")
-                print(f"MONTO DE LA OPERACIÓN:      {operacion.monto}")
+                print(f"MONTO DE LA OPERACIÓN:      ${operacion.monto}")
                 print(f"FECHA EN LA QUE SE REALIZÓ: {operacion.fecha}")
                 print(f"HORA EN LA QUE SE REALIZÓ:  {operacion.hora}")
 
