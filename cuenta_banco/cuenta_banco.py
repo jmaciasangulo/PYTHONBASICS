@@ -112,6 +112,7 @@ def menu_principal(cuenta):
     match respuesta:
         case "1":
             print("*****************DEPÓSITO*****************")
+
             while True:
                 try:
                     cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
