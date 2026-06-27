@@ -44,6 +44,9 @@ class CuentaBancaria:
         self._anexar_operacion(operacion)
 
     def ver_historial(self):
+        operacion = self._crear_operacion("Consulta de historial de operaciones de cuenta", None)
+        self._anexar_operacion(operacion)
+
         for operacion in self.historial:
             if operacion.monto is None:
                 print()
@@ -56,9 +59,6 @@ class CuentaBancaria:
                 print(f"MONTO DE LA OPERACIÓN:      ${operacion.monto}")
                 print(f"FECHA EN LA QUE SE REALIZÓ: {operacion.fecha}")
                 print(f"HORA EN LA QUE SE REALIZÓ:  {operacion.hora}")
-
-        operacion = self._crear_operacion("Consulta de historial de operaciones de cuenta", None)
-        self._anexar_operacion(operacion)
 
     def _crear_operacion(self, operacion, monto):
         hora_actual = datetime.datetime.now().strftime("%I:%M %p")
