@@ -230,7 +230,6 @@ try:
 except FileNotFoundError:
     usuarios = {}
 
-cuenta_actual = None
 
 print("¡Bienvenido a PyBank!")
 print()
