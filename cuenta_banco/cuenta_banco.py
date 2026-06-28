@@ -201,6 +201,14 @@ def validar_respuesta(respuesta):
 
     return respuesta
 
+def preguntar_cerrar_programa():
+    print()
+    print("El titular no existe.")
+    continuar = input("¿Desea volver a intentarlo? [S/N] ").upper()
+    print()
+
+    return validar_respuesta(continuar)
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
