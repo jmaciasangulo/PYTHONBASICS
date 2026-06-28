@@ -104,6 +104,7 @@ def validar_nip(nip, cuenta):
     else:
         return False
 
+#FUNCIÓN PRINCIPAL. ES EL MENÚ PRINCIPAL
 def menu_principal(cuenta):
     while True:
         print("-----------------MENÚ DE CUENTA-----------------")
