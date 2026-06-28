@@ -165,6 +165,15 @@ def menu_principal(cuenta):
                         print("Ingrese el monto de la operación utilizando números.")
 
                 cuenta.retirar(cantidad_dinero)
+
+                if cantidad_dinero > cuenta.balance:
+                    print()
+                    print(f"Se han intentado retirar: ${cantidad_dinero} MXN")
+                    print(f"EL BALANCE ACTUAL NO HA SIDO MODIFICADO.")
+                    print()
+                    print("******************************************")
+                    print()
+                
                 print()
                 print(f"Se han retirado:   ${cantidad_dinero} MXN")
                 print(f"Balance actual:    ${cuenta.balance} MXN")
