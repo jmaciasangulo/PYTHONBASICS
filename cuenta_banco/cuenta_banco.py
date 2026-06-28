@@ -98,11 +98,9 @@ def obtener_usuario(input_usuario):
     dicionario_cuenta = None
     return dicionario_cuenta
 
-def validar_nip(nip):
-    global cuenta_actual
-    if cuenta_actual.nip == nip:
-        acceso = True
-        return acceso
+def validar_nip(nip, cuenta):
+    if cuenta.nip == nip:
+        return True
     else:
         return False
 
