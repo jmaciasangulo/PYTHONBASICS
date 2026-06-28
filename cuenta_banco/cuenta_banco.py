@@ -214,15 +214,15 @@ def obtener_objeto_titular():
         nombre = input("Ingrese el nombre del titular: ")
 
         try:
-            cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
+            cuenta_scope_funcion = deserializar_cuenta(obtener_usuario(nombre))
             break
         except TypeError:
             if preguntar_cerrar_programa() == "N":
                 print("Gracias por usar PyBank!")
-                cuenta_actual = None
+                cuenta_scope_funcion = None
                 break
 
-    return cuenta_actual
+    return cuenta_scope_funcion
 
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
