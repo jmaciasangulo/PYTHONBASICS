@@ -246,34 +246,29 @@ while opcion not in ["1", "2"]:
 
 match opcion:
     case "1":
-        nombre = input("Ingrese el nombre del titular: ")
+        cuenta_actual = obtener_objeto_titular()
 
-        dic_cuenta = obtener_usuario(nombre)
+        if  cuenta_actual is None:
+            sys.exit()
 
-        if dic_cuenta:
+        nip_ingresado = input("Ingrese su NIP: ")
+        intentos = 0
 
-            cuenta_actual = deserializar_cuenta(dic_cuenta)
+        while not validar_nip(nip_ingresado, cuenta_actual):
+
+            if intentos == 2:
+                print("Has agotado los intentos de acceso, intentelo más tarde.")
+                sys.exit()
+
+            intentos += 1
+            print("NIP incorrecto, vuelva a intenar.")
             nip_ingresado = input("Ingrese su NIP: ")
-            intentos = 0
 
-            while not validar_nip(nip_ingresado):
+        print()
+        print("Has accedido correctamete.")
+        print()
 
-                if intentos == 2:
-                    print("Has agotado los intentos de acceso, intentelo más tarde.")
-                    sys.exit()
-
-                intentos += 1
-                print("NIP incorrecto, vuelva a intenar.")
-                nip_ingresado = input("Ingrese su NIP: ")
-
-            print()
-            print("Has accedido correctamete.")
-            print()
-
-            menu_principal(cuenta_actual)
-
-        else:
-            print("El usuario no existe")
+        menu_principal(cuenta_actual)
 
     case  "2":
         print("Bienvenido a PyBank!")
