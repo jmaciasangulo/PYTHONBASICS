@@ -209,7 +209,7 @@ def preguntar_cerrar_programa():
 
     return validar_respuesta(continuar)
 
-def obtener_nombre_titular():
+def obtener_objeto_titular():
     while True:
         nombre = input("Ingrese el nombre del titular: ")
 
