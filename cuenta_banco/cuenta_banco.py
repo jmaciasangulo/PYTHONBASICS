@@ -36,6 +36,9 @@ class CuentaBancaria:
             print()
             print("EL RETIRO NO ES POSIBLE:")
             print("LA CANTIDAD ES MAYOR A LA QUE SE TIENE.")
+
+            operacion = self._crear_operacion("Retiro - FALLIDO", monto)
+            self._anexar_operacion(operacion)
         else:
             self.balance -= monto
             operacion = self._crear_operacion("Retiro", monto)
