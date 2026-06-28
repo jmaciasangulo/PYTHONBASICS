@@ -209,6 +209,21 @@ def preguntar_cerrar_programa():
 
     return validar_respuesta(continuar)
 
+def obtener_nombre_titular():
+    while True:
+        nombre = input("Ingrese el nombre del titular: ")
+
+        try:
+            cuenta_actual = deserializar_cuenta(obtener_usuario(nombre))
+            break
+        except TypeError:
+            if preguntar_cerrar_programa() == "N":
+                print("Gracias por usar PyBank!")
+                cuenta_actual = None
+                break
+
+    return cuenta_actual
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
