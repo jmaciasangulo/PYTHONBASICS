@@ -32,9 +32,14 @@ class CuentaBancaria:
         self._anexar_operacion(operacion)
 
     def retirar(self, monto):
-        self.balance -= monto
-        operacion = self._crear_operacion("Retiro", monto)
-        self._anexar_operacion(operacion)
+        if monto > self.balance:
+            print()
+            print("EL RETIRO NO ES POSIBLE:")
+            print("LA CANTIDAD ES MAYOR A LA QUE SE TIENE.")
+        else:
+            self.balance -= monto
+            operacion = self._crear_operacion("Retiro", monto)
+            self._anexar_operacion(operacion)
 
     def ver_balance(self):
         print(f"Estimado {self.titular},")
