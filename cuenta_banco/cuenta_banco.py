@@ -175,7 +175,7 @@ def menu_principal(cuenta):
                     print()
                 else:
                     print()
-                    print(f"Se han retirado:   ${cantidad_dinero} MXN")
+                    print(f"Se han retirado:  -${cantidad_dinero} MXN")
                     print(f"Balance actual:    ${cuenta.balance} MXN")
                     print()
                     print("******************************************")
