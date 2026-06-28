@@ -193,6 +193,14 @@ def menu_principal(cuenta):
             print(f"¡Gracias por usar PyBank, {cuenta.titular}!")
             break
 
+def validar_respuesta(respuesta):
+
+    while respuesta not in ["S", "N"]:
+        print("Respuesta invalida, vuelva a intentar.")
+        respuesta = input("¿Desea volver a intentarlo? [S/N] ").upper()
+
+    return respuesta
+
 try:
     with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
