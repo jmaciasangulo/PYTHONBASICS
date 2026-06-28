@@ -291,12 +291,12 @@ match opcion:
         print("CREASE UNA CUENTA")
         print()
 
-        nombre = input("Ingrese el nombre del titular de la cuenta: ")
-        todos_caracter = all( caracter.isalpha() or caracter.isspace() for caracter in nombre)
+        nuevo_nombre = input("Ingrese el nombre del titular de la cuenta: ")
+        todos_caracter = all( caracter.isalpha() or caracter.isspace() for caracter in nuevo_nombre)
         while not todos_caracter:
             print("Escriba su nombre en letras.")
-            nombre = input("Ingrese el nombre del titular de la cuenta: ")
-            todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre)
+            nuevo_nombre = input("Ingrese el nombre del titular de la cuenta: ")
+            todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nuevo_nombre)
 
         while True:
             try:
