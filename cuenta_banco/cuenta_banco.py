@@ -324,3 +324,9 @@ match opcion:
         while len(nip_nuevo) != 4 or not(nip_nuevo.isdigit()):
             print("SOLO ESCRIBA 4 NÚMEROS PARA SU NIP")
             nip_nuevo = input("Escriba su NIP (contraseña de 4 dígitos para acceder a su cuenta): ")
+
+        tupla_datos = (nuevo_nombre, balance_inicial, nip_nuevo)
+        nueva_cuenta = crear_cuenta_bancaria(tupla_datos)
+        dic_nueva_cuenta = serializar_cuenta(nueva_cuenta)
+        usuarios[nueva_cuenta.id_cuenta] = dic_nueva_cuenta
+        guardar_cambios()
