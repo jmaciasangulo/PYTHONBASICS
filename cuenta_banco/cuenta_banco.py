@@ -330,3 +330,12 @@ match opcion:
         dic_nueva_cuenta = serializar_cuenta(nueva_cuenta)
         usuarios[nueva_cuenta.id_cuenta] = dic_nueva_cuenta
         guardar_cambios()
+
+        print()
+        print(f"Estimado {nueva_cuenta.titular},")
+        print("has creado una cuenta en PyBank de manera exitosa!!!")
+        print("Le aseguramos que será la mejor experiencia.")
+        print("Para comenzar a usar su cuenta bancaria, vuelva a ejecutar")
+        print("este script y acceda con los datos proporcionados.")
+        print()
+        print("¡Que tenga un excelente día!")
