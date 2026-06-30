@@ -155,6 +155,10 @@ def menu_principal(cuenta):
                 print("******************************************")
                 print()
 
+                dic_cuenta = serializar_cuenta(cuenta)
+                usuarios[cuenta.id_cuenta] = dic_cuenta
+                guardar_cambios()
+
             case "2":
                 print("******************RETIRO******************")
 
