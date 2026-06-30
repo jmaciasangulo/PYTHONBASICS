@@ -184,6 +184,8 @@ def menu_principal(cuenta):
                     print("******************************************")
                     print()
 
+                guardar_cambios_final_operacion(cuenta)
+
             case "3":
                 print("***********CONSULTA DE BALANCE************")
                 print()
@@ -192,6 +194,8 @@ def menu_principal(cuenta):
                 print("******************************************")
                 print()
 
+                guardar_cambios_final_operacion(cuenta)
+
             case "4":
                 print("***********CONSULTA DE HISTORAL***********")
                 print()
@@ -199,6 +203,8 @@ def menu_principal(cuenta):
                 print()
                 print("******************************************")
                 print()
+
+                guardar_cambios_final_operacion(cuenta)
 
         continuar = input("¿Desea realizar otra operación? [S/N] ").upper()
 
