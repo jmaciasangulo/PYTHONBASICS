@@ -1,3 +1,4 @@
+import copy
 import datetime
 import json
 import sys
@@ -79,7 +80,7 @@ class CuentaBancaria:
         self.historial.append(operacion)
 
 def serializar_cuenta(cuenta_bancaria):
-    dicionario_cuenta = cuenta_bancaria.__dict__
+    dicionario_cuenta = copy.copy(cuenta_bancaria.__dict__)
     hist_indep = [operacion.__dict__ for operacion in cuenta_bancaria.historial]
     dicionario_cuenta["historial"] = hist_indep
     return dicionario_cuenta
