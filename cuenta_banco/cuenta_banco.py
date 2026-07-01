@@ -34,10 +34,6 @@ class CuentaBancaria:
 
     def retirar(self, monto):
         if monto > self.balance:
-            print()
-            print("EL RETIRO NO ES POSIBLE:")
-            print("LA CANTIDAD ES MAYOR A LA QUE SE TIENE.")
-
             operacion = self._crear_operacion("Retiro - FALLIDO", monto)
             self._anexar_operacion(operacion)
         else:
@@ -170,6 +166,9 @@ def menu_principal(cuenta):
                 cuenta.retirar(cantidad_dinero)
 
                 if cantidad_dinero > cuenta.balance:
+                    print()
+                    print("EL RETIRO NO ES POSIBLE:")
+                    print("LA CANTIDAD ES MAYOR A LA QUE SE TIENE.")
                     print()
                     print(f"Se han intentado retirar: ${cantidad_dinero} MXN")
                     print(f"EL BALANCE ACTUAL NO HA SIDO MODIFICADO.")
