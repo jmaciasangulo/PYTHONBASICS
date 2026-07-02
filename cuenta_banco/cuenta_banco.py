@@ -98,7 +98,7 @@ def deserializar_cuenta(dict_cuenta):
     return cuenta_obj
 
 def guardar_cambios():
-    with open("cuentas.json", "w", encoding="utf-8") as archivo_cuentas_esc:
+    with open(ruta_json, "w", encoding="utf-8") as archivo_cuentas_esc:
         json.dump(usuarios, archivo_cuentas_esc, indent=4, ensure_ascii=False)
 
 def obtener_usuario(input_usuario):
@@ -266,7 +266,7 @@ def guardar_cambios_final_operacion(cuenta):
 
 
 try:
-    with open("cuentas.json", "r", encoding= "utf-8") as archivo_cuentas_lec:
+    with open(ruta_json, "r", encoding= "utf-8") as archivo_cuentas_lec:
         usuarios = json.load(archivo_cuentas_lec)
 except FileNotFoundError:
     usuarios = {}
