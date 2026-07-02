@@ -90,10 +90,10 @@ class CuentaBancaria:
         self.historial.append(operacion)
 
 def serializar_cuenta(cuenta_bancaria):
-    dicionario_cuenta = copy.copy(cuenta_bancaria.__dict__)
+    diccionario_cuenta = copy.copy(cuenta_bancaria.__dict__)
     hist_indep = [operacion.__dict__ for operacion in cuenta_bancaria.historial]
-    dicionario_cuenta["historial"] = hist_indep
-    return dicionario_cuenta
+    diccionario_cuenta["historial"] = hist_indep
+    return diccionario_cuenta
 
 def deserializar_cuenta(dict_cuenta):
     historial = []
@@ -112,10 +112,10 @@ def guardar_cambios():
 def obtener_usuario(input_usuario):
     for usuario in usuarios:
         if usuarios[usuario]["titular"] == input_usuario:
-            dicionario_cuenta = usuarios[usuario]
-            return dicionario_cuenta
-    dicionario_cuenta = None
-    return dicionario_cuenta
+            diccionario_cuenta = usuarios[usuario]
+            return diccionario_cuenta
+    diccionario_cuenta = None
+    return diccionario_cuenta
 
 def validar_nip(nip, cuenta):
     return cuenta.nip == nip
