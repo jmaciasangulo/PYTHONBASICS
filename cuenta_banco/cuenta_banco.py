@@ -34,15 +34,20 @@ class CuentaBancaria:
         self.historial = []
 
     def depositar(self, monto):
-        self.balance += monto
-        operacion = self._crear_operacion( "Deposito", monto)
-        self._anexar_operacion(operacion)
+        if monto <= 0:
+            pass
+        else:
+            self.balance += monto
+            operacion = self._crear_operacion( "Deposito", monto)
+            self._anexar_operacion(operacion)
 
     def retirar(self, monto):
         if monto > self.balance:
             operacion = self._crear_operacion("Retiro - FALLIDO", monto)
             self._anexar_operacion(operacion)
             return False
+        elif monto <= 0:
+            return None
         else:
             self.balance -= monto
             operacion = self._crear_operacion("Retiro", monto)
