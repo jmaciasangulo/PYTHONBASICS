@@ -72,8 +72,9 @@ class CuentaBancaria:
                 print(f"HORA EN LA QUE SE REALIZÓ:  {operacion.hora}")
 
     def _crear_operacion(self, operacion, monto):
-        hora_actual = datetime.datetime.now().strftime("%I:%M %p")
-        fecha_actual = datetime.datetime.now().strftime("%d/%m/%Y")
+        momento_actual = datetime.datetime.now()
+        hora_actual = momento_actual.strftime("%I:%M %p")
+        fecha_actual = momento_actual.strftime("%d/%m/%Y")
 
         historial = Operacion(fecha_actual, hora_actual, operacion, monto)
         return historial
