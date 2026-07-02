@@ -148,6 +148,9 @@ def menu_principal(cuenta):
                 while True:
                     try:
                         cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
+                        while cantidad_dinero <= 0:
+                            print("CANTIDAD INVALIDA, VUELVA A INTENTAR")
+                            cantidad_dinero = float(input("Ingrese el monto del dinero a depositar: $"))
                         break
                     except ValueError:
                         print("Ingrese el monto de la operación utilizando números.")
