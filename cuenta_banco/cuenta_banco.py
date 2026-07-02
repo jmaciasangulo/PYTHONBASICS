@@ -42,10 +42,12 @@ class CuentaBancaria:
         if monto > self.balance:
             operacion = self._crear_operacion("Retiro - FALLIDO", monto)
             self._anexar_operacion(operacion)
+            return False
         else:
             self.balance -= monto
             operacion = self._crear_operacion("Retiro", monto)
             self._anexar_operacion(operacion)
+            return True
 
     def ver_balance(self):
         print(f"Estimado {self.titular},")
