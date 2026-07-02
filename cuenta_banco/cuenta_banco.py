@@ -172,9 +172,8 @@ def menu_principal(cuenta):
                     except ValueError:
                         print("Ingrese el monto de la operación utilizando números.")
 
-                cuenta.retirar(cantidad_dinero)
 
-                if cantidad_dinero > cuenta.balance:
+                if not cuenta.retirar(cantidad_dinero):
                     print()
                     print("EL RETIRO NO ES POSIBLE:")
                     print("LA CANTIDAD ES MAYOR A LA QUE SE TIENE.")
