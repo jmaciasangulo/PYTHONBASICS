@@ -35,7 +35,7 @@ class CuentaBancaria:
 
     def depositar(self, monto):
         if monto <= 0:
-            pass
+            raise ValueError("monto de deposito debe ser mayor que 0")
         else:
             self.balance += monto
             operacion = self._crear_operacion( "Deposito", monto)
@@ -47,7 +47,7 @@ class CuentaBancaria:
             self._anexar_operacion(operacion)
             return False
         elif monto <= 0:
-            return None
+            raise ValueError("monto de retiro debe ser mayor que 0")
         else:
             self.balance -= monto
             operacion = self._crear_operacion("Retiro", monto)
