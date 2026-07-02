@@ -113,10 +113,7 @@ def obtener_usuario(input_usuario):
     return dicionario_cuenta
 
 def validar_nip(nip, cuenta):
-    if cuenta.nip == nip:
-        return True
-    else:
-        return False
+    return cuenta.nip == nip
 
 #FUNCIÓN PRINCIPAL. ES EL MENÚ PRINCIPAL
 def menu_principal(cuenta):
