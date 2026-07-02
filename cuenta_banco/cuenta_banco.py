@@ -256,10 +256,6 @@ def obtener_objeto_titular():
 
     return cuenta_scope_funcion
 
-def crear_cuenta_bancaria(datos):
-    cuenta_scope_funcion = CuentaBancaria(datos[0], datos[1], datos[2])
-    return cuenta_scope_funcion
-
 def guardar_cambios_final_operacion(cuenta):
     dic_cuenta = serializar_cuenta(cuenta)
     usuarios[cuenta.id_cuenta] = dic_cuenta
