@@ -5,6 +5,11 @@ import sys
 import uuid
 
 
+ruta_script = os.path.dirname(os.path.abspath(__file__))
+
+ruta_json = os.path.join(ruta_script, "cuentas.json")
+
+
 class Operacion:
 
     def __init__(self, fecha, hora, operacion, monto):
