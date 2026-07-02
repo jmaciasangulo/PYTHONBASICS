@@ -330,8 +330,11 @@ match opcion:
 
         nuevo_nombre = input("Ingrese el nombre del titular de la cuenta: ")
         todos_caracter = all( caracter.isalpha() or caracter.isspace() for caracter in nuevo_nombre)
-        while not todos_caracter:
-            print("Escriba su nombre en letras.")
+
+        nombres = [dato["titular"] for dato in usuarios.values()]
+
+        while not todos_caracter or nuevo_nombre in nombres:
+            print("Nombre de titular invalido o ya existente, intende de nuevo.")
             nuevo_nombre = input("Ingrese el nombre del titular de la cuenta: ")
             todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nuevo_nombre)
 
