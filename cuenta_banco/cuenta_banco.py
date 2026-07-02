@@ -130,7 +130,7 @@ def menu_principal(cuenta):
         print("-Realizar  un Depósito-----------------------[1]")
         print("-Realizar un Retiro--------------------------[2]")
         print("-Consultar su Balance Actual-----------------[3]")
-        print("-Consultar el Historal de Operaciones--------[4]")
+        print("-Consultar el Historial de Operaciones--------[4]")
         print()
         respuesta = input("¿Qué desea hacer? Ingrese su opción: ")
         print()
@@ -212,7 +212,7 @@ def menu_principal(cuenta):
                 guardar_cambios_final_operacion(cuenta)
 
             case "4":
-                print("***********CONSULTA DE HISTORAL***********")
+                print("***********CONSULTA DE HISTORIAL***********")
                 print()
                 cuenta.ver_historial()
                 print()
@@ -322,7 +322,7 @@ match opcion:
         print("Bienvenido a PyBank!")
         print()
         print("Le damos la bienvenida a nuestro banco a base de código de python.")
-        print("Acontinuación le mostramos todo lo que nuestra cuenta de banco ofrece: ")
+        print("A continuación le mostramos todo lo que nuestra cuenta de banco ofrece: ")
         print("-Depósitos y retiros 100% seguros y digitales.")
         print("-Consultas de dinero e historial.")
         print("-Un riguroso historial que lleva registro de todo lo que haga, en el momento que sea.")
