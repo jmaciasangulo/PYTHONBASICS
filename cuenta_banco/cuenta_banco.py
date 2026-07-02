@@ -42,12 +42,12 @@ class CuentaBancaria:
             self._anexar_operacion(operacion)
 
     def retirar(self, monto):
-        if monto > self.balance:
+        if monto <= 0:
+            raise ValueError("monto de retiro debe ser mayor que 0")
+        elif monto > self.balance:
             operacion = self._crear_operacion("Retiro - FALLIDO", monto)
             self._anexar_operacion(operacion)
             return False
-        elif monto <= 0:
-            raise ValueError("monto de retiro debe ser mayor que 0")
         else:
             self.balance -= monto
             operacion = self._crear_operacion("Retiro", monto)
