@@ -32,3 +32,6 @@ def menu_principal():
                categoria = input("Escriba el tipo de gasto que se registra: ")
                id_gasto = str(uuid.uuid7())
                
+
+               basedatos.execute("INSERT INTO gastos VALUES (id, nombre, descripcion, monto, categoria, fecha, hora)",
+                                  (id_gasto, nombre, descripcion, monto, categoria))
