@@ -26,12 +26,11 @@ def menu_principal():
           case "1":
                print("**********************REGISTRAR GASTO*********************")
                print()
+               id_gasto = str(uuid.uuid7())
                nombre = input("Escriba el nombre del gasto: ")
                descripcion = input("Añada una descripción del gasto: ")
                monto = input("Escriba el monto del gasto (MXN): ")
                categoria = input("Escriba el tipo de gasto que se registra: ")
-               id_gasto = str(uuid.uuid7())
-               
 
                basedatos.execute("INSERT INTO gastos VALUES (id, nombre, descripcion, monto, categoria, fecha, hora)",
                                   (id_gasto, nombre, descripcion, monto, categoria))
