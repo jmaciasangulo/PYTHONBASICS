@@ -31,9 +31,10 @@ def menu_principal():
                descripcion = input("Añada una descripción del gasto: ")
                monto = input("Escriba el monto del gasto (MXN): ")
                categoria = input("Escriba el tipo de gasto que se registra: ")
+               fecha, hora = registrar_fecha_hora()
 
                basedatos.execute("INSERT INTO gastos VALUES (id, nombre, descripcion, monto, categoria, fecha, hora)",
-                                  (id_gasto, nombre, descripcion, monto, categoria))
+                                  (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
 
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
