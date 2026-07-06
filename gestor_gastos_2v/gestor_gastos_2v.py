@@ -1,4 +1,5 @@
 import sqlite3
+import uuid
 
 conexion = sqlite3.connect('gastos.db')
 basedatos = conexion.cursor()
