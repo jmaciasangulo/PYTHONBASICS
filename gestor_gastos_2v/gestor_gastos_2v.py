@@ -16,3 +16,7 @@ def menu_principal():
      print("Eliminar gasto-----------------------------------------[2]")
      print()
      opcion = input("¿Qué desea hacer? R: ")
+
+     while opcion not in ["1", "2"]:
+          print("Opción invalida, vuelva a intentar...")
+          opcion = input("¿Qué desea hacer? R: ")
