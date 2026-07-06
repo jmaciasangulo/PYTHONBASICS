@@ -20,3 +20,7 @@ def menu_principal():
      while opcion not in ["1", "2"]:
           print("Opción invalida, vuelva a intentar...")
           opcion = input("¿Qué desea hacer? R: ")
+
+     match opcion:
+          case "1":
+               
