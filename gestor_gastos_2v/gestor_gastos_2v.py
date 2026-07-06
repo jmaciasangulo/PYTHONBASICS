@@ -15,3 +15,4 @@ def menu_principal():
      print("Registrar gasto----------------------------------------[1]")
      print("Eliminar gasto-----------------------------------------[2]")
      print()
+     opcion = input("¿Qué desea hacer? R: ")
