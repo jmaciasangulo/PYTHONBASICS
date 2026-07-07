@@ -56,6 +56,20 @@ def menu_principal():
                basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
                                   (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
                conexion.commit()
+          case "2":
+               print("**********************LISTAR GASTOS***********************")
+               print()
+               print("A continuación se presentan todos los gastos, ")
+               print("ordenados con base a la fecha más reciente y hora más reciente")
+               print()
+               for gasto_scope_for in gastos_diccionario.values():
+                    print(f"NOMBRE:       {gasto_scope_for.nombre}")
+                    print(f"DESCRIPCCIÓN: {gasto_scope_for.descripcion}")
+                    print(f"MONTO:        {gasto_scope_for.monto}")
+                    print(f"CATEGORIA:    {gasto_scope_for.categoria}")
+                    print(f"FECHA:        {gasto_scope_for.fecha}")
+                    print(f"HORA:         {gasto_scope_for.hora}")
+                    print()
 
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
