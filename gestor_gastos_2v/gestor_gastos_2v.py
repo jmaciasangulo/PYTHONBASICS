@@ -74,6 +74,7 @@ def menu_principal():
                     print(f"CATEGORIA:    {g.categoria}")
                     print(f"FECHA:        {g.fecha}")
                     print(f"HORA:         {g.hora}")
+                    print(f"ID:           {g.id_gasto}")
                     print()
 
           case "3":
