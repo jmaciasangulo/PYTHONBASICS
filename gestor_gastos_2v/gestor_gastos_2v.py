@@ -17,7 +17,7 @@ class Gasto:
 conexion = sqlite3.connect('gastos.db')
 basedatos = conexion.cursor()
 
-basedatos.execute('''CREATE TABLE IF NOT EXISTS gastos (id TEXT PRIMARY KEY, nombre TEXT, descripccion TEXT, monto REAL,
+basedatos.execute('''CREATE TABLE IF NOT EXISTS gastos (id TEXT PRIMARY KEY, nombre TEXT, descripcion TEXT, monto REAL,
 categoria TEXT, fecha TEXT, hora TEXT)''')
 
 basedatos.execute("SELECT * FROM gastos")
