@@ -35,6 +35,7 @@ def menu_principal():
 
                basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
                                   (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
+               conexion.commit()
 
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
