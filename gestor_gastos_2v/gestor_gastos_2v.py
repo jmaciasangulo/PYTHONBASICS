@@ -3,6 +3,17 @@ import sqlite3
 import uuid
 from dataclasses import dataclass
 
+
+@dataclass
+class Gasto:
+     id_gasto: str
+     nombre: str
+     descripcion: str
+     monto: float
+     categoria: str
+     fecha: str
+     hora: str
+
 conexion = sqlite3.connect('gastos.db')
 basedatos = conexion.cursor()
 
