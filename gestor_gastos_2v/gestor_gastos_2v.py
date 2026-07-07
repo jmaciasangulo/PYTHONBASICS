@@ -56,6 +56,10 @@ def menu_principal():
                basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
                                   (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
                conexion.commit()
+
+               nuevo_gasto = Gasto(id_gasto, nombre, descripcion, monto, categoria, fecha, hora)
+               gastos_diccionario[id_gasto] = nuevo_gasto
+
           case "2":
                print("**********************LISTAR GASTOS***********************")
                print()
