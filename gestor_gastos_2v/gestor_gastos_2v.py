@@ -76,6 +76,13 @@ def menu_principal():
                     print(f"HORA:         {g.hora}")
                     print()
 
+          case "3":
+               print("**********************ELIMINAR GASTOS*********************")
+               print()
+               print("Ingrese le ID del gasto a eliminar y confirme si desea eliminar")
+               print()
+               
+
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
      fecha_actual = momento_actual.strftime("%Y-%m-%d")
