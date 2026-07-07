@@ -25,7 +25,7 @@ gastos_lista = basedatos.fetchall()
 gastos_diccionario = {}
 
 for gasto in gastos_lista:
-     gastos_diccionario[gasto[0]] = gasto
+     gastos_diccionario[gasto[0]] = Gasto(gasto[0], gasto[1], gasto[2], gasto[3], gasto[4], gasto[5], gasto[6])
 
 def menu_principal():
      print("Bienvenido a su gestor de gastos PyRe")
