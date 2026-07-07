@@ -34,7 +34,7 @@ def menu_principal():
      print()
      print("Usted puede hacer las siguientes operaciones:")
      print("Registrar gasto----------------------------------------[1]")
-     print("Eliminar gasto-----------------------------------------[2]")
+     print("Listar gasto-------------------------------------------[2]")
      print()
      opcion = input("¿Qué desea hacer? R: ")
 
