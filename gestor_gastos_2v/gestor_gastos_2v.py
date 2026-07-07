@@ -56,24 +56,23 @@ def menu_principal():
 
                basedatos.execute("SELECT * FROM gastos ORDER BY fecha DESC, hora DESC")
                gastos_lista = basedatos.fetchall()
-               gastos_diccionario = {}
-
-               for gasto in gastos_lista:
-                    gastos_diccionario[gasto[0]] = Gasto(gasto[0], gasto[1], gasto[2], gasto[3], gasto[4], gasto[5],
-                                                         gasto[6])
 
                print("**********************LISTAR GASTOS***********************")
                print()
                print("A continuación se presentan todos los gastos, ")
                print("ordenados con base a la fecha más reciente y hora más reciente")
                print()
-               for gasto_scope_for in gastos_diccionario.values():
-                    print(f"NOMBRE:       {gasto_scope_for.nombre}")
-                    print(f"DESCRIPCCIÓN: {gasto_scope_for.descripcion}")
-                    print(f"MONTO:        {gasto_scope_for.monto}")
-                    print(f"CATEGORIA:    {gasto_scope_for.categoria}")
-                    print(f"FECHA:        {gasto_scope_for.fecha}")
-                    print(f"HORA:         {gasto_scope_for.hora}")
+
+               for gasto in gastos_lista:
+
+                    g = Gasto(gasto[0], gasto[1], gasto[2], gasto[3], gasto[4], gasto[5],gasto[6])
+
+                    print(f"NOMBRE:       {g.nombre}")
+                    print(f"DESCRIPCCIÓN: {g.descripcion}")
+                    print(f"MONTO:        {g.monto}")
+                    print(f"CATEGORIA:    {g.categoria}")
+                    print(f"FECHA:        {g.fecha}")
+                    print(f"HORA:         {g.hora}")
                     print()
 
 def registrar_fecha_hora():
