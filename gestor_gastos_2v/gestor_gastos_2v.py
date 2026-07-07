@@ -42,3 +42,5 @@ def registrar_fecha_hora():
      fecha_actual = momento_actual.strftime("%d/%m/%Y")
      hora_actual = momento_actual.strftime("%I:%M %p")
      return fecha_actual, hora_actual
+
+menu_principal()
