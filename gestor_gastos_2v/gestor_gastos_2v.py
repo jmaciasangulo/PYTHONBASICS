@@ -29,7 +29,7 @@ def menu_principal():
                id_gasto = str(uuid.uuid7())
                nombre = input("Escriba el nombre del gasto: ")
                descripcion = input("Añada una descripción del gasto: ")
-               monto = input("Escriba el monto del gasto (MXN): ")
+               monto = float(input("Escriba el monto del gasto (MXN): "))
                categoria = input("Escriba el tipo de gasto que se registra: ")
                fecha, hora = registrar_fecha_hora()
 
