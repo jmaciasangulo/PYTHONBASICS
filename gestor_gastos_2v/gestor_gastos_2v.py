@@ -1,6 +1,7 @@
 import datetime
 import sqlite3
 import uuid
+from dataclasses import dataclass
 
 conexion = sqlite3.connect('gastos.db')
 basedatos = conexion.cursor()
