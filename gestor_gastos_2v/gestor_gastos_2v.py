@@ -20,6 +20,13 @@ basedatos = conexion.cursor()
 basedatos.execute('''CREATE TABLE IF NOT EXISTS gastos (id TEXT PRIMARY KEY, nombre TEXT, descripccion TEXT, monto REAL,
 categoria TEXT, fecha TEXT, hora TEXT)''')
 
+basedatos.execute("SELECT * FROM gastos")
+gastos_lista = basedatos.fetchall()
+gastos_diccionario = {}
+
+for gasto in gastos_lista:
+     gastos_diccionario[gasto[0]] = gasto
+
 def menu_principal():
      print("Bienvenido a su gestor de gastos PyRe")
      print()
