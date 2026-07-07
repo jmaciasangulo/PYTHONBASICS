@@ -69,7 +69,7 @@ def menu_principal():
                     g = Gasto(gasto[0], gasto[1], gasto[2], gasto[3], gasto[4], gasto[5],gasto[6])
 
                     print(f"NOMBRE:       {g.nombre}")
-                    print(f"DESCRIPCCIÓN: {g.descripcion}")
+                    print(f"DESCRIPCIÓN: {g.descripcion}")
                     print(f"MONTO:        {g.monto}")
                     print(f"CATEGORIA:    {g.categoria}")
                     print(f"FECHA:        {g.fecha}")
