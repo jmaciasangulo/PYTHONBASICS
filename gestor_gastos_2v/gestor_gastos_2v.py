@@ -33,7 +33,7 @@ def menu_principal():
                categoria = input("Escriba el tipo de gasto que se registra: ")
                fecha, hora = registrar_fecha_hora()
 
-               basedatos.execute("INSERT INTO gastos VALUES (id, nombre, descripcion, monto, categoria, fecha, hora)",
+               basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
                                   (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
 
 def registrar_fecha_hora():
