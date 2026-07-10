@@ -1,18 +1,6 @@
 import datetime
 import sqlite3
 import uuid
-from dataclasses import dataclass
-
-
-@dataclass
-class Gasto:
-     id_gasto: str
-     nombre: str
-     descripcion: str
-     monto: float
-     categoria: str
-     fecha: str
-     hora: str
 
 conexion = sqlite3.connect('gastos.db')
 basedatos = conexion.cursor()
@@ -71,15 +59,13 @@ def menu_principal():
 
                     for gasto in gastos_lista:
 
-                         g = Gasto(gasto[0], gasto[1], gasto[2], gasto[3], gasto[4], gasto[5],gasto[6])
-
-                         print(f"NOMBRE:       {g.nombre}")
-                         print(f"DESCRIPCIÓN: {g.descripcion}")
-                         print(f"MONTO:        {g.monto}")
-                         print(f"CATEGORIA:    {g.categoria}")
-                         print(f"FECHA:        {g.fecha}")
-                         print(f"HORA:         {g.hora}")
-                         print(f"ID:           {g.id_gasto}")
+                         print(f"NOMBRE:       {gasto[1]}")
+                         print(f"DESCRIPCIÓN:  {gasto[2]}")
+                         print(f"MONTO:        {gasto[3]}")
+                         print(f"CATEGORIA:    {gasto[4]}")
+                         print(f"FECHA:        {gasto[5]}")
+                         print(f"HORA:         {gasto[6]}")
+                         print(f"ID:           {gasto[0]}")
                          print()
 
                case "3":
