@@ -101,6 +101,11 @@ def menu_principal():
                     print(f"HORA:         {retorno[6]}")
                     print(f"ID:           {retorno[0]}")
 
+                    borrar = input("¿Está seguro de eliminar el gasto encontrado? [S/N]").upper()
+                    while borrar not in ["S", "N"]:
+                         print("Respuesta invalida, vuelva a intentar...")
+                         borrar = input("¿Está seguro de eliminar el gasto encontrado? [S/N]").upper()
+
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
      fecha_actual = momento_actual.strftime("%Y-%m-%d")
