@@ -122,7 +122,9 @@ def menu_principal():
                     print("Ingrese la categoría de gastos a listar.")
                     categoria_gasto = input("CATEGORÍA GASTO: ")
                     print()
-                    
+
+                    basedatos.execute("SELECT * FROM gastos WHERE categoria = ?", (categoria_gasto,))
+                    gastos = basedatos.fetchall()
 
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
