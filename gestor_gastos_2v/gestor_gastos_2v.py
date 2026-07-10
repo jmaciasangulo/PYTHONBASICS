@@ -129,7 +129,17 @@ def menu_principal():
 
                     if gastos is None:
                          print(f"No hay gastos registrados con la categoria {categoria_gasto}.")
-                    
+                    else:
+                         for gasto in gastos:
+                              print()
+                              print(f"NOMBRE:       {gasto[1]}")
+                              print(f"DESCRIPCIÓN:  {gasto[2]}")
+                              print(f"MONTO:        {gasto[3]}")
+                              print(f"CATEGORIA:    {gasto[4]}")
+                              print(f"FECHA:        {gasto[5]}")
+                              print(f"HORA:         {gasto[6]}")
+                              print(f"ID:           {gasto[0]}")
+                              print()
 
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
