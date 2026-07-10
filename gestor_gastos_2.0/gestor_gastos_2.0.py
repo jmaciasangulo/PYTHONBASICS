@@ -10,7 +10,7 @@ basedatos.execute("PRAGMA foreign_keys = ON")
 basedatos.execute("CREATE TABLE IF NOT EXISTS categorias ( nombre TEXT PRIMARY KEY)")
 
 basedatos.execute('''CREATE TABLE IF NOT EXISTS gastos (id TEXT PRIMARY KEY, nombre TEXT, descripcion TEXT, monto REAL,
-categoria TEXT, fecha TEXT, hora TEXT)''')
+categoria TEXT, fecha TEXT, hora TEXT, FOREIGN KEY (categoria) REFERENCES categorias(nombre) ON DELETE CASCADE)''')
 
 
 def menu_principal():
