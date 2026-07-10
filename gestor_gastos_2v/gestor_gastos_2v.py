@@ -91,6 +91,8 @@ def menu_principal():
                     print("El ID ingresado no existe.")
                else:
                     print()
+                    print("Gasto encontrado:")
+                    print()
                     print(f"NOMBRE:       {retorno[1]}")
                     print(f"DESCRIPCIÓN:  {retorno[2]}")
                     print(f"MONTO:        {retorno[3]}")
