@@ -116,6 +116,14 @@ def menu_principal():
                               basedatos.execute("DELETE FROM gastos WHERE id = ?", (id_gasto_eliminar,))
                               print("El gasto ha sido eliminado correctamente.")
 
+               case 4:
+                    print("***************LISTAR GASTOS POR CATEGORIA****************")
+                    print()
+                    print("Ingrese la categoría de gastos a listar.")
+                    print("CATEGORÍA GASTO: ")
+                    print()
+                    
+
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
           while continuar not in ["S", "N"]:
