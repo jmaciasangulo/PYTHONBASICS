@@ -120,7 +120,7 @@ def menu_principal():
                     print("***************LISTAR GASTOS POR CATEGORIA****************")
                     print()
                     print("Ingrese la categoría de gastos a listar.")
-                    print("CATEGORÍA GASTO: ")
+                    categoria_gasto = input("CATEGORÍA GASTO: ")
                     print()
                     
 
