@@ -25,9 +25,11 @@ def menu_principal():
           print("Listar gastos por categoría----------------------------[4]")
           print()
           opcion = input("¿Qué desea hacer? R: ")
+          print()
 
           while opcion not in ["1", "2", "3", "4"]:
                print("Opción invalida, vuelva a intentar...")
+               print()
                opcion = input("¿Qué desea hacer? R: ")
 
           match opcion:
@@ -39,12 +41,14 @@ def menu_principal():
                     descripcion = input("Añada una descripción del gasto: ")
                     monto = float(input("Escriba el monto del gasto (MXN): "))
                     categoria = input("Escriba el tipo de gasto que se registra: ")
+                    print()
                     fecha, hora = registrar_fecha_hora()
 
                     basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
                                        (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
                     conexion.commit()
-
+                    print("Gasto registrado correctamente")
+                    print()
 
                case "2":
 
@@ -101,7 +105,9 @@ def menu_principal():
                          if borrar == "S":
                               basedatos.execute("DELETE FROM gastos WHERE id = ?", (id_gasto_eliminar,))
                               conexion.commit()
+                              print()
                               print("El gasto ha sido eliminado correctamente.")
+                              print()
 
                case "4":
                     print("***************LISTAR GASTOS POR CATEGORIA****************")
@@ -115,6 +121,7 @@ def menu_principal():
 
                     if not gastos:
                          print(f"No hay gastos registrados con la categoria {categoria_gasto}.")
+                         print()
                     else:
                          for gasto in gastos:
                               print()
