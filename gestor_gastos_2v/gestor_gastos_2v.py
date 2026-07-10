@@ -106,6 +106,12 @@ def menu_principal():
                          print("Respuesta invalida, vuelva a intentar...")
                          borrar = input("¿Está seguro de eliminar el gasto encontrado? [S/N]").upper()
 
+                    if borrar == "S":
+                         basedatos.execute("DELETE FROM gastos WHERE id = ?", (id_gasto_eliminar,))
+                         print("El gasto ha sido eliminado correctamente.")
+
+
+
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
      fecha_actual = momento_actual.strftime("%Y-%m-%d")
