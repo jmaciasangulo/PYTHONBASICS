@@ -23,6 +23,7 @@ def menu_principal():
           print("Listar gastos------------------------------------------[2]")
           print("Eliminar gasto-----------------------------------------[3]")
           print("Listar gastos por categoría----------------------------[4]")
+          print("Ver resumen de gastos----------------------------------[5]")
           print()
           opcion = input("¿Qué desea hacer? R: ")
           print()
