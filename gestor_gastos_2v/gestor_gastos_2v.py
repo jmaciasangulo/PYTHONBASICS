@@ -117,7 +117,7 @@ def menu_principal():
                               conexion.commit()
                               print("El gasto ha sido eliminado correctamente.")
 
-               case 4:
+               case "4":
                     print("***************LISTAR GASTOS POR CATEGORIA****************")
                     print()
                     print("Ingrese la categoría de gastos a listar.")
