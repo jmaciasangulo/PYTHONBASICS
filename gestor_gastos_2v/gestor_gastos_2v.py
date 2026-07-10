@@ -114,6 +114,7 @@ def menu_principal():
 
                          if borrar == "S":
                               basedatos.execute("DELETE FROM gastos WHERE id = ?", (id_gasto_eliminar,))
+                              conexion.commit()
                               print("El gasto ha sido eliminado correctamente.")
 
                case 4:
