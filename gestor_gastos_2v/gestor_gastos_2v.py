@@ -82,7 +82,22 @@ def menu_principal():
                print()
                print("Ingrese le ID del gasto a eliminar y confirme si desea eliminar")
                print()
-               
+               id_gasto_eliminar = input("ID GASTO a eliminar: ")
+
+               basedatos.execute("SELECT * FROM gastos WHERE id = ?", (id_gasto_eliminar,))
+               retorno = basedatos.fetchone()
+
+               if retorno is None:
+                    print("El ID ingresado no existe.")
+               else:
+                    print()
+                    print(f"NOMBRE:       {retorno[1]}")
+                    print(f"DESCRIPCIÓN:  {retorno[2]}")
+                    print(f"MONTO:        {retorno[3]}")
+                    print(f"CATEGORIA:    {retorno[4]}")
+                    print(f"FECHA:        {retorno[5]}")
+                    print(f"HORA:         {retorno[6]}")
+                    print(f"ID:           {retorno[0]}")
 
 def registrar_fecha_hora():
      momento_actual = datetime.datetime.now()
