@@ -127,7 +127,7 @@ def menu_principal():
                     basedatos.execute("SELECT * FROM gastos WHERE categoria = ?", (categoria_gasto,))
                     gastos = basedatos.fetchall()
 
-                    if gastos is None:
+                    if not gastos:
                          print(f"No hay gastos registrados con la categoria {categoria_gasto}.")
                     else:
                          for gasto in gastos:
