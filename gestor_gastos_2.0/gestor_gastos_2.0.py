@@ -39,21 +39,31 @@ def menu_principal():
 
           match opcion:
                case "1":
-                    print("**********************REGISTRAR GASTO*********************")
-                    print()
-                    id_gasto = str(uuid.uuid7())
-                    nombre = input("Escriba el nombre del gasto: ")
-                    descripcion = input("Añada una descripción del gasto: ")
-                    monto = float(input("Escriba el monto del gasto (MXN): "))
-                    categoria = input("Escriba el tipo de gasto que se registra: ")
-                    print()
-                    fecha, hora = registrar_fecha_hora()
 
-                    basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
-                                       (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
-                    conexion.commit()
-                    print("Gasto registrado correctamente")
-                    print()
+                    basedatos.execute('''SELECT COUNT(*) FROM categorias''')
+                    num_categorias = basedatos.fetchone() [0]
+
+                    if num_categorias == 0:
+                         print("Es necesario tener categorías de gastos registradas antes de empezar")
+                         print("a registrar gastos, por favor, registre las categorías de gasto")
+                         print("necesarias para que pueda registrar este gasto.")
+
+                    else:
+                         print("**********************REGISTRAR GASTO*********************")
+                         print()
+                         id_gasto = str(uuid.uuid7())
+                         nombre = input("Escriba el nombre del gasto: ")
+                         descripcion = input("Añada una descripción del gasto: ")
+                         monto = float(input("Escriba el monto del gasto (MXN): "))
+                         categoria = input("Escriba el tipo de gasto que se registra: ")
+                         print()
+                         fecha, hora = registrar_fecha_hora()
+
+                         basedatos.execute("INSERT INTO gastos VALUES (?, ?, ?, ?, ?, ?, ?)",
+                                            (id_gasto, nombre, descripcion, monto, categoria, fecha, hora))
+                         conexion.commit()
+                         print("Gasto registrado correctamente")
+                         print()
 
                case "2":
 
