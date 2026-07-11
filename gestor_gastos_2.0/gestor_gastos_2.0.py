@@ -59,7 +59,14 @@ def menu_principal():
                          id_gasto = str(uuid.uuid7())
                          nombre = input("Escriba el nombre del gasto: ")
                          descripcion = input("Añada una descripción del gasto: ")
-                         monto = float(input("Escriba el monto del gasto (MXN): "))
+
+                         while True:
+                              try:
+                                   monto = float(input("Escriba el monto del gasto (MXN): "))
+                                   break
+                              except ValueError:
+                                   print("Por favor ingrese la cantidad en números.")
+
                          print()
                          print("CATEGORIAS DISPONIBLES")
                          print()
