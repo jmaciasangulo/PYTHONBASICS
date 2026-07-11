@@ -49,6 +49,11 @@ def menu_principal():
                          print("necesarias para que pueda registrar este gasto.")
 
                     else:
+
+                         basedatos.execute("SELECT nombre FROM categorias")
+                         categorias = basedatos.fetchall()
+                         categorias_lista = [categoria[0] for categoria in categorias]
+
                          print("**********************REGISTRAR GASTO*********************")
                          print()
                          id_gasto = str(uuid.uuid7())
