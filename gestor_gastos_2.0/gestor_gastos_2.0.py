@@ -131,6 +131,8 @@ def menu_principal():
                     categoria_gasto = input("CATEGORÍA GASTO: ")
                     print()
 
+                    basedatos.execute("SELECT * FROM categorias WHERE nombre = ?", (categoria_gasto,))
+                    categoria = basedatos.fetchone()
                     basedatos.execute("SELECT * FROM gastos WHERE categoria = ?", (categoria_gasto,))
                     gastos = basedatos.fetchall()
 
