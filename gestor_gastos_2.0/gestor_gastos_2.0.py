@@ -67,6 +67,12 @@ def menu_principal():
                               print(f"-{categoria[0]}.")
                          print()
                          categoria = input("Escriba el tipo de gasto que se registra: ")
+
+                         while categoria not in categorias_lista:
+                              print("La categoría ingresada no existe, vuelva a intentar...")
+                              print()
+                              categoria = input("Escriba el tipo de gasto que se registra: ")
+
                          print()
                          fecha, hora = registrar_fecha_hora()
 
