@@ -60,6 +60,12 @@ def menu_principal():
                          nombre = input("Escriba el nombre del gasto: ")
                          descripcion = input("Añada una descripción del gasto: ")
                          monto = float(input("Escriba el monto del gasto (MXN): "))
+                         print()
+                         print("CATEGORIAS DISPONIBLES")
+                         print()
+                         for categoria in categorias:
+                              print(f"-{categoria[0]}.")
+                         print()
                          categoria = input("Escriba el tipo de gasto que se registra: ")
                          print()
                          fecha, hora = registrar_fecha_hora()
