@@ -179,6 +179,8 @@ def menu_principal():
                               print(f"HORA:         {gasto[6]}")
                               print(f"ID:           {gasto[0]}")
                               print()
+               case "5":
+                   pass
 
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
