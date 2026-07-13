@@ -188,6 +188,7 @@ def menu_principal():
                     nueva_categoria = input("Escriba la nueva Categoría de gasto a registrar: ")
                     print()
                     basedatos.execute("INSERT INTO categorias VALUES (?)", (nueva_categoria,))
+                    conexion.commit()
                     print(f"La Categoria de Gastos denominada '{nueva_categoria}' ha sido registrada correctamente.")
                     print()
 
