@@ -191,6 +191,25 @@ def menu_principal():
                     conexion.commit()
                     print(f"La Categoria de Gastos denominada '{nueva_categoria}' ha sido registrada correctamente.")
                     print()
+               case "7":
+                    print("***************ELIMINAR CATEGORIA DE GASTOS***************")
+                    print()
+                    categoria_eliminar = input("Escriba la categoria del gasto a eliminar: ")
+                    basedatos.execute("SELECT * FROM categorias WHERE nombre = ?", (categoria_eliminar,))
+                    categoria_retorno = basedatos.fetchone()
+
+                    if categoria_retorno is None:
+                         print(f"La categoria {categoria_eliminar} no existe.")
+                         print()
+                    else:
+                         print("¿Está seguro que desea continuar?")
+                         print("Al eliminar la categoria eliminará todos los gastos registrados con esa categoria.")
+                         proceder = input("[S/N] ")
+
+                         if proceder == "S":
+                              basedatos.execute("DELETE FROM categorias WHERE nombre = ?", (categoria_eliminar,))
+                              conexion.commit()
+                              print("La categoria de gastos ha sido eliminada correctamente.")
 
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
