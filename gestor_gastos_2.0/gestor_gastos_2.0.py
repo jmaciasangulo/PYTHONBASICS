@@ -180,7 +180,13 @@ def menu_principal():
                               print(f"ID:           {gasto[0]}")
                               print()
                case "5":
-                   pass
+                    pass
+
+               case "6":
+                    print("***************AGREGAR CATEGORIA DE GASTOS****************")
+                    print()
+                    nueva_categoria = input("Escriba la nueva Categoría de gasto a registrar: ")
+                    print()
 
           continuar = input("¿Desea realizar otra operacion? [S/N] ").upper()
 
