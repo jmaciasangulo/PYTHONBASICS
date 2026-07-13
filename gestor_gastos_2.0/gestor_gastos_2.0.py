@@ -34,7 +34,7 @@ def menu_principal():
           opcion = input("¿Qué desea hacer? R: ")
           print()
 
-          while opcion not in ["1", "2", "3", "4", "5"]:
+          while opcion not in ["1", "2", "3", "4", "5", "6", "7"]:
                print("Opción invalida, vuelva a intentar...")
                print()
                opcion = input("¿Qué desea hacer? R: ")
