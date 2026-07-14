@@ -180,7 +180,10 @@ def menu_principal():
                               print(f"ID:           {gasto[0]}")
                               print()
                case "5":
-                    pass
+                    print("******************VER RESUMEN DE GASTOS*******************")
+                    print()
+                    print("A continuación se muestran el resumen de gastos por categoria.")
+                    print()
 
                case "6":
                     print("***************AGREGAR CATEGORIA DE GASTOS****************")
