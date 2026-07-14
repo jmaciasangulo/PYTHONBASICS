@@ -184,6 +184,10 @@ def menu_principal():
                     print()
                     print("A continuación se muestran el resumen de gastos por categoria.")
                     print()
+                    basedatos.execute("SELECT nombre FROM categorias")
+                    categorias = basedatos.fetchall()
+                    categorias_lista = [categoria[0] for categoria in categorias]
+                    
 
                case "6":
                     print("***************AGREGAR CATEGORIA DE GASTOS****************")
