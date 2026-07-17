@@ -187,7 +187,35 @@ def menu_principal():
                     basedatos.execute("SELECT nombre FROM categorias")
                     categorias = basedatos.fetchall()
                     categorias_lista = [categoria[0] for categoria in categorias]
-                    
+
+                    sumatoria_total = 0
+
+                    for categoria in categorias_lista:
+
+                         basedatos.execute("SELECT * FROM gastos WHERE categoria = ?", (categoria,))
+                         retorno = basedatos.fetchall()
+                         print(f"CATEGORIA: {categoria}")
+
+
+                         sumatoria = 0
+
+                         for gasto in retorno:
+                              print()
+                              print(f"NOMBRE:       {gasto[1]}")
+                              print(f"DESCRIPCIÓN:  {gasto[2]}")
+                              print(f"MONTO:        {gasto[3]}")
+                              print(f"CATEGORIA:    {gasto[4]}")
+                              print(f"FECHA:        {gasto[5]}")
+                              print(f"HORA:         {gasto[6]}")
+                              print(f"ID:           {gasto[0]}")
+                              sumatoria += gasto[3]
+
+                         print()
+                         print(f"TOTAL POR ESTA CATEGORIA: ${sumatoria}")
+                         print()
+                         sumatoria_total += sumatoria
+
+                    print(f"TOTAL POR TODAS LAS CATEGORIAS: ${sumatoria_total}")
 
                case "6":
                     print("***************AGREGAR CATEGORIA DE GASTOS****************")
