@@ -5,7 +5,7 @@ class MaterialBibliografico:
 
     def __init__(self, titulo, autor, fecha_adquisicion):
 
-        self.id_material = None
+        self.id_material = str(uuid.uuid7())
         self.titulo = titulo
         self.autor = autor
         self.fecha_adquisicion = fecha_adquisicion
