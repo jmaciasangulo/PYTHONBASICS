@@ -1,3 +1,6 @@
+import uuid
+
+
 class MaterialBibliografico:
 
     def __init__(self, titulo, autor, fecha_adquisicion):
