@@ -14,5 +14,5 @@ class MaterialBibliografico:
     def devolver(self):
         self.disponiblidad = True
 
-    def calcular_multa(self):
+    def calcular_multa(self, dias_retraso):
         raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
