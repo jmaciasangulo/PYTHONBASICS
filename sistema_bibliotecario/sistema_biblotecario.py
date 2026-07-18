@@ -10,3 +10,6 @@ class MaterialBibliografico:
 
     def prestar(self):
         self.disponiblidad = False
+
+    def devolver(self):
+        self.disponiblidad = True
