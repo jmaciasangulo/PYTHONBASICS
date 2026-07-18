@@ -7,3 +7,6 @@ class MaterialBibliografico:
         self.autor = autor
         self.fecha_adquisicion = fecha_adquisicion
         self.disponiblidad = True
+
+    def prestar(self):
+        self.disponiblidad = False
