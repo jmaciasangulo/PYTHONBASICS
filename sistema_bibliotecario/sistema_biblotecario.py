@@ -64,3 +64,5 @@ class Revista(MaterialBibliografico):
 
 conexion = sqlite3.connect("sistema_bibliotecario.db")
 basedatos = conexion.cursor()
+
+basedatos.execute("PRAGMA foreign_keys = ON")
