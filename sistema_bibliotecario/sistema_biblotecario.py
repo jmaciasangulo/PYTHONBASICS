@@ -58,3 +58,5 @@ class Revista(MaterialBibliografico):
     def calcular_multa(self, dias_retraso):
         if dias_retraso is not int:
             raise ValueError("Los días de retraso deben de ser un número entero")
+        multa = dias_retraso * 3
+        return multa
