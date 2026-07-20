@@ -19,3 +19,11 @@ class MaterialBibliografico:
 
     def calcular_multa(self, dias_retraso):
         raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
+
+
+class Libro(MaterialBibliografico):
+
+    def __init__(self, titulo, autor, fecha_adquisicion, paginas, genero):
+        super().__init__(titulo, autor, fecha_adquisicion)
+        self.paginas = paginas
+        self.genero = genero
