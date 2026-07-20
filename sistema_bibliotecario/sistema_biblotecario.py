@@ -35,3 +35,8 @@ class Libro(MaterialBibliografico):
         return multa
 
 class Pelicula(MaterialBibliografico):
+
+    def __init__(self, titulo, autor, fecha_adquisicion, duracion, clasificacion):
+        super().__init__(titulo, autor, fecha_adquisicion)
+        self.duracion = duracion
+        self.clasificacion = clasificacion
