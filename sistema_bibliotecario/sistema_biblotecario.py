@@ -66,3 +66,6 @@ conexion = sqlite3.connect("sistema_bibliotecario.db")
 basedatos = conexion.cursor()
 
 basedatos.execute("PRAGMA foreign_keys = ON")
+
+basedatos.execute("CREATE TABLE IF NOT EXISTS materiales_bibliograficos(id TEXT PRIMARY KEY, tipo TEXT, titulo TEXT, disponibilidad INTEGRER)")
+
