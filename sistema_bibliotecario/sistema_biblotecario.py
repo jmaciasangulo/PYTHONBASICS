@@ -40,3 +40,10 @@ class Pelicula(MaterialBibliografico):
         super().__init__(titulo, autor, fecha_adquisicion)
         self.duracion = duracion
         self.clasificacion = clasificacion
+
+    def calcular_multa(self, dias_retraso):
+
+        if dias_retraso is not int:
+            raise ValueError("Los días de retraso deben de ser un número entero")
+        multa = dias_retraso * 10
+        return multa
