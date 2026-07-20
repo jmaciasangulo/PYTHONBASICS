@@ -61,3 +61,6 @@ class Revista(MaterialBibliografico):
             raise ValueError("Los días de retraso deben de ser un número entero")
         multa = dias_retraso * 3
         return multa
+
+conexion = sqlite3.connect("sistema_bibliotecario.db")
+basedatos = conexion.cursor()
