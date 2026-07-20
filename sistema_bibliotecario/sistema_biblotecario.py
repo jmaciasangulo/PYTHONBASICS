@@ -33,3 +33,5 @@ class Libro(MaterialBibliografico):
             raise ValueError("Los días de retraso deben der ser un número entero")
         multa = dias_retraso * 5
         return multa
+
+class Pelicula(MaterialBibliografico):
