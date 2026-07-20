@@ -47,3 +47,10 @@ class Pelicula(MaterialBibliografico):
             raise ValueError("Los días de retraso deben de ser un número entero")
         multa = dias_retraso * 10
         return multa
+
+class Revista(MaterialBibliografico):
+
+    def __init__(self, titulo, autor, fecha_adquisicion, numero_edicion, periodicidad):
+        super().__init__(titulo, autor, fecha_adquisicion)
+        self.numero_edicion = numero_edicion
+        self.periodicidad = periodicidad
