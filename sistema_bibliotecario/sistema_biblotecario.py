@@ -27,3 +27,9 @@ class Libro(MaterialBibliografico):
         super().__init__(titulo, autor, fecha_adquisicion)
         self.paginas = paginas
         self.genero = genero
+
+    def calcular_multa(self, dias_retraso):
+        if dias_retraso is not int:
+            raise ValueError("Los días de retraso deben der ser un número entero")
+        multa = dias_retraso * 5
+        return multa
