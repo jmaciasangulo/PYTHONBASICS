@@ -111,3 +111,13 @@ def validar_id_usuario():
         print("El id de usuario ya existe, intenta con otro...")
 
     return nuevo_id_usuario
+
+def validar_nombre_usuario():
+    nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
+
+    todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre_usuario)
+
+    while not todos_caracter:
+        print("Ingrese su nombre de usuario solo usando letras")
+        nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
+        todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre_usuario)
