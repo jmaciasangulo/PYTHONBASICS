@@ -121,3 +121,5 @@ def validar_nombre_usuario():
         print("Ingrese su nombre de usuario solo usando letras")
         nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
         todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre_usuario)
+
+    return nombre_usuario
