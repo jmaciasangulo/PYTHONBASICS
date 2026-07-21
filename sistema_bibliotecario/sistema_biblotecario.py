@@ -84,20 +84,7 @@ def menu_crear_cuenta():
     print()
     print("Crea una cuenta y accede a nuestra libreria!!!")
     print()
-    while True:
-
-        nuevo_id_usuario = input("Escriba un ID de usuario, maximo 10 caracteres: ")
-
-        if not  5 <= len(nuevo_id_usuario) <= 10 :
-            print("Ingrese un id de 5 a 10 caracteres")
-            continue
-
-        basedatos.execute("SELECT id_usuario FROM usuarios WHERE id_usuario = ?", (nuevo_id_usuario,))
-
-        if basedatos.fetchone() is None:
-            break
-
-        print("El id de usuario ya existe, intenta con otro...")
+    nuevo_id_usuario = validar_id_usuario()
 
 def validar_id_usuario():
     while True:
