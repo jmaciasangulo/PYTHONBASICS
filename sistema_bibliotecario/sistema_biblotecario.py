@@ -19,6 +19,8 @@ class MaterialBibliografico:
         self.disponiblidad = True
 
     def calcular_multa(self, dias_retraso):
+        if not isinstance(dias_retraso, int):
+            raise ValueError("Los días de retraso deben de ser un número entero")
         raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
 
 
@@ -30,8 +32,6 @@ class Libro(MaterialBibliografico):
         self.genero = genero
 
     def calcular_multa(self, dias_retraso):
-        if dias_retraso is not int:
-            raise ValueError("Los días de retraso deben der ser un número entero")
         multa = dias_retraso * 5
         return multa
 
@@ -43,9 +43,6 @@ class Pelicula(MaterialBibliografico):
         self.clasificacion = clasificacion
 
     def calcular_multa(self, dias_retraso):
-
-        if dias_retraso is not int:
-            raise ValueError("Los días de retraso deben de ser un número entero")
         multa = dias_retraso * 10
         return multa
 
@@ -57,8 +54,6 @@ class Revista(MaterialBibliografico):
         self.periodicidad = periodicidad
 
     def calcular_multa(self, dias_retraso):
-        if dias_retraso is not int:
-            raise ValueError("Los días de retraso deben de ser un número entero")
         multa = dias_retraso * 3
         return multa
 
