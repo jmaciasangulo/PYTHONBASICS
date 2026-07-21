@@ -127,3 +127,12 @@ def validar_contrasena():
     while True:
 
         contrasena = input("Ingrese su contraseña: ")
+
+        if not all(caracter.isupper() for caracter in contrasena):
+            print("Ingrese al menos una letra mayuscula.")
+            continue
+
+        if not all(caracter.isdigit() for caracter in contrasena):
+            print("Ingrese al menos un número.")
+            continue
+        
