@@ -86,6 +86,13 @@ def menu_crear_cuenta():
     print()
     nuevo_id_usuario = validar_id_usuario()
     nombre_usuario = validar_nombre_usuario()
+    print("Es momento de crear una contraseña, por favor use:")
+    print("-Al menos 8 caracteres")
+    print("-Letras mayusculas y minusculas")
+    print("-Números")
+    print("-Caracteres especiales")
+    print()
+    contrasena = validar_contrasena()
 
 def validar_id_usuario():
     while True:
