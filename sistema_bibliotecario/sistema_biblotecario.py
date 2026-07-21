@@ -85,6 +85,7 @@ def menu_crear_cuenta():
     print("Crea una cuenta y accede a nuestra libreria!!!")
     print()
     nuevo_id_usuario = validar_id_usuario()
+    nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
 
 def validar_id_usuario():
     while True:
