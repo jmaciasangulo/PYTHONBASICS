@@ -87,6 +87,13 @@ def menu_crear_cuenta():
     nuevo_id_usuario = validar_id_usuario()
     nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
 
+    todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre_usuario)
+
+    while  not todos_caracter:
+        print("Ingrese su nombre de usuario solo usando letras")
+        nombre_usuario = input("Ingrese el nombre de usuario de su preferencia: ")
+        todos_caracter = all(caracter.isalpha() or caracter.isspace() for caracter in nombre_usuario)
+
 def validar_id_usuario():
     while True:
 
