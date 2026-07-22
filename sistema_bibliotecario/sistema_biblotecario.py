@@ -142,4 +142,7 @@ def validar_contrasena():
         if not any(caracter.islower() for caracter in contrasena):
             print("Ingrese al menos una letra minuscula.")
             continue
-        
+
+        if not any(caracter.isdigit() for caracter in contrasena):
+            print("Ingrese al menos un número.")
+            continue
