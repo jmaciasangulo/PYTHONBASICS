@@ -156,3 +156,6 @@ def validar_contrasena():
         if not 8 <=len(contrasena) <= 20:
             print("Ingrese entre 8 a 20 caracteres")
             continue
+
+        print("La contraseña es válida.")
+        return contrasena
