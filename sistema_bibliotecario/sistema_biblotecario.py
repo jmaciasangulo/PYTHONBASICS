@@ -152,3 +152,7 @@ def validar_contrasena():
         if not any(caracter in especiales for caracter in contrasena):
             print("Ingrese al menos un caracter especial.")
             continue
+
+        if not 8 <=len(contrasena) <= 20:
+            print("Ingrese entre 8 a 20 caracteres")
+            continue
