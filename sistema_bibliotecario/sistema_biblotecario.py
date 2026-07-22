@@ -125,12 +125,6 @@ def validar_nombre_usuario():
     return nombre_usuario
 
 def validar_contrasena():
-    print("Es momento de crear una contraseña, por favor use:")
-    print("-Al menos 8 caracteres")
-    print("-Letras mayusculas y minusculas")
-    print("-Números")
-    print("-Caracteres especiales")
-    print()
     while True:
 
         contrasena = input("Ingrese su contraseña: ")
