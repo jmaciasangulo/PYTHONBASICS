@@ -145,6 +145,7 @@ def validar_contrasena():
 
         if not any(caracter.isdigit() for caracter in contrasena):
             print("Ingrese al menos un número.")
+            continue
 
         especiales = "!@#$%^&*()-_=+[]{}|;:',.<>/?"
 
