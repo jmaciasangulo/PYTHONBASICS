@@ -152,4 +152,5 @@ def validar_contrasena():
             continue
 
         print("La contraseña es válida.")
-        return contrasena
+        break
+    return contrasena
