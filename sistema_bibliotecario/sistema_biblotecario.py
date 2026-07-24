@@ -182,3 +182,6 @@ def menu_acceder():
 
         case "2":
             menu_crear_cuenta()
+
+def menu_iniciar_sesion():
+    nombre_input = input("Ingrese su nombre de usuario: ")
