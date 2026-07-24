@@ -172,3 +172,11 @@ def menu_iniciar_sesion():
     while opcion not in ["1", "2"]:
         print("Opción no válida, vuelva a intentar...")
         opcion = input("Ingrese su opcion: ")
+
+    match opcion:
+
+        case "1":
+            pass
+
+        case "2":
+            menu_crear_cuenta()
