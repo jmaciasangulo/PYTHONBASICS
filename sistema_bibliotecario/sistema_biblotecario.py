@@ -204,3 +204,6 @@ def menu_iniciar_sesion():
 
             if volver_intentar == "N":
                 sys.exit()
+
+        else:
+            break
