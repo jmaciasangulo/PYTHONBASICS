@@ -186,3 +186,5 @@ def menu_acceder():
 
 def menu_iniciar_sesion():
     id_usuario_input = input("Ingrese su id de usuario: ")
+
+    basedatos.execute("SELECT id_usuario FROM usuarios WHERE id_usuario = ?", (id_usuario_input,))
