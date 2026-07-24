@@ -94,6 +94,8 @@ def menu_crear_cuenta():
     print()
     contrasena = validar_contrasena()
 
+    basedatos.execute("INSERT INTO TABLE usuarios (?, ?, ?)", (nuevo_id_usuario, nombre_usuario, contrasena))
+
 def validar_id_usuario():
     while True:
 
