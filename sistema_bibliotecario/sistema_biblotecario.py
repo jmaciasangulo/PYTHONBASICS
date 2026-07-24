@@ -198,3 +198,6 @@ def menu_iniciar_sesion():
             while volver_intentar not in ["S", "N"]:
                 print("Opción invalida, vuelva a intentar...")
                 volver_intentar = input("¿Desea volver a intentar? [S/N]").upper()
+
+            if volver_intentar == "N":
+                sys.exit()
