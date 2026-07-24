@@ -160,3 +160,5 @@ def validar_contrasena():
         print("La contraseña es válida.")
         break
     return contrasena
+
+def menu_iniciar_sesion():
