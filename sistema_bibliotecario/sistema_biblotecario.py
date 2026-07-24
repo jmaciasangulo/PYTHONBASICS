@@ -193,3 +193,7 @@ def menu_iniciar_sesion():
         print("El id de usuario ingresado no existe.")
         print()
         volver_intentar = input("¿Desea volver a intentar? [S/N]").upper()
+
+        while volver_intentar not in ["S", "N"]:
+            print("Opción invalida, vuelva a intentar...")
+            volver_intentar = input("¿Desea volver a intentar? [S/N]").upper()
