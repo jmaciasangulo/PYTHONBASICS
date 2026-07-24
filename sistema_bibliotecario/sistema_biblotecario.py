@@ -191,3 +191,5 @@ def menu_iniciar_sesion():
 
     if basedatos.fetchone() is None:
         print("El id de usuario ingresado no existe.")
+        print()
+        volver_intentar = input("¿Desea volver a intentar? [S/N]").upper()
