@@ -185,4 +185,4 @@ def menu_acceder():
             menu_crear_cuenta()
 
 def menu_iniciar_sesion():
-    nombre_input = input("Ingrese su nombre de usuario: ")
+    id_usuario_input = input("Ingrese su id de usuario: ")
