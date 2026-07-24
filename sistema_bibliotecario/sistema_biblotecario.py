@@ -162,3 +162,8 @@ def validar_contrasena():
     return contrasena
 
 def menu_iniciar_sesion():
+    print("Bienvenido a PyLibrary.")
+    print()
+    print("Para continuar inicie sesión-------[1]")
+    print("O crea una cuenta si no tienes una-[2]")
+    print()
