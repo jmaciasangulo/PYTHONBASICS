@@ -168,3 +168,7 @@ def menu_iniciar_sesion():
     print("O crea una cuenta si no tienes una-[2]")
     print()
     opcion = input("Ingrese su opcion: ")
+
+    while opcion not in ["1", "2"]:
+        print("Opción no válida, vuelva a intentar...")
+        opcion = input("Ingrese su opcion: ")
