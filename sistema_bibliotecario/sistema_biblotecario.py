@@ -233,4 +233,6 @@ def menu_iniciar_sesion():
         else:
             print("Contraseña incorrecta.")
 
+def menu_principal():
+    print("Bienvenido a PyLibrary.")
 menu_acceder()
