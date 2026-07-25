@@ -189,11 +189,8 @@ def menu_acceder():
 
         case "1":
             usuario = menu_iniciar_sesion()
-
-            basedatos.execute("SELECT * FROM usuarios WHERE id_usuario = ?", (usuario,))
-            datos_usuario = basedatos.fetchone()
-
-            cuenta_usuario = Usuario(datos_usuario[0], datos_usuario[1], datos_usuario[2])
+            cuenta_usuario = instanciar_usuario(usuario)
+            menu_principal(cuenta_usuario)
 
         case "2":
             menu_crear_cuenta()
