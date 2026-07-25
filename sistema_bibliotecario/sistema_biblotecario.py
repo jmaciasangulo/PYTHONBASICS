@@ -232,3 +232,5 @@ def menu_iniciar_sesion():
 
         else:
             print("Contraseña incorrecta.")
+
+menu_acceder()
