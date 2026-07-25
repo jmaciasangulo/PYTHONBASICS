@@ -243,5 +243,5 @@ def menu_principal():
     print("Consultar materiales disponibles--[4]")
     print("Consultar materiales prestados----[5]")
     print()
-    
+    opcion = input("Ingrese su opcion: ")
 menu_acceder()
