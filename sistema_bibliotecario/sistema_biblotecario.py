@@ -210,6 +210,8 @@ def menu_iniciar_sesion():
         else:
             break
 
+    cont = 0
+
     while True:
         contrasena_input = input("Ingrese su contraseña: ")
 
