@@ -180,7 +180,7 @@ def menu_acceder():
     match opcion:
 
         case "1":
-            pass
+            menu_iniciar_sesion()
 
         case "2":
             menu_crear_cuenta()
