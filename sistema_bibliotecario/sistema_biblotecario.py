@@ -101,6 +101,7 @@ def menu_crear_cuenta():
     print(f"Bienvenido {nombre_usuario}! Disfruta de los contenidos de nuestra libreria")
     print()
     print("Para acceder a la librería, vuelva a ejecutar este script e inicie sesión")
+    sys.exit()
 
 def validar_id_usuario():
     while True:
