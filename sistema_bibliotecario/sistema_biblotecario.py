@@ -215,6 +215,8 @@ def menu_iniciar_sesion():
     while True:
         contrasena_input = input("Ingrese su contraseña: ")
 
+        cont += 1
+
         basedatos.execute("SELECT contrasena FROM usuarios WHERE id_usuario = ?", (id_usuario_input,))
 
         if basedatos.fetchone()[0] == contrasena_input:
