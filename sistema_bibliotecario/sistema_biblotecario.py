@@ -279,4 +279,13 @@ def menu_principal(cuenta):
         case "5":
             pass
 
+def instanciar_usuario(usuario):
+
+    basedatos.execute("SELECT * FROM usuarios WHERE id_usuario = ?", (usuario,))
+    datos_usuario = basedatos.fetchone()
+
+    cuenta_usuario = Usuario(datos_usuario[0], datos_usuario[1], datos_usuario[2])
+
+    return cuenta_usuario
+
 menu_acceder()
