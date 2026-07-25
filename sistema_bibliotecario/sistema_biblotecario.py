@@ -213,6 +213,11 @@ def menu_iniciar_sesion():
     cont = 0
 
     while True:
+
+        if cont == 3:
+            print("Has agotado todos los intentos para acceder, intentalo más tarde.")
+            sys.exit()
+
         contrasena_input = input("Ingrese su contraseña: ")
 
         cont += 1
