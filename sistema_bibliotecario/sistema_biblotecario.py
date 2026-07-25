@@ -9,8 +9,6 @@ class Usuario:
     nombre : str
     contrasena : str
 
-
-
 class MaterialBibliografico:
 
     def __init__(self, titulo, autor, fecha_adquisicion):
