@@ -218,3 +218,6 @@ def menu_iniciar_sesion():
         if basedatos.fetchone()[0] == contrasena_input:
             print("Contraseña correcta.")
             break
+
+        else:
+            print("Contraseña incorrecta.")
