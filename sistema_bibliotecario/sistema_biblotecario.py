@@ -249,4 +249,20 @@ def menu_principal(cuenta):
         print("Opción invalida, vuelva a intentar...")
         opcion = input("Ingrese su opcion: ")
 
+    match opcion:
+        case "1":
+            pass
+
+        case "2":
+            pass
+
+        case "3":
+            pass
+
+        case "4":
+            pass
+
+        case "5":
+            pass
+
 menu_acceder()
