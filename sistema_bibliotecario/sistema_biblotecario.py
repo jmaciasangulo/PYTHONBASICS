@@ -244,4 +244,9 @@ def menu_principal(cuenta):
     print("Consultar materiales prestados----[5]")
     print()
     opcion = input("Ingrese su opcion: ")
+
+    while opcion not in ["1", "2", "3", "4", "5"]:
+        print("Opción invalida, vuelva a intentar...")
+        opcion = input("Ingrese su opcion: ")
+
 menu_acceder()
