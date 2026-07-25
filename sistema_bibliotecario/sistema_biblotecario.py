@@ -1,6 +1,14 @@
 import sys
 import uuid
 import sqlite3
+from dataclasses import dataclass
+
+@dataclass
+class Usuario:
+    id_usuario : str
+    nombre : str
+    contrasena : str
+
 
 
 class MaterialBibliografico:
@@ -23,7 +31,6 @@ class MaterialBibliografico:
         if not isinstance(dias_retraso, int):
             raise ValueError("Los días de retraso deben de ser un número entero")
         raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
-
 
 class Libro(MaterialBibliografico):
 
