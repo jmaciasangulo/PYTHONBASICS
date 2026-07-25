@@ -181,7 +181,7 @@ def menu_acceder():
     match opcion:
 
         case "1":
-            menu_iniciar_sesion()
+            usuario = menu_iniciar_sesion()
 
         case "2":
             menu_crear_cuenta()
