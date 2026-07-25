@@ -235,4 +235,13 @@ def menu_iniciar_sesion():
 
 def menu_principal():
     print("Bienvenido a PyLibrary.")
+    print()
+    print("Usted puede hacer lo siguiente en nuestra librería:")
+    print("Donar material--------------------[1]")
+    print("Pedir prestado un material--------[2]")
+    print("Devolver un material--------------[3]")
+    print("Consultar materiales disponibles--[4]")
+    print("Consultar materiales prestados----[5]")
+    print()
+    
 menu_acceder()
