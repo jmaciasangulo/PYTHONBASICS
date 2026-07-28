@@ -40,6 +40,7 @@ class Libro(MaterialBibliografico):
         self.genero = genero
 
     def calcular_multa(self, dias_retraso):
+        self._validar_dias_retraso(dias_retraso)
         multa = dias_retraso * 5
         return multa
 
@@ -51,6 +52,7 @@ class Pelicula(MaterialBibliografico):
         self.clasificacion = clasificacion
 
     def calcular_multa(self, dias_retraso):
+        self._validar_dias_retraso(dias_retraso)
         multa = dias_retraso * 10
         return multa
 
@@ -62,6 +64,7 @@ class Revista(MaterialBibliografico):
         self.periodicidad = periodicidad
 
     def calcular_multa(self, dias_retraso):
+        self._validar_dias_retraso(dias_retraso)
         multa = dias_retraso * 3
         return multa
 
