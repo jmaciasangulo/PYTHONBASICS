@@ -26,9 +26,11 @@ class MaterialBibliografico:
         self.disponiblidad = True
 
     def calcular_multa(self, dias_retraso):
+        raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
+
+    def _validar_dias_retraso(self, dias_retraso):
         if not isinstance(dias_retraso, int):
             raise ValueError("Los días de retraso deben de ser un número entero")
-        raise NotImplementedError("Este método solo funciona en las clases hijas de esta misma clase.")
 
 class Libro(MaterialBibliografico):
 
