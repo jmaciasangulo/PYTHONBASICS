@@ -323,6 +323,8 @@ def menu_donar_material():
 
             basedatos.execute("INSERT INTO materiales_bibliograficos VALUES (?, ?, ?, ?)",
                               (nuevo_material.id_material, tipo_material, nuevo_material.titulo, nuevo_material.disponiblidad))
+            basedatos.execute("INSERT INTO libros VALUES (?, ?, ?, ?, ?)",
+                              (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.numero_edicion, nuevo_material.periodicidad))
             conexion.commit()
         case "PELICULA":
             duracion = input("Ingrese la duracion de la película (en minutos): ")
