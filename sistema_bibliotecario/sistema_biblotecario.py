@@ -266,7 +266,7 @@ def menu_principal(cuenta):
 
     match opcion:
         case "1":
-            pass
+            menu_donar_material()
 
         case "2":
             pass
