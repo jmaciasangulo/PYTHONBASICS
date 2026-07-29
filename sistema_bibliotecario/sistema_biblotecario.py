@@ -282,6 +282,10 @@ def menu_principal(cuenta):
 
     repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
 
+    while repetir_bucle not in ["S", "N"]:
+        print("Opción invalida, vuelva a intentar...")
+        repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
+
 def instanciar_usuario(usuario):
 
     basedatos.execute("SELECT * FROM usuarios WHERE id_usuario = ?", (usuario,))
