@@ -297,4 +297,8 @@ def menu_donar_material(cuenta):
     while tipo_material not in ["LIBRO", "REVISTA", "PELICULA"]:
         print("Opccion invalida, vuelva a intentar...")
         tipo_material = input("Ingrese el tipo de material [LIBRO, REVISTA, PELICULA]: ").upper()
+
+    titulo = input("Ingrese el titulo del material: ")
+    autor = input("Ingrese el autor del material: ")
+    fecha_adquisicion = datetime.datetime.now().strftime("%Y-%m-%d")
 menu_acceder()
