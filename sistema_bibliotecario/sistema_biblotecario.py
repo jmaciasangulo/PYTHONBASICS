@@ -309,6 +309,11 @@ def menu_donar_material(cuenta):
             genero = input("Ingrese el genero del material: ")
 
             nuevo_material = Libro(titulo, autor, fecha_adquisicion, paginas, genero)
+
+            basedatos.execute(" INSERT INTO materiales_bibliograficos VALUES (?, ?, ?, ?)",
+                              (nuevo_material.id_material, tipo_material, nuevo_material.titulo, nuevo_material.disponiblidad ))
+            basedatos.execute("INSERT INTO libros VALUES (?, ?, ?, ?, ?)",
+                              (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.paginas, nuevo_material.genero))
         case "REVISTA":
             numero_edicion = input("Ingrese el numero de edicion de la revista: ")
             periodicidad = input("Ingrese la periodicidad de la revista: ")
