@@ -249,45 +249,46 @@ def menu_iniciar_sesion():
     return id_usuario_input
 
 def menu_principal(cuenta):
-    print("Bienvenido a PyLibrary.")
-    print()
-    print("Usted puede hacer lo siguiente en nuestra librería:")
-    print("Donar material--------------------[1]")
-    print("Pedir prestado un material--------[2]")
-    print("Devolver un material--------------[3]")
-    print("Consultar materiales disponibles--[4]")
-    print("Consultar materiales prestados----[5]")
-    print()
-    opcion = input("Ingrese su opcion: ")
-
-    while opcion not in ["1", "2", "3", "4", "5"]:
-        print("Opción invalida, vuelva a intentar...")
+    while True:
+        print("Bienvenido a PyLibrary.")
+        print()
+        print("Usted puede hacer lo siguiente en nuestra librería:")
+        print("Donar material--------------------[1]")
+        print("Pedir prestado un material--------[2]")
+        print("Devolver un material--------------[3]")
+        print("Consultar materiales disponibles--[4]")
+        print("Consultar materiales prestados----[5]")
+        print()
         opcion = input("Ingrese su opcion: ")
 
-    match opcion:
-        case "1":
-            menu_donar_material()
+        while opcion not in ["1", "2", "3", "4", "5"]:
+            print("Opción invalida, vuelva a intentar...")
+            opcion = input("Ingrese su opcion: ")
 
-        case "2":
-            pass
+        match opcion:
+            case "1":
+                menu_donar_material()
 
-        case "3":
-            pass
+            case "2":
+                pass
 
-        case "4":
-            pass
+            case "3":
+                pass
 
-        case "5":
-            pass
+            case "4":
+                pass
 
-    repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
+            case "5":
+                pass
 
-    while repetir_bucle not in ["S", "N"]:
-        print("Opción invalida, vuelva a intentar...")
         repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
 
-    if repetir_bucle == "N":
-        break
+        while repetir_bucle not in ["S", "N"]:
+            print("Opción invalida, vuelva a intentar...")
+            repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
+
+        if repetir_bucle == "N":
+            break
 
 def instanciar_usuario(usuario):
 
