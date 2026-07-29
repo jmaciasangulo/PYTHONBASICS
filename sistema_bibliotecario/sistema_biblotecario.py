@@ -280,6 +280,8 @@ def menu_principal(cuenta):
         case "5":
             pass
 
+    repetir_bucle = input("Desea volver a hacer otra operación? [S/N]: ").upper()
+
 def instanciar_usuario(usuario):
 
     basedatos.execute("SELECT * FROM usuarios WHERE id_usuario = ?", (usuario,))
