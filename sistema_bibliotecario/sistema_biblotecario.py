@@ -306,4 +306,10 @@ def menu_donar_material(cuenta):
         case "LIBRO":
             paginas = input("Ingrese el número de paginas del material: ")
             genero = input("Ingrese el genero del material: ")
+        case "REVISTA":
+            numero_edicion = input("Ingrese el numero de edicion de la revista: ")
+            periodicidad = input("Ingrese la periodicidad de la revista: ")
+        case "PELICULA":
+            duracion = input("Ingrese la duracion de la película (en minutos): ")
+            clasificacion = input("Ingrese la clasificación de la película: ")
 menu_acceder()
