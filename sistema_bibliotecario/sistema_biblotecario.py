@@ -301,4 +301,9 @@ def menu_donar_material(cuenta):
     titulo = input("Ingrese el titulo del material: ")
     autor = input("Ingrese el autor del material: ")
     fecha_adquisicion = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    match tipo_material:
+        case "LIBRO":
+            paginas = input("Ingrese el número de paginas del material: ")
+            genero = input("Ingrese el genero del material: ")
 menu_acceder()
