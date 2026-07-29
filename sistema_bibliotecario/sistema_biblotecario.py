@@ -293,4 +293,8 @@ def menu_donar_material(cuenta):
     print()
     print("Para concluir, realiza el siguiente formulario:")
     tipo_material = input("Ingrese el tipo de material [LIBRO, REVISTA, PELICULA]: ").upper()
+
+    while tipo_material not in ["LIBRO", "REVISTA", "PELICULA"]:
+        print("Opccion invalida, vuelva a intentar...")
+        tipo_material = input("Ingrese el tipo de material [LIBRO, REVISTA, PELICULA]: ").upper()
 menu_acceder()
