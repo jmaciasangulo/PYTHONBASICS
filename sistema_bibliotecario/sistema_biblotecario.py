@@ -288,4 +288,9 @@ def instanciar_usuario(usuario):
 
     return cuenta_usuario
 
+def menu_donar_material(cuenta):
+    print("Muchas gracias por donar material a la biblioteca!!!")
+    print()
+    print("Para concluir, realiza el siguiente formulario:")
+    
 menu_acceder()
