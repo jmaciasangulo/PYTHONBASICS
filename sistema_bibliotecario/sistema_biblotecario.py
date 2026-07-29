@@ -336,4 +336,7 @@ def menu_donar_material():
                               (nuevo_material.id_material, tipo_material, nuevo_material.titulo, nuevo_material.disponiblidad ))
             basedatos.execute("INSERT INTO libros VALUES (?, ?, ?, ?, ?)",
                               (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.duracion, nuevo_material.clasificacion))
+
+    print(f"El registro de {titulo} ha sido llevado a cabo con exito.")
+    print("Te agradecemos de corazon por donar a nuestra biblioteca!!!")
 menu_acceder()
