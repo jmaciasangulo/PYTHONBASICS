@@ -307,6 +307,8 @@ def menu_donar_material(cuenta):
         case "LIBRO":
             paginas = input("Ingrese el número de paginas del material: ")
             genero = input("Ingrese el genero del material: ")
+
+            nuevo_material = Libro(titulo, autor, fecha_adquisicion, paginas, genero)
         case "REVISTA":
             numero_edicion = input("Ingrese el numero de edicion de la revista: ")
             periodicidad = input("Ingrese la periodicidad de la revista: ")
