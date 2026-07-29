@@ -318,6 +318,12 @@ def menu_donar_material():
         case "REVISTA":
             numero_edicion = input("Ingrese el numero de edicion de la revista: ")
             periodicidad = input("Ingrese la periodicidad de la revista: ")
+
+            nuevo_material = Revista(titulo, autor, fecha_adquisicion, numero_edicion, periodicidad)
+
+            basedatos.execute("INSERT INTO materiales_bibliograficos VALUES (?, ?, ?, ?)",
+                              (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.numero_edicion, nuevo_material.periodicidad))
+            conexion.commit()
         case "PELICULA":
             duracion = input("Ingrese la duracion de la película (en minutos): ")
             clasificacion = input("Ingrese la clasificación de la película: ")
