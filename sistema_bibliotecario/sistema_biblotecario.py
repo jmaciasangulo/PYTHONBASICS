@@ -333,7 +333,7 @@ def menu_donar_material():
 
             basedatos.execute("INSERT INTO materiales_bibliograficos VALUES (?, ?, ?, ?)",
                               (nuevo_material.id_material, tipo_material, nuevo_material.titulo, nuevo_material.disponiblidad))
-            basedatos.execute("INSERT INTO libros VALUES (?, ?, ?, ?, ?)",
+            basedatos.execute("INSERT INTO revistas VALUES (?, ?, ?, ?, ?)",
                               (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.numero_edicion, nuevo_material.periodicidad))
             conexion.commit()
         case "PELICULA":
@@ -344,7 +344,7 @@ def menu_donar_material():
 
             basedatos.execute("INSERT INTO materiales_bibliograficos VALUES (?, ?, ?, ?)",
                               (nuevo_material.id_material, tipo_material, nuevo_material.titulo, nuevo_material.disponiblidad ))
-            basedatos.execute("INSERT INTO libros VALUES (?, ?, ?, ?, ?)",
+            basedatos.execute("INSERT INTO peliculas VALUES (?, ?, ?, ?, ?)",
                               (nuevo_material.id_material, nuevo_material.autor, nuevo_material.fecha_adquisicion, nuevo_material.duracion, nuevo_material.clasificacion))
             conexion.commit()
 
@@ -354,8 +354,7 @@ def menu_donar_material():
 def menu_pedir_prestado_material(cuenta):
     print("Prestar Material.")
     print()
-    basedatos.execute(
-        "SELECT COUNT(*) FROM historial_prestamos WHERE id_usuario = ? AND WHERE fecha_devolucion IS NULL", (cuenta,))
+    basedatos.execute("SELECT COUNT(*) FROM historial_prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL", (cuenta.id_usuario,))
     total_prestamos = basedatos.fetchone()[0]
 
     if total_prestamos == 5:
@@ -364,7 +363,7 @@ def menu_pedir_prestado_material(cuenta):
     else:
         while True:
             material_buscar = input("Ingrese el nombre o el ID del material que desea buscar: ")
-            basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ? OR WHERE titulo = ?", (material_buscar, material_buscar))
+            basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ? OR titulo = ?", (material_buscar, material_buscar))
             resultados = basedatos.fetchall()
 
             print()
