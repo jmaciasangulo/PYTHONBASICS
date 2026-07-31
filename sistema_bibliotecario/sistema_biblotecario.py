@@ -406,6 +406,10 @@ def menu_pedir_prestado_material(cuenta):
 
             continuar = input("Desea continuar con el préstamo? [S/N]: ").upper()
 
+            while continuar not in ["S", "N"]:
+                print("Opción invalida, vuelva a intentar...")
+                continuar = input("Desea continuar con el préstamo? [S/N]: ").upper()
+
             if continuar == "S":
                 id_prestamo_guardar = str(uuid.uuid7())
                 id_material_guardar = id_material
