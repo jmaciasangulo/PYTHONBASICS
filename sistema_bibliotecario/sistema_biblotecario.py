@@ -383,6 +383,10 @@ def menu_pedir_prestado_material(cuenta):
 
             repetir_busqueda = input("Desea volver a buscar material? [S/N]: ").upper()
 
+            while repetir_busqueda not in ["S", "N"]:
+                print("Opción invalida, vuelva a intentar...")
+                repetir_busqueda = input("Desea volver a buscar material? [S/N]: ").upper()
+
             if repetir_busqueda == "N":
                 break
 
