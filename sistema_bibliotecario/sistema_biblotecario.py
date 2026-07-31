@@ -393,6 +393,12 @@ def menu_pedir_prestado_material(cuenta):
         basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ?", (id_material,))
         material_seleccionado = basedatos.fetchone()
 
+        if material_seleccionado is None:
+            print("ID invalido...")
+        elif material_seleccionado[3] == 0:
+            print("Material no disponible...")
+        else:
+
             print("MATERIAL SELECCIONADO: ")
 
             print("ID:     ", material_seleccionado[0])
