@@ -350,4 +350,8 @@ def menu_donar_material():
 
     print(f"El registro de {titulo} ha sido llevado a cabo con exito.")
     print("Te agradecemos de corazon por donar a nuestra biblioteca!!!")
+
+def menu_pedir_prestado_material(cuenta):
+    print("Prestar Material.")
+    print()
 menu_acceder()
