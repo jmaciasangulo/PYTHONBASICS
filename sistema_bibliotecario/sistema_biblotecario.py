@@ -373,8 +373,8 @@ def menu_pedir_prestado_material(cuenta):
                 print("ID:     ", tupla[0])
                 print("TIPO:   ", tupla[1])
                 print("TITULO: ", tupla[2])
-                if tupla[3] == 0:
-                    print(" ESTE MATERIAL ESTÁ DISPONIBLE")
+                if tupla[3] == 1:
+                    print("ESTE MATERIAL ESTÁ DISPONIBLE")
                 else:
                     print("ESTE MATERIAL NO ESTÁ DISPONIBLE")
 
