@@ -365,4 +365,5 @@ def menu_pedir_prestado_material(cuenta):
         while True:
             material_buscar = input("Ingrese el nombre o el ID del material que desea buscar: ")
             basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ? OR WHERE titulo = ?", (material_buscar, material_buscar))
+            resultados = basedatos.fetchall()
 menu_acceder()
