@@ -270,7 +270,7 @@ def menu_principal(cuenta):
                 menu_donar_material()
 
             case "2":
-                pass
+                menu_pedir_prestado_material(cuenta)
 
             case "3":
                 pass
