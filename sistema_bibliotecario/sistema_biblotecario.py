@@ -361,5 +361,8 @@ def menu_pedir_prestado_material(cuenta):
     if total_prestamos == 5:
         print("Usted tiene ya ha alcanzado el límite de prestamos.")
         print("Regrese al menos un material para pode obtener otro.")
-
+    else:
+        while True:
+            material_buscar = input("Ingrese el nombre o el ID del material que desea buscar: ")
+            basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ? OR WHERE titulo = ?", (material_buscar, material_buscar))
 menu_acceder()
