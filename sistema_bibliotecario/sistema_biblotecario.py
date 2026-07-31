@@ -366,4 +366,18 @@ def menu_pedir_prestado_material(cuenta):
             material_buscar = input("Ingrese el nombre o el ID del material que desea buscar: ")
             basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ? OR WHERE titulo = ?", (material_buscar, material_buscar))
             resultados = basedatos.fetchall()
+
+            print()
+            print("RESULTADOS DE BUSQUEDA")
+            for tupla in resultados:
+                print()
+                print("ID:     ", tupla[0])
+                print("TIPO:   ", tupla[1])
+                print("TITULO: ", tupla[2])
+                if tupla[3] == 0:
+                    print(" ESTE MATERIAL ESTÁ DISPONIBLE")
+                else:
+                    print("ESTE MATERIAL NO ESTÁ DISPONIBLE")
+
+            print("Para mejores resultados, consulte los materiales disponibles y prestados.")
 menu_acceder()
