@@ -400,4 +400,15 @@ def menu_pedir_prestado_material(cuenta):
             print("TITULO: ", material_seleccionado[2])
 
             continuar = input("Desea continuar con el préstamo? [S/N]: ").upper()
+
+            if continuar == "S":
+                id_prestamo_guardar = str(uuid.uuid7())
+                id_material_guardar = id_material
+                id_usuario_guardar = cuenta.id_usuario
+                momento_actual = datetime.datetime.now()
+                fecha_prestamo_guardar = momento_actual.strftime("%Y-%m-%d")
+                fecha_limite = momento_actual + datetime.timedelta(days=20)
+                fecha_limite = fecha_limite.strftime("%Y-%m-%d")
+                fecha_devolucion = None
+                basedatos.execute("INSERT INTO historial_prestamos VALUES (?, ?, ?, ?, ?, ?)", (id_prestamo_guardar, id_material_guardar, id_usuario_guardar, fecha_prestamo_guardar, fecha_limite, fecha_devolucion))
 menu_acceder()
