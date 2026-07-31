@@ -357,4 +357,9 @@ def menu_pedir_prestado_material(cuenta):
     basedatos.execute(
         "SELECT COUNT(*) FROM historial_prestamos WHERE id_usuario = ? AND WHERE fecha_devolucion IS NULL", (cuenta,))
     total_prestamos = basedatos.fetchone()[0]
+
+    if total_prestamos == 5:
+        print("Usted tiene ya ha alcanzado el límite de prestamos.")
+        print("Regrese al menos un material para pode obtener otro.")
+
 menu_acceder()
