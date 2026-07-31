@@ -389,9 +389,9 @@ def menu_pedir_prestado_material(cuenta):
             if repetir_busqueda == "N":
                 break
 
-            id_material = input("Ingrese el ID del material que desea pedir prestado: ")
-            basedatos.execute("SELEC * FROM materiales_bibliograficos WHERE id_material = ?", (id_material,))
-            material_seleccionado = basedatos.fetchone()
+        id_material = input("Ingrese el ID del material que desea pedir prestado: ")
+        basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ?", (id_material,))
+        material_seleccionado = basedatos.fetchone()
 
             print("MATERIAL SELECCIONADO: ")
 
