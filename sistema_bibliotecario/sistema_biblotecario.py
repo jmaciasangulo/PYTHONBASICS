@@ -354,4 +354,7 @@ def menu_donar_material():
 def menu_pedir_prestado_material(cuenta):
     print("Prestar Material.")
     print()
+    basedatos.execute(
+        "SELECT COUNT(*) FROM historial_prestamos WHERE id_usuario = ? AND WHERE fecha_devolucion IS NULL", (cuenta,))
+    total_prestamos = basedatos.fetchone()[0]
 menu_acceder()
