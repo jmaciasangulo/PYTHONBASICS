@@ -398,4 +398,6 @@ def menu_pedir_prestado_material(cuenta):
 
             print("ID:     ", material_seleccionado[0])
             print("TITULO: ", material_seleccionado[2])
+
+            continuar = input("Desea continuar con el préstamo? [S/N]: ").upper()
 menu_acceder()
