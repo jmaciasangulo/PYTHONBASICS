@@ -380,4 +380,9 @@ def menu_pedir_prestado_material(cuenta):
                     print("ESTE MATERIAL NO ESTÁ DISPONIBLE")
 
             print("Para mejores resultados, consulte los materiales disponibles y prestados.")
+
+            repetir_busqueda = input("Desea volver a buscar material? [S/N]: ").upper()
+
+            if repetir_busqueda == "N":
+                break
 menu_acceder()
