@@ -377,6 +377,19 @@ def menu_pedir_prestado_material(cuenta):
                     FROM materiales_bibliograficos
                     JOIN libros ON materiales_bibliograficos.id = libros.id_libro
                     WHERE materiales_bibliograficos.id = ?""", (seleccionar_material,))
+                    resultado = basedatos.fetchone()
+
+                    material_seleccionado = Libro(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+
+                    print("MATERIAL SELECCIONADO:")
+                    print()
+                    print(f"TIPO:     {resultado[1]}")
+                    print(f"TITULO:   {material_seleccionado.titulo}")
+                    print(f"AUTOR:    {material_seleccionado.autor}")
+                    print(f"PAGINAS:  {material_seleccionado.paginas}")
+                    print(f"GENERO:   {material_seleccionado.genero}")
+                    print()
+
                 case "REVISTA":
                     pass
                 case "PELICULA":
