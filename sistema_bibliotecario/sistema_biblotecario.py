@@ -422,6 +422,8 @@ def menu_pedir_prestado_material(cuenta):
                 basedatos.execute("INSERT INTO historial_prestamos VALUES (?, ?, ?, ?, ?, ?)", (id_prestamo_guardar, id_material_guardar, id_usuario_guardar, fecha_prestamo_guardar, fecha_limite, fecha_devolucion))
                 basedatos.execute("UPDATE materiales_bibliograficos SET disponibilidad = ? WHERE id = ?", (False, id_material_guardar))
                 conexion.commit()
+
+                print("Recuerda cuidar el material, es para el bien de todos :)")
             else:
                 print("Prestamo cancelado")
 
