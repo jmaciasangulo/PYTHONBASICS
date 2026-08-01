@@ -361,5 +361,6 @@ def menu_pedir_prestado_material(cuenta):
         print("Usted tiene ya ha alcanzado el límite de prestamos.")
         print("Regrese al menos un material para pode obtener otro.")
     else:
+        seleccionar_material = input("Ingrese el ID del material que desea pedir prestado: ")
 
 menu_acceder()
