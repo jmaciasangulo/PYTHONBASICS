@@ -426,6 +426,10 @@ def menu_pedir_prestado_material(cuenta):
                     print(f"CLASIFICACIÓN:      {material_seleccionado.clasificacion}")
                     print()
 
+            continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
+
+            
+
 
 
 
