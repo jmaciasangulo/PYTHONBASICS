@@ -391,9 +391,42 @@ def menu_pedir_prestado_material(cuenta):
                     print()
 
                 case "REVISTA":
-                    pass
+                    basedatos.execute("""SELECT *
+                                        FROM materiales_bibliograficos
+                                        JOIN revistas ON materiales_bibliograficos.id = revistas.id_revista
+                                        WHERE materiales_bibliograficos.id = ?""", (seleccionar_material,))
+                    resultado = basedatos.fetchone()
+
+                    material_seleccionado = Revista(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+
+                    print("MATERIAL SELECCIONADO:")
+                    print()
+                    print(f"TIPO:               {resultado[1]}")
+                    print(f"TITULO:             {material_seleccionado.titulo}")
+                    print(f"AUTOR:              {material_seleccionado.autor}")
+                    print(f"NÚMERO DE EDICION:  {material_seleccionado.numero_edicion}")
+                    print(f"PERIODICIDAD:       {material_seleccionado.periodicidad}")
+                    print()
+
                 case "PELICULA":
-                    pass
+                    basedatos.execute("""SELECT *
+                                        FROM materiales_bibliograficos
+                                        JOIN peliculas ON materiales_bibliograficos.id = peliculas.id_pelicula
+                                        WHERE materiales_bibliograficos.id = ?""", (seleccionar_material,))
+                    resultado = basedatos.fetchone()
+
+                    material_seleccionado = Pelicula(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+
+                    print("MATERIAL SELECCIONADO:")
+                    print()
+                    print(f"TIPO:               {resultado[1]}")
+                    print(f"TITULO:             {material_seleccionado.titulo}")
+                    print(f"AUTOR:              {material_seleccionado.autor}")
+                    print(f"DURACIÓN:           {material_seleccionado.duracion}")
+                    print(f"CLASIFICACIÓN:      {material_seleccionado.clasificacion}")
+                    print()
+
+
 
 
 menu_acceder()
