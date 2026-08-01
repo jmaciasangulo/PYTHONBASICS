@@ -363,4 +363,7 @@ def menu_pedir_prestado_material(cuenta):
     else:
         seleccionar_material = input("Ingrese el ID del material que desea pedir prestado: ")
 
+        basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ?", (seleccionar_material,))
+        resultado = basedatos.fetchone()
+
 menu_acceder()
