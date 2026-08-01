@@ -369,5 +369,15 @@ def menu_pedir_prestado_material(cuenta):
 
         if resultado is None:
             print("EL ID ingresado no existe.")
+        else:
+            match resultado[1]:
+
+                case "LIBRO":
+                    pass
+                case "REVISTA":
+                    pass
+                case "PELICULA":
+                    pass
+
 
 menu_acceder()
