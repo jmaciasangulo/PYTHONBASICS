@@ -428,7 +428,9 @@ def menu_pedir_prestado_material(cuenta):
 
             continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
 
-            
+            while continuar not in ["S", "N"]:
+                print("Respuesta invalida, vuelva a intentar...")
+                continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
 
 
 
