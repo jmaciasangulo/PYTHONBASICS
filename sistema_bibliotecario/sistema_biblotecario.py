@@ -373,7 +373,10 @@ def menu_pedir_prestado_material(cuenta):
             match resultado[1]:
 
                 case "LIBRO":
-                    pass
+                    basedatos.execute("""SELECT materiales_bibliograficos.tipo, materiales_bibliograficos.titulo, libros.autor, libros.paginas, libros.genero, materiales_bibliograficos.disponibilidad
+                    FROM materiales_bibliograficos
+                    JOIN libros ON materiales_bibliograficos.id = libros.id_libro
+                    WHERE materiales_bibliograficos.id = ?""", (seleccionar_material,))
                 case "REVISTA":
                     pass
                 case "PELICULA":
