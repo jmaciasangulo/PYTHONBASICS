@@ -502,6 +502,7 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
             print(f"MATERIAL {cadena_texto}:")
             print()
+            print(f"ID:       {material_seleccionado.id_material}")
             print(f"TIPO:     {resultado[1]}")
             print(f"TITULO:   {material_seleccionado.titulo}")
             print(f"AUTOR:    {material_seleccionado.autor}")
@@ -523,6 +524,7 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
             print(f"MATERIAL {cadena_texto}:")
             print()
+            print(f"ID:                 {material_seleccionado.id_material}")
             print(f"TIPO:               {resultado[1]}")
             print(f"TITULO:             {material_seleccionado.titulo}")
             print(f"AUTOR:              {material_seleccionado.autor}")
@@ -544,6 +546,7 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
             print(f"MATERIAL {cadena_texto}:")
             print()
+            print(f"ID:                 {material_seleccionado.id_material}")
             print(f"TIPO:               {resultado[1]}")
             print(f"TITULO:             {material_seleccionado.titulo}")
             print(f"AUTOR:              {material_seleccionado.autor}")
