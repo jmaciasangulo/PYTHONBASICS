@@ -544,4 +544,76 @@ def menu_devolver_material(cuenta):
                     print()
 
 
+def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
+
+    material_seleccionado = None
+
+    match tipo:
+
+        case "LIBRO":
+            basedatos.execute("""SELECT *
+                                            FROM materiales_bibliograficos
+                                            JOIN libros ON materiales_bibliograficos.id = libros.id_libro
+                                            WHERE materiales_bibliograficos.id = ?""", (id_seleccionado,))
+            resultado = basedatos.fetchone()
+
+            material_seleccionado = Libro(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+            material_seleccionado.id_material = resultado[0]
+
+            print(f"MATERIAL {cadena_texto}:")
+            print()
+            print(f"TIPO:     {resultado[1]}")
+            print(f"TITULO:   {material_seleccionado.titulo}")
+            print(f"AUTOR:    {material_seleccionado.autor}")
+            print(f"PAGINAS:  {material_seleccionado.paginas}")
+            print(f"GENERO:   {material_seleccionado.genero}")
+            print()
+
+        case "REVISTA":
+            basedatos.execute("""SELECT *
+                                            FROM materiales_bibliograficos
+                                            JOIN revistas ON materiales_bibliograficos.id = revistas.id_revista
+                                            WHERE materiales_bibliograficos.id = ?""",
+                              (id_seleccionado,))
+            resultado = basedatos.fetchone()
+
+            material_seleccionado = Revista(resultado[2], resultado[5], resultado[6], resultado[7],
+                                            resultado[8])
+            material_seleccionado.id_material = resultado[0]
+
+            print(f"MATERIAL {cadena_texto}:")
+            print()
+            print(f"TIPO:               {resultado[1]}")
+            print(f"TITULO:             {material_seleccionado.titulo}")
+            print(f"AUTOR:              {material_seleccionado.autor}")
+            print(f"NÚMERO DE EDICION:  {material_seleccionado.numero_edicion}")
+            print(f"PERIODICIDAD:       {material_seleccionado.periodicidad}")
+            print()
+
+        case "PELICULA":
+            basedatos.execute("""SELECT *
+                                            FROM materiales_bibliograficos
+                                            JOIN peliculas ON materiales_bibliograficos.id = peliculas.id_pelicula
+                                            WHERE materiales_bibliograficos.id = ?""",
+                              (id_seleccionado,))
+            resultado = basedatos.fetchone()
+
+            material_seleccionado = Pelicula(resultado[2], resultado[5], resultado[6], resultado[7],
+                                             resultado[8])
+            material_seleccionado.id_material = resultado[0]
+
+            print(f"MATERIAL {cadena_texto}:")
+            print()
+            print(f"TIPO:               {resultado[1]}")
+            print(f"TITULO:             {material_seleccionado.titulo}")
+            print(f"AUTOR:              {material_seleccionado.autor}")
+            print(f"DURACIÓN:           {material_seleccionado.duracion} minutos")
+            print(f"CLASIFICACIÓN:      {material_seleccionado.clasificacion}")
+            print()
+        case _:
+            raise ValueError(f"El tipo del material desconocido {tipo}")
+
+    return material_seleccionado
+
+
 menu_acceder()
