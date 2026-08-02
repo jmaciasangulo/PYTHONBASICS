@@ -464,6 +464,9 @@ def menu_pedir_prestado_material(cuenta):
                 print("El material ha sido entregado a ti.")
                 print("Recuerda cuidar el material :)")
 
+            else:
+                print("El prestamo ha sido cancelado.")
+
 
 
 menu_acceder()
