@@ -432,6 +432,10 @@ def menu_pedir_prestado_material(cuenta):
                 print("Respuesta invalida, vuelva a intentar...")
                 continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
 
+            if continuar == "S":
+
+                material_seleccionado.prestar()
+
 
 
 
