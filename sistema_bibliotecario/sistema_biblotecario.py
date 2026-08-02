@@ -382,6 +382,7 @@ def menu_pedir_prestado_material(cuenta):
                     resultado = basedatos.fetchone()
 
                     material_seleccionado = Libro(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+                    material_seleccionado.id_material = resultado[0]
 
                     print("MATERIAL SELECCIONADO:")
                     print()
@@ -400,6 +401,7 @@ def menu_pedir_prestado_material(cuenta):
                     resultado = basedatos.fetchone()
 
                     material_seleccionado = Revista(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+                    material_seleccionado.id_material = resultado[0]
 
                     print("MATERIAL SELECCIONADO:")
                     print()
@@ -418,6 +420,7 @@ def menu_pedir_prestado_material(cuenta):
                     resultado = basedatos.fetchone()
 
                     material_seleccionado = Pelicula(resultado[2], resultado[5], resultado[6], resultado[7], resultado[8])
+                    material_seleccionado.id_material = resultado[0]
 
                     print("MATERIAL SELECCIONADO:")
                     print()
