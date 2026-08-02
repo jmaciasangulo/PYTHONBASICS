@@ -426,6 +426,9 @@ def menu_pedir_prestado_material(cuenta):
                     print(f"CLASIFICACIÓN:      {material_seleccionado.clasificacion}")
                     print()
 
+                case _:
+                    raise ValueError(f"El tipo del material desconocido {resultado[1]}")
+
             continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
 
             while continuar not in ["S", "N"]:
