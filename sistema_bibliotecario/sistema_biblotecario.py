@@ -362,6 +362,7 @@ def menu_pedir_prestado_material(cuenta):
         print("Regrese al menos un material para pode obtener otro.")
     else:
         seleccionar_material = input("Ingrese el ID del material que desea pedir prestado: ")
+        print()
 
         basedatos.execute("SELECT * FROM materiales_bibliograficos WHERE id = ?", (seleccionar_material,))
         resultado = basedatos.fetchone()
@@ -427,7 +428,7 @@ def menu_pedir_prestado_material(cuenta):
                     print(f"TIPO:               {resultado[1]}")
                     print(f"TITULO:             {material_seleccionado.titulo}")
                     print(f"AUTOR:              {material_seleccionado.autor}")
-                    print(f"DURACIÓN:           {material_seleccionado.duracion}")
+                    print(f"DURACIÓN:           {material_seleccionado.duracion} minutos")
                     print(f"CLASIFICACIÓN:      {material_seleccionado.clasificacion}")
                     print()
 
@@ -459,6 +460,9 @@ def menu_pedir_prestado_material(cuenta):
                                   (id_prestamo, id_material, id_usuario, fecha_prestamo, fecha_limite, fecha_devolucion))
 
                 conexion.commit()
+
+                print("El material ha sido entregado a ti.")
+                print("Recuerda cuidar el material :)")
 
 
 
