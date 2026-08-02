@@ -446,6 +446,14 @@ def menu_pedir_prestado_material(cuenta):
 
                 basedatos.execute("""UPDATE materiales_bibliograficos SET disponibilidad = ? WHERE id = ?""", (material_seleccionado.disponiblidad, material_seleccionado.id_material))
 
+                id_prestamo = str(uuid.uuid7())
+                id_material = material_seleccionado.id_material
+                id_usuario = cuenta.id_usuario
+                momento_actual = datetime.datetime.now()
+                fecha_prestamo = momento_actual.strftime("%Y-%m-%d")
+                fecha_limite = momento_actual + datetime.timedelta(days=20)
+                fecha_limite = fecha_limite.strftime("%Y-%m-%d")
+                fecha_devolucion = None
 
 
 
