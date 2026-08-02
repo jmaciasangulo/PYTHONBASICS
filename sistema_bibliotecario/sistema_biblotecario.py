@@ -444,6 +444,8 @@ def menu_pedir_prestado_material(cuenta):
 
                 material_seleccionado.prestar()
 
+                basedatos.execute("""UPDATE materiales_bibliograficos SET disponibilidad = ? WHERE id = ?""", (material_seleccionado.disponiblidad, material_seleccionado.id_material))
+
 
 
 
