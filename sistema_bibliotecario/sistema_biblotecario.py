@@ -467,6 +467,16 @@ def menu_pedir_prestado_material(cuenta):
             else:
                 print("El prestamo ha sido cancelado.")
 
+def menu_devolver_material(cuenta):
+
+    basedatos.execute("""SELECT id_material FROM historial_prestamos 
+    WHERE id_usuario = ? AND fecha_devolucion IS NULL""", (cuenta.id_usuario,))
+    resultados = basedatos.fetchall()
+
+    if not resultados:
+        print("Usted no tiene préstamos activos.")
+
+
 
 
 menu_acceder()
