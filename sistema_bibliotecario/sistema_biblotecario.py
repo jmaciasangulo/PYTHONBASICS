@@ -455,6 +455,9 @@ def menu_pedir_prestado_material(cuenta):
                 fecha_limite = fecha_limite.strftime("%Y-%m-%d")
                 fecha_devolucion = None
 
+                basedatos.execute("""INSERT INTO historial_prestamos VALUES (?, ?, ?, ?, ?, ?)""",
+                                  (id_prestamo, id_material, id_usuario, fecha_prestamo, fecha_limite, fecha_devolucion))
+
 
 
 menu_acceder()
