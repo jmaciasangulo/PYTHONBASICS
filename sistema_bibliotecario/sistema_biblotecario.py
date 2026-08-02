@@ -458,6 +458,8 @@ def menu_pedir_prestado_material(cuenta):
                 basedatos.execute("""INSERT INTO historial_prestamos VALUES (?, ?, ?, ?, ?, ?)""",
                                   (id_prestamo, id_material, id_usuario, fecha_prestamo, fecha_limite, fecha_devolucion))
 
+                conexion.commit()
+
 
 
 menu_acceder()
