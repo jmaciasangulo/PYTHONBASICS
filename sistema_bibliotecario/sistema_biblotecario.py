@@ -469,7 +469,7 @@ def menu_pedir_prestado_material(cuenta):
 
 def menu_devolver_material(cuenta):
 
-    basedatos.execute("""SELECT id_material FROM historial_prestamos 
+    basedatos.execute("""SELECT id_material, tipo FROM historial_prestamos 
     WHERE id_usuario = ? AND fecha_devolucion IS NULL""", (cuenta.id_usuario,))
     resultados = basedatos.fetchall()
 
