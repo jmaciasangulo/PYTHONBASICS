@@ -370,7 +370,7 @@ def menu_pedir_prestado_material(cuenta):
         if resultado is None:
             print("EL ID ingresado no existe.")
         else:
-            imprimir_material_tipo(material_seleccionado, resultado[1], "SELECCIONADO")
+            material_seleccionado = imprimir_material_tipo(seleccionar_material, resultado[1], "SELECCIONADO")
 
             continuar = input("Desea proceder con el préstamo? [S/N] ").upper()
 
