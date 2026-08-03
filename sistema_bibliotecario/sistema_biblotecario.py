@@ -369,6 +369,8 @@ def menu_pedir_prestado_material(cuenta):
 
         if resultado is None:
             print("EL ID ingresado no existe.")
+        elif resultado[3] == 0:
+            print("El material seleccionado se encuentra ocupado, intentelo después.")
         else:
             material_seleccionado = imprimir_material_tipo(seleccionar_material, resultado[1], "SELECCIONADO")
 
