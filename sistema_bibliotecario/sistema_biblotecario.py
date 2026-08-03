@@ -417,6 +417,7 @@ def menu_devolver_material(cuenta):
     if not resultados:
         print("Usted no tiene préstamos activos.")
     else:
+        print("A continuación se presentan los materiales en su poseción.")
         for tupla in resultados:
 
             imprimir_material_tipo(tupla[0], tupla[1], "EN POSECIÓN")
