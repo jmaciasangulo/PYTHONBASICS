@@ -430,6 +430,11 @@ def menu_devolver_material(cuenta):
             print("El ID ingresado no corresponde a los materiales en su poseción.")
             material_devolver = input("Ingrese el ID del material que desea devolver: ")
 
+        basedatos.execute("""SELECT tipo
+        FROM materiales_bibliograficos
+        WHERE id = ?""", (material_devolver,))
+        tipo = basedatos.fetchone()[0]
+
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
