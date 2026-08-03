@@ -422,6 +422,14 @@ def menu_devolver_material(cuenta):
 
             imprimir_material_tipo(tupla[0], tupla[1], "EN POSECIÓN")
 
+        material_devolver = input("Ingrese el ID del material que desea devolver: ")
+
+        ids_materiales_posecion = [tupla[0] for tupla in resultados]
+
+        while material_devolver not in ids_materiales_posecion:
+            print("El ID ingresado no corresponde a los materiales en su poseción.")
+            material_devolver = input("Ingrese el ID del material que desea devolver: ")
+
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
