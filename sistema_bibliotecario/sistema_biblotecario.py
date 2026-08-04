@@ -435,6 +435,10 @@ def menu_devolver_material(cuenta):
         WHERE id = ?""", (material_devolver,))
         tipo = basedatos.fetchone()[0]
 
+        material_devolver = imprimir_material_tipo(material_devolver, tipo, "SELECCIONADO")
+
+
+
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
