@@ -468,6 +468,10 @@ def menu_devolver_material(cuenta):
 
             multa = material_devolver.calcular_multa(dias_multa)
 
+            if multa > 0:
+                print(f"Usted tiene una multa de ${multa} pesos.")
+                print("Asegurese de pagar su multa.")
+
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     material_seleccionado = None
