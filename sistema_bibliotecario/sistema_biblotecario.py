@@ -443,6 +443,15 @@ def menu_devolver_material(cuenta):
             print("Respuesta invalida, vuelva a intentar.")
             continuar = input("¿Desea proceder con la devolución? [S/N] ").upper()
 
+        if continuar == "S":
+            material_devolver.devolver()
+            basedatos.execute("""UPDATE  materiales_bibliograficos SET disponibilidad = ? WHERE id = ?""", (material_devolver.disponiblidad, material_devolver.id_material))
+
+            momento_actual = datetime.datetime.now()
+            fecha_devolucion = momento_actual.strftime("%Y-%m-%d")
+
+            basedatos.execute("""UPDATE historial_prestamos SET fecha_devolucion = ? WHERE id_material = ?""", (fecha_devolucion, material_devolver.id_material))
+
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
