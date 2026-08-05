@@ -550,7 +550,10 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     return material_seleccionado
 
-def menu_consultar_disponibles():
+def menu_consultar_materiales(disponibilidad):
+    if not isinstance(disponibilidad, bool):
+        raise TypeError("El disponibilidad debe ser boolean")
+
     print("Consultar disponibles.")
     print()
     tipo_consultar = input("Ingrese el tipo de materiales que desea consultar: ").upper()
