@@ -572,6 +572,10 @@ def menu_consultar_disponibles():
             for tupla in ids:
                 imprimir_material_tipo(tupla[0], "PELICULA", "DISPONIBLE")
         case "REVISTA", "REVISTAS":
-            pass
+            basedatos.execute("""SELECT id FROM materiales_bibliograficos WHERE tipo = ? AND disponibilidad = ?""",
+                              ("REVISTA", 1))
+            ids = basedatos.fetchall()
+            for tupla in ids:
+                imprimir_material_tipo(tupla[0], "REVISTA", "DISPONIBLE")
 
 menu_acceder()
