@@ -278,7 +278,7 @@ def menu_principal(cuenta):
                 menu_devolver_material(cuenta)
 
             case "4":
-                pass
+                menu_consultar_disponibles()
 
             case "5":
                 pass
