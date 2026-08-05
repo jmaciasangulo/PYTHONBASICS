@@ -461,6 +461,9 @@ def menu_devolver_material(cuenta):
 
             dias_multa = (fecha_limite - fecha_devolucion).days
 
+            if dias_multa < 1:
+                dias_multa = 0
+
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     material_seleccionado = None
