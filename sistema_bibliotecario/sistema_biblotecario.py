@@ -472,6 +472,8 @@ def menu_devolver_material(cuenta):
                 print(f"Usted tiene una multa de ${multa} pesos.")
                 print("Asegurese de pagar su multa.")
 
+            print("Muchas gracias por devolver el material :)")
+
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     material_seleccionado = None
