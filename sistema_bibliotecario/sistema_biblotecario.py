@@ -559,5 +559,12 @@ def menu_consultar_disponibles:
         print("Respuesta invalida, vuelva a intenar...")
         tipo_consultar = input("Ingrese el tipo de materiales que desea consultar: ").upper()
 
+    match tipo_consultar:
+        case "LIBRO", "LIBROS":
+            pass
+        case "PELICULA", "PELICULAS", "PELÍCULA", "PELÍCULAS":
+            pass
+        case "REVISTA", "REVISTAS":
+            pass
 
 menu_acceder()
