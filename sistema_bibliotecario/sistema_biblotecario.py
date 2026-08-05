@@ -550,5 +550,8 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     return material_seleccionado
 
+def menu_consultar_disponibles:
+
+
 
 menu_acceder()
