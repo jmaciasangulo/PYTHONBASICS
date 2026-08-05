@@ -564,6 +564,10 @@ def menu_consultar_disponibles():
 
             basedatos.execute("""SELECT id FROM materiales_bibliograficos WHERE tipo = ? AND disponibilidad = ?""", ("LIBRO", 1))
             ids = basedatos.fetchall()
+
+            if not ids:
+                print("No hay libros disponibles")
+
             for tupla in ids:
                 imprimir_material_tipo(tupla[0], "LIBRO", "DISPONIBLE")
             print("Final")
@@ -573,6 +577,10 @@ def menu_consultar_disponibles():
             basedatos.execute("""SELECT id FROM materiales_bibliograficos WHERE tipo = ? AND disponibilidad = ?""",
                               ("PELICULA", 1))
             ids = basedatos.fetchall()
+
+            if not ids:
+                print("No hay peliculas disponibles")
+
             for tupla in ids:
                 imprimir_material_tipo(tupla[0], "PELICULA", "DISPONIBLE")
 
@@ -581,6 +589,10 @@ def menu_consultar_disponibles():
             basedatos.execute("""SELECT id FROM materiales_bibliograficos WHERE tipo = ? AND disponibilidad = ?""",
                               ("REVISTA", 1))
             ids = basedatos.fetchall()
+
+            if not ids:
+                print("No hay revistas disponibles")
+
             for tupla in ids:
                 imprimir_material_tipo(tupla[0], "REVISTA", "DISPONIBLE")
 
