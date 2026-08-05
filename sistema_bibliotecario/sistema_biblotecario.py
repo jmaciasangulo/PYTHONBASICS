@@ -447,6 +447,9 @@ def menu_devolver_material(cuenta):
             material_devolver.devolver()
             basedatos.execute("""UPDATE  materiales_bibliograficos SET disponibilidad = ? WHERE id = ?""", (material_devolver.disponiblidad, material_devolver.id_material))
 
+            basedatos.execute("""SELECT fecha_limite FROM historial_prestamos WHERE id_material = ? AND fecha_devolucion IS NULL""", (material_devolver.id_material,))
+            fecha_limite = basedatos.fetchone()[0]
+
             momento_actual = datetime.datetime.now()
             fecha_devolucion = momento_actual.strftime("%Y-%m-%d")
 
