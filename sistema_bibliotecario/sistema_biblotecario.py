@@ -439,6 +439,9 @@ def menu_devolver_material(cuenta):
 
         continuar = input("¿Desea proceder con la devolución? [S/N] ").upper()
 
+        while continuar not in ["S", "N"]:
+            print("Respuesta invalida, vuelva a intentar.")
+            continuar = input("¿Desea proceder con la devolución? [S/N] ").upper()
 
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
