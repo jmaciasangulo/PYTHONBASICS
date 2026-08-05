@@ -456,6 +456,10 @@ def menu_devolver_material(cuenta):
             basedatos.execute("""UPDATE historial_prestamos SET fecha_devolucion = ? WHERE id_material = ?""", (fecha_devolucion, material_devolver.id_material))
             conexion.commit()
 
+            fecha_limite = datetime.datetime.strptime(fecha_limite, "%Y-%m-%d")
+            fecha_devolucion = datetime.datetime.strptime(fecha_devolucion, "%Y-%m-%d")
+
+            dias_multa = (fecha_limite - fecha_devolucion).days
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
