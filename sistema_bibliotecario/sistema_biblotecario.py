@@ -437,6 +437,7 @@ def menu_devolver_material(cuenta):
 
         material_devolver = imprimir_material_tipo(material_devolver, tipo, "SELECCIONADO")
 
+        continuar = input("¿Desea proceder con la devolución? [S/N] ").upper()
 
 
 
