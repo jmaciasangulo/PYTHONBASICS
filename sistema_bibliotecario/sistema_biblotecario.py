@@ -570,7 +570,6 @@ def menu_consultar_disponibles():
 
             for tupla in ids:
                 imprimir_material_tipo(tupla[0], "LIBRO", "DISPONIBLE")
-            print("Final")
 
         case "PELICULA" | "PELICULAS" | "PELÍCULA" | "PELÍCULAS":
 
