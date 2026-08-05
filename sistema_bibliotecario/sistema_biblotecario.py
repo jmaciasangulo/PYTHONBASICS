@@ -461,7 +461,7 @@ def menu_devolver_material(cuenta):
             fecha_limite = datetime.datetime.strptime(fecha_limite, "%Y-%m-%d")
             fecha_devolucion = datetime.datetime.strptime(fecha_devolucion, "%Y-%m-%d")
 
-            dias_multa = (fecha_limite - fecha_devolucion).days
+            dias_multa = (fecha_devolucion - fecha_limite).days
 
             if dias_multa < 1:
                 dias_multa = 0
