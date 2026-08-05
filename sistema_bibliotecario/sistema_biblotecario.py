@@ -555,6 +555,9 @@ def menu_consultar_disponibles:
     print()
     tipo_consultar = input("Ingrese el tipo de materiales que desea consultar: ").upper()
 
+    while tipo_consultar not in ["LIBRO", "LIBROS", "PELÍCULA", "PELÍCULAS", "PELICULA", "PELICULAS" "REVISTA", "REVISTAS"]:
+        print("Respuesta invalida, vuelva a intenar...")
+        tipo_consultar = input("Ingrese el tipo de materiales que desea consultar: ").upper()
 
 
 menu_acceder()
