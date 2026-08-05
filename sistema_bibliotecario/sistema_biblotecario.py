@@ -275,7 +275,7 @@ def menu_principal(cuenta):
                 menu_pedir_prestado_material(cuenta)
 
             case "3":
-                pass
+                menu_devolver_material(cuenta)
 
             case "4":
                 pass
