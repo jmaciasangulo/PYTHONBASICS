@@ -455,7 +455,7 @@ def menu_devolver_material(cuenta):
             momento_actual = datetime.datetime.now()
             fecha_devolucion = momento_actual.strftime("%Y-%m-%d")
 
-            basedatos.execute("""UPDATE historial_prestamos SET fecha_devolucion = ? WHERE id_material = ?""", (fecha_devolucion, material_devolver.id_material))
+            basedatos.execute("""UPDATE historial_prestamos SET fecha_devolucion = ? WHERE id_material = ? AND fecha_devolucion IS NULL""", (fecha_devolucion, material_devolver.id_material))
             conexion.commit()
 
             fecha_limite = datetime.datetime.strptime(fecha_limite, "%Y-%m-%d")
