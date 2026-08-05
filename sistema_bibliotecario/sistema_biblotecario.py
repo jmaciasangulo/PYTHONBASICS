@@ -550,7 +550,7 @@ def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
     return material_seleccionado
 
-def menu_consultar_disponibles:
+def menu_consultar_disponibles():
     print("Consultar disponibles.")
     print()
     tipo_consultar = input("Ingrese el tipo de materiales que desea consultar: ").upper()
