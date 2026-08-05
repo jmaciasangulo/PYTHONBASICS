@@ -32,6 +32,8 @@ class MaterialBibliografico:
     def _validar_dias_retraso(self, dias_retraso):
         if not isinstance(dias_retraso, int):
             raise ValueError("Los días de retraso deben de ser un número entero")
+        if dias_retraso < 0:
+            raise ValueError("Los dias de retraso deben de ser un número positivo")
 
 class Libro(MaterialBibliografico):
 
