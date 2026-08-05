@@ -473,6 +473,8 @@ def menu_devolver_material(cuenta):
                 print("Asegurese de pagar su multa.")
 
             print("Muchas gracias por devolver el material :)")
+        else:
+            print("Devolución cancelada.")
 
 def imprimir_material_tipo(id_seleccionado, tipo, cadena_texto):
 
